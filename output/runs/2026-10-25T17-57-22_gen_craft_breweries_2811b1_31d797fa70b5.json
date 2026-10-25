@@ -1,0 +1,480 @@
+{
+ "session_id": "31d797fa70b5",
+ "user": "darrel",
+ "case_id": "gen_craft_breweries_2811b1",
+ "finished": "2026-10-25T17:57:22+00:00",
+ "duration_sec": 1588,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Harborlight Brewing is a regional craft brewery with a popular taproom. Its owners are considering raising the price of its flagship beer to help improve profitability, but they worry that customers may switch to other local breweries. They have asked us to assess whether a price increase makes sense and recommend how to proceed.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "candidate",
+   "text": "Before we get started, I have several clarifying questions. Do we know which region the brewery is located, and is it in the US?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The specific region and country aren\u2019t specified. For this case, focus on Harborlight\u2019s taproom and nearby competing breweries in its home market. What else would you like to clarify?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "off_topic",
+     "strikes": 1
+    }
+   ],
+   "tokens": {
+    "input_tokens": 3697,
+    "cache_read_tokens": 2406,
+    "cache_write_tokens": 1282,
+    "output_tokens": 147,
+    "requests": 3,
+    "cost_usd": 0.00025871
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Do they have a target in mind? such as profitability targets or capturing additional market?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The objective is to improve taproom profitability without materially reducing demand or harming Harborlight\u2019s local reputation. No specific profitability or market-share target has been provided.",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "current_price"
+    },
+    {
+     "type": "stage",
+     "stage": "analysis"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 2866,
+    "cache_read_tokens": 2683,
+    "cache_write_tokens": 177,
+    "output_tokens": 145,
+    "requests": 2,
+    "cost_usd": 0.00012206
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Ok, this is helpful. My initial hypothesis is yes, to raise prices to increase profitability, but to have a more definitive answer, I would like to look at this through three lenses. First being their current revenue, second being their costs, and finally the risks of changing revenue and cost variables. For revenue, I want to see what the breakdown is amongst their products, so that we can get a sense of how willing consumers are ready to pay for their more flagship products. I want to get a sense of the price per unit, the number of beers sold per customer, and numbers on how many beers of the flagship, as well as how their competitors are doing in the same market for the same type of beer. Secondly for costs, I want to see the inputs that go in to making one unit of their flagship beer, as well as unit costs for one of their non flagship beers, as well as how that stacks with competitors. That is because if their have opportunities to lower their costs, they can increase profitability without even raising prices. Thirdly, I want to understand more of the risks associated with raising prices. If consumers are elastic, they are more willing to switch to their competitors and as a result our clients would lose market share. But perhaps we can look at their revenue stream first and get a better picture, if we have numbers, on what competitors are selling and what our client is selling.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Okay. Harborlight sells about 100,000 flagship pints annually, and comparable local taprooms charge an average of $7.50 per pint, with most prices between $7.25 and $7.75. Harborlight is currently below that average. I\u2019m putting an exhibit on your screen. Where would you like to start?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "volume"
+    },
+    {
+     "type": "fact",
+     "topic": "competitor_prices"
+    },
+    {
+     "type": "exhibit",
+     "id": "ex1",
+     "title": "Flagship pint prices at local taprooms"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 5908,
+    "cache_read_tokens": 5240,
+    "cache_write_tokens": 659,
+    "output_tokens": 229,
+    "requests": 3,
+    "cost_usd": 0.00025017
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "I see that three local competitors are charging higher per pint. This tells me that there is perhaps a higher ceiling for harborlight to increase their flagship pints' cost per pint. However, one stands out to me now is that even though the cost per pint is lower at Harborlight, perhaps the reason it's lower is because they are serving different demographics. Do we have an idea of what demographics look like for harborlight vs their peers?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "We don\u2019t have demographic data for Harborlight or its peers, so make a reasonable assumption. What would you want to test next to assess whether Harborlight can raise its price without losing too much demand?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "off_topic",
+     "strikes": 2
+    }
+   ],
+   "tokens": {
+    "input_tokens": 4700,
+    "cache_read_tokens": 4433,
+    "cache_write_tokens": 261,
+    "output_tokens": 107,
+    "requests": 2,
+    "cost_usd": 0.00013106
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "I want to understand what the costs for harborlight flagship product is. DO we have data on that?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The variable cost to brew and serve each pint is $2.30, and the taproom has $300,000 in annual fixed costs. What would you like to calculate or examine next?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "unit_economics"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 5027,
+    "cache_read_tokens": 4858,
+    "cache_write_tokens": 163,
+    "output_tokens": 78,
+    "requests": 2,
+    "cost_usd": 0.00010856
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "I would like to understand what their annual pints sold is, that way I can get a sense of total revenue and compare how that relates to their annual costs.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The taproom sells about 100,000 flagship pints annually. Using the current price and the cost figures, what are the annual revenue and the relevant costs?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {
+    "input_tokens": 5329,
+    "cache_read_tokens": 5179,
+    "cache_write_tokens": 144,
+    "output_tokens": 99,
+    "requests": 2,
+    "cost_usd": 0.00011989
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Selling 100k pints annually would mean 470k in total revenue before fixed costs. after fixed costs, the annual profit just on flagship pints is 170k in profit. I want to compare this with profitability of other local brewery and see what profit is like. Is that reasonable?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Can you walk me through your revenue calculation again? We don\u2019t have competitors\u2019 profitability data. What information would help you assess whether Harborlight\u2019s proposed price increase could improve profit without materially reducing demand?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "100000*7",
+     "result": 700000.0
+    },
+    {
+     "type": "calc",
+     "expression": "100000*(7-2.3)-300000",
+     "result": 170000.0
+    }
+   ],
+   "tokens": {
+    "input_tokens": 8617,
+    "cache_read_tokens": 8385,
+    "cache_write_tokens": 223,
+    "output_tokens": 169,
+    "requests": 3,
+    "cost_usd": 0.00019713
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Yes, revenue is (7-2.3) * 100k = 470k. Fixed cost of another 300k would mean 170k annual profit just on their flagship product. I would want to see if consumers are actually willing to pay higher, and whether consumers would pivot to their lower tier product, causing cannibalization of its flagship consumer revenue, as well as if they would switch to other local breweries.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The sensitivity test estimates that each 1% price increase leads to about a 0.8% decrease in pint volume, treated as linear for the proposed change. One distinction: your $470,000 figure is revenue after variable costs, before fixed costs\u2014not sales revenue. How would you use the sensitivity estimate to assess the proposed price increase?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "price_sensitivity"
+    },
+    {
+     "type": "calc",
+     "expression": "(7-2.3)*100000",
+     "result": 470000.0
+    }
+   ],
+   "tokens": {
+    "input_tokens": 12910,
+    "cache_read_tokens": 12451,
+    "cache_write_tokens": 447,
+    "output_tokens": 294,
+    "requests": 4,
+    "cost_usd": 0.00032859
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Because 1% increase in price would lead to greater revenue than their decreased pint volume, I see the opportunity to raise prices such that it is still lower than their peer's lowest $/pint for the same product. That is because if we raise it to equal or more than the next closest subsittue, we risk losing consumers to another local brewery. I would therefore propose to just raise the price per pint to close enough to local brewery A",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "You\u2019ve identified room between Harborlight\u2019s current price and competitors\u2019 prices. Before choosing a price, quantify the expected volume change and resulting profit at the proposed $7.35 price, using the sensitivity estimate. What do you get?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "(7.35-7)/7*100",
+     "result": 4.999999999999995
+    }
+   ],
+   "tokens": {
+    "input_tokens": 7342,
+    "cache_read_tokens": 6950,
+    "cache_write_tokens": 386,
+    "output_tokens": 249,
+    "requests": 2,
+    "cost_usd": 0.00024285
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Raising price by 0.35/7 = 5% would result in a decrease of 4% in volume sold. We then have a revenue of (7.35-2.3) * 100k =505000 - 300000 = 205,000 in total profit for this flagship product in a year. However, at this price point, we risk losing consumers to local brewery A since they operate in the same market, targeting the same consumers. I would then further propose that if we use this price piont of 7.35, Harborlight should identify ways to differentiate itself from Local Brewery A, through means such as membership rewards, or spending prizes, and other incentives to maintain consumers and not lose them to brewery A.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Can you walk me through the profit calculation again, accounting for the lower volume after the price increase? Also, how would you test whether the proposed differentiation would actually reduce switching?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "100000*(7.35-2.3)-300000",
+     "result": 205000.0
+    },
+    {
+     "type": "calc",
+     "expression": "100000*(1-0.04)",
+     "result": 96000.0
+    }
+   ],
+   "tokens": {
+    "input_tokens": 12182,
+    "cache_read_tokens": 11816,
+    "cache_write_tokens": 357,
+    "output_tokens": 185,
+    "requests": 3,
+    "cost_usd": 0.00025619
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "You're right, I did not account for decreased volume. it should be (7.35 - 2.3) * 96000 = 485000 - 300k = 185k. Still greater than price point of $7. I would test how differentiation would actually reduce switching, but launching loyalty programs and seeing whether the lost in consumers is less than 4%. If it is less than 4% loss in consumers, less than our expected loss due to price change, we can more confidently assume that this is due to differentaition in loyalty programs.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Your revised profit estimate is consistent with the expected volume decline. Your test should distinguish the effect of the price change from the effect of the loyalty program\u2014for example, by using a comparable control group. The CEO has just walked in; what\u2019s your final recommendation, including the key rationale, risks, and next steps?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "(7.35-2.3)*96000",
+     "result": 484800.0
+    },
+    {
+     "type": "calc",
+     "expression": "484800-300000",
+     "result": 184800.0
+    },
+    {
+     "type": "stage",
+     "stage": "synthesis"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 17711,
+    "cache_read_tokens": 17269,
+    "cache_write_tokens": 430,
+    "output_tokens": 202,
+    "requests": 4,
+    "cost_usd": 0.00032864
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "I would recommend that Harborlight raises its flagship pint form $7 to at least $7.25. There is opportunity to raise price further, but any 1% increase in price would cause a decrease of 0.8% in volume sold. Therefore, a safe price increase is to 7.25 to minimize loss of consumers to local brewery A, as they sell their price at 7.25 on average. Should we increase above 7.25, we will need to start thinking of ways to differentiate our product or create loyalty programs to maintain more of our market share.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Okay. Your recommendation is to raise the price to $7.25, with further increases contingent on differentiation and loyalty efforts. Let me know when you\u2019re ready to be graded.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {
+    "input_tokens": 4724,
+    "cache_read_tokens": 4529,
+    "cache_write_tokens": 192,
+    "output_tokens": 182,
+    "requests": 1,
+    "cost_usd": 0.00016059
+   }
+  }
+ ],
+ "revealed": [
+  "current_price",
+  "volume",
+  "competitor_prices",
+  "unit_economics",
+  "price_sensitivity"
+ ],
+ "scorecard": {
+  "case_id": "gen_craft_breweries_2811b1",
+  "case_title": "Harborlight Brewing: finding the right pint price",
+  "case_type": "pricing",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 3,
+    "reason": "You offered a three-part revenue, cost, and risk structure, but it was broad and not consistently used to prioritize the pricing analysis.",
+    "evidence_quote": "I would like to look at this through three lenses. First being their current revenue, second being their costs, and finally the risks of changing revenue and cost variables."
+   },
+   {
+    "dimension": "clarifying",
+    "score": 3,
+    "reason": "You clarified the objective and asked about market context, though you did not probe timeline or implementation scope.",
+    "evidence_quote": "Do they have a target in mind? such as profitability targets or capturing additional market?"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 2,
+    "reason": "You correctly calculated the baseline and volume decline, but initially ignored the decline in volume when calculating post-increase profit and did not calculate the break-even decline.",
+    "evidence_quote": "Raising price by 0.35/7 = 5% would result in a decrease of 4% in volume sold."
+   },
+   {
+    "dimension": "judgment",
+    "score": 3,
+    "reason": "You recognized competitor positioning and customer switching risk, but your final price rationale treated $7.25 as a safe ceiling without supporting evidence that this minimizes demand loss.",
+    "evidence_quote": "Should we increase above 7.25, we will need to start thinking of ways to differentiate our product or create loyalty programs to maintain more of our market share."
+   },
+   {
+    "dimension": "synthesis",
+    "score": 3,
+    "reason": "You gave a clear recommendation with a demand-risk rationale, but omitted the corrected projected profit and a specific monitoring threshold or test design.",
+    "evidence_quote": "I would recommend that Harborlight raises its flagship pint form $7 to at least $7.25."
+   },
+   {
+    "dimension": "communication",
+    "score": 3,
+    "reason": "Your responses were generally understandable, but some calculations and the recommendation needed correction or clearer signposting.",
+    "evidence_quote": "You're right, I did not account for decreased volume."
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "projected_volume",
+    "question": "If Harborlight raises the price as proposed, how many pints should it expect to sell in a year?",
+    "correct_answer": 96000.0,
+    "unit": "pints",
+    "candidate_number": 96000.0,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "operating_profit_after_increase",
+    "question": "What would annual taproom operating profit be after the proposed price increase, assuming fixed costs stay the same?",
+    "correct_answer": 184800.0,
+    "unit": "$",
+    "candidate_number": 185000.0,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "breakeven_volume_decline",
+    "question": "What percentage decline in volume would make the proposed price increase break even on contribution profit?",
+    "correct_answer": 6.930693069306931,
+    "unit": "%",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   }
+  ],
+  "overall": 2.8,
+  "top_strength": "You incorporated the 4% expected volume decline into a corrected profit estimate after recognizing the earlier calculation error.",
+  "biggest_gap": "You did not quantify the 6.9% break-even volume decline, and your final $7.25 recommendation was not tied to projected profit at that price or an explicit test threshold.",
+  "summary": "You showed sound awareness of competitor pricing and customer switching, and you recovered by correcting your profit calculation to account for lower volume. You should tighten the final recommendation by calculating break-even volume loss and pairing the chosen price with a measured rollout and clear monitoring triggers.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "Your quantitative score rose from 1 on the past market-sizing case to 2 today, but today\u2019s breakeven volume decline was not attempted; your other five dimensions are all 3 today, up from 1\u20132 previously.",
+  "focus_dimension": "quantitative",
+  "drill": "Spend 10 minutes on three price-change scenarios: calculate projected profit, solve for the break-even volume decline, then state the price recommendation with a numeric test threshold for each.",
+  "next_case_id": "ledgerloop_ai",
+  "next_case_reason": "This uncompleted pricing case gives you another direct chance to practice linking price, volume response, and profit with explicit break-even math."
+ },
+ "usage": {
+  "input_tokens": 96509,
+  "cache_read_tokens": 86199,
+  "cache_write_tokens": 9965,
+  "output_tokens": 2885,
+  "requests": 33,
+  "cost_usd": 0.00358463
+ }
+}

@@ -1,0 +1,153 @@
+{
+  "id": "gen_boutique_fitness_studios_47f9fa",
+  "title": "Pulse Studio: full classes, falling profits",
+  "case_type": "profitability",
+  "industry": "Boutique fitness studios",
+  "difficulty": 2,
+  "prompt": "Our client is Pulse Studio, a boutique fitness brand offering instructor-led classes. The CEO says the studios still feel busy, but operating profit has deteriorated. The CEO wants to understand what is driving the decline and how to restore profitability without damaging the member experience.",
+  "clarifying_answers": {
+    "objective": "Restore positive studio-level operating profit and establish a credible path toward the prior profit level.",
+    "timeline": "The CEO would like an initial turnaround plan within the next year.",
+    "geography": "The business operates in a single US region.",
+    "business_model": "Studios sell monthly memberships and class packs. All studios are company-owned.",
+    "definition_of_profit": "Operating profit after studio-level labor, rent, marketing, and other operating expenses; excludes corporate headquarters costs.",
+    "competition": "The brand competes with local boutique studios, larger fitness chains, and at-home workout options. No single new entrant explains the decline."
+  },
+  "hidden_facts": [
+    {
+      "topic": "revenue_trend",
+      "hint": "revenue, sales, pricing, or how performance has changed over time",
+      "fact": "Revenue per studio fell from $1.30M two years ago to $1.20M today. The decline is modest in absolute terms but has occurred across the business.",
+      "numbers": {
+        "revenue_before_m": 1.3,
+        "revenue_now_m": 1.2
+      }
+    },
+    {
+      "topic": "cost_trend",
+      "hint": "costs, cost breakdown, or cost trends",
+      "fact": "Total operating cost per studio rose from $1.05M two years ago to $1.22M today. Instructor and front-desk labor increased from $0.42M to $0.54M; rent stayed flat, while marketing and other overhead also rose modestly.",
+      "numbers": {
+        "cost_before_m": 1.05,
+        "cost_now_m": 1.22,
+        "labor_before_m": 0.42,
+        "labor_now_m": 0.54
+      }
+    },
+    {
+      "topic": "studio_count",
+      "hint": "the number of locations or the scale of the chain",
+      "fact": "Pulse Studio operates 32 studios, all company-owned.",
+      "numbers": {
+        "studios": 32.0
+      }
+    },
+    {
+      "topic": "membership_trend",
+      "hint": "members, cancellations, customer volume, or revenue per member",
+      "fact": "Average active memberships per studio fell from 500 to 450. Monthly revenue per active member rose slightly, from roughly $217 to $222, so the revenue decline is primarily a volume issue rather than a broad price drop.",
+      "numbers": {
+        "members_before": 500.0,
+        "members_now": 450.0,
+        "monthly_revenue_per_member_before": 217.0,
+        "monthly_revenue_per_member_now": 222.0
+      }
+    },
+    {
+      "topic": "class_utilization",
+      "hint": "class attendance, capacity, scheduling, or instructor deployment",
+      "fact": "A typical studio schedules 12 classes per day, with capacity for 20 people per class and average attendance of 11. About 30% of classes draw at most 6 people; these low-attendance classes are concentrated in off-peak time slots, while popular evening classes often fill.",
+      "numbers": {
+        "classes_per_day": 12.0,
+        "class_capacity": 20.0,
+        "average_attendance": 11.0,
+        "low_attendance_share_pct": 30.0,
+        "low_attendance_threshold": 6.0
+      }
+    },
+    {
+      "topic": "cancellation_reasons",
+      "hint": "why members leave, feedback, or the causes of cancellations",
+      "fact": "In exit surveys, 40% of canceling members cite inconvenient class times as a reason, while 25% cite price. Members also say that popular evening classes can be hard to book.",
+      "numbers": {
+        "schedule_cancellation_share_pct": 40.0,
+        "price_cancellation_share_pct": 25.0
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Operating cost per studio",
+      "kind": "bar",
+      "unlock_topic": "cost_trend",
+      "labels": [
+        "Instructor and front-desk labor",
+        "Rent",
+        "Marketing",
+        "Other"
+      ],
+      "series": [
+        {
+          "name": "Two years ago",
+          "values": [
+            420.0,
+            300.0,
+            180.0,
+            150.0
+          ]
+        },
+        {
+          "name": "Today",
+          "values": [
+            540.0,
+            300.0,
+            200.0,
+            180.0
+          ]
+        }
+      ],
+      "unit": "$K"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "current_chain_profit",
+      "question": "What is Pulse Studio's current annual operating profit across all studios?",
+      "formula": "(revenue_now_m - cost_now_m) * studios",
+      "answer": -0.64,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "chain_profit_decline",
+      "question": "How much has annual operating profit declined across the chain compared with two years ago?",
+      "formula": "((revenue_before_m - cost_before_m) - (revenue_now_m - cost_now_m)) * studios",
+      "answer": 8.64,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "labor_share_cost_increase",
+      "question": "What share of the increase in per-studio operating costs came from labor?",
+      "formula": "(labor_now_m - labor_before_m) / (cost_now_m - cost_before_m) * 100",
+      "answer": 70.58823529411765,
+      "unit": "%",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Decompose operating profit into revenue and costs, and compare both over time.",
+    "For revenue, separate member count, retention, and revenue per member; investigate which members or time slots are being lost.",
+    "For costs, separate labor, rent, marketing, and other overhead; identify whether higher labor reflects wage rates, class schedules, or staffing practices.",
+    "Assess class-level economics and capacity: identify off-peak classes that can be consolidated while preserving access to popular classes.",
+    "Develop a practical recovery plan, including schedule changes, member-retention actions, and safeguards for service quality."
+  ],
+  "recommendation": "Pulse Studio should prioritize a schedule-and-retention turnaround rather than broad price increases or indiscriminate wage cuts. The chain is currently losing about $0.64M in annual operating profit, and profit has declined about $8.64M versus two years ago; roughly 71% of the per-studio cost increase is labor. Consolidate or redesign persistently under-attended off-peak classes, redeploy instructors toward popular evening slots, and use member feedback to improve schedule convenience. Pilot the changes in a small group of studios and track attendance, cancellations, and labor cost per attended class before scaling. Because price is cited less often than scheduling in exit surveys, protect the member experience and test targeted offers only where they improve retention.",
+  "common_mistakes": [
+    "Focusing only on costs and overlooking that fewer active members are also reducing revenue.",
+    "Assuming the labor increase should be reversed with across-the-board wage cuts instead of examining class scheduling and staffing productivity.",
+    "Cutting low-attendance classes without addressing the reported difficulty booking popular evening classes.",
+    "Recommending a general price increase despite scheduling being the more frequently cited cancellation reason."
+  ]
+}

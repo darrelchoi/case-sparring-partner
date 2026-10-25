@@ -1,0 +1,362 @@
+{
+ "session_id": "7f74b1e0dd62",
+ "user": "sim-c",
+ "case_id": "freshcart_kits",
+ "finished": "2026-10-24T07:57:22+00:00",
+ "duration_sec": 130,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is FreshCart, a regional grocery chain with 50 stores in the Southeast. The CEO wants to know whether FreshCart should start selling meal kits, and if so, how.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "candidate",
+   "text": "So, um, I guess the first thing I'd want to understand is, like, what the CEO is really trying to get out of this, because meal kits could be about profit, or about getting people into the stores more often, or maybe about competing with delivery companies, so what is the main goal here?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The main goals are to grow profit and give loyal shoppers a reason to visit more often. What else would you like to clarify before you structure the problem?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {
+    "input_tokens": 2234,
+    "cache_read_tokens": 1097,
+    "cache_write_tokens": 1131,
+    "output_tokens": 54,
+    "requests": 2,
+    "cost_usd": 0.00017994
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Okay, got it. So I think I'd want to look at, well, a bunch of things, like the customers and whether they want this, and also how much money each kit makes, and also the competitors, because I know HelloFresh is big, and also whether FreshCart can actually make these kits, and then how to launch it. How many customers does FreshCart have?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "FreshCart has 400,000 loyalty-card households. Where would you like to start your analysis?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "shoppers"
+    },
+    {
+     "type": "stage",
+     "stage": "analysis"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 3934,
+    "cache_read_tokens": 3680,
+    "cache_write_tokens": 245,
+    "output_tokens": 106,
+    "requests": 3,
+    "cost_usd": 0.00012133
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "And do we know how many of them would actually buy meal kits?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "In a survey, 15% of loyalty households said they would buy a meal kit about twice a month. What would you like to assess next?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "interest"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 2899,
+    "cache_read_tokens": 2796,
+    "cache_write_tokens": 97,
+    "output_tokens": 53,
+    "requests": 2,
+    "cost_usd": 6.719e-05
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "So let me think, 400 thousand households times 15 percent is 60 thousand households, and if they buy twice a month that's 24 kits a year each, so 60 thousand times 24 is, um, 1.44 million kits a year. What does a kit sell for and cost?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "That calculation is right: 1.44 million kits a year. Each kit sells for $25 and costs $17 to make, including food, packaging, and labor. I\u2019m putting an exhibit on your screen. What does that imply for the economics?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "400000 * 0.15",
+     "result": 60000.0
+    },
+    {
+     "type": "calc",
+     "expression": "60000 * 24",
+     "result": 1440000.0
+    },
+    {
+     "type": "fact",
+     "topic": "economics"
+    },
+    {
+     "type": "exhibit",
+     "id": "ex1",
+     "title": "Cost to make one kit ($)"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 6588,
+    "cache_read_tokens": 6316,
+    "cache_write_tokens": 260,
+    "output_tokens": 149,
+    "requests": 4,
+    "cost_usd": 0.00017136
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Okay so each kit makes 8 dollars, 25 minus 17, so 1.44 million times 8 is about 11.5 million dollars of gross profit, which seems pretty good I think.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Correct: that\u2019s $11.52 million in gross profit before any additional costs or effects such as unsold kits. What would you want to investigate next before deciding whether to launch?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "25 - 17",
+     "result": 8.0
+    },
+    {
+     "type": "calc",
+     "expression": "1440000 * 8",
+     "result": 11520000.0
+    }
+   ],
+   "tokens": {
+    "input_tokens": 7714,
+    "cache_read_tokens": 7434,
+    "cache_write_tokens": 268,
+    "output_tokens": 133,
+    "requests": 4,
+    "cost_usd": 0.00017554
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "What are competitors doing in this space?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Let's take that one step at a time. What would you like to look at next?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "competition"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 6362,
+    "cache_read_tokens": 6184,
+    "cache_write_tokens": 169,
+    "output_tokens": 100,
+    "requests": 3,
+    "cost_usd": 0.00013387
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Hmm, a rival dropped kits because of food waste, so waste seems important. How much does FreshCart usually waste on prepared food?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "FreshCart currently wastes about 10% of the prepared-food items it makes. How would you factor that into the kit economics, and what might FreshCart do to manage the risk?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "waste"
+    },
+    {
+     "type": "calc",
+     "expression": "(17 / 0.9)",
+     "result": 18.88888888888889
+    }
+   ],
+   "tokens": {
+    "input_tokens": 6928,
+    "cache_read_tokens": 6729,
+    "cache_write_tokens": 190,
+    "output_tokens": 124,
+    "requests": 3,
+    "cost_usd": 0.00015394
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Okay, so I think overall, um, FreshCart should probably go ahead with meal kits, because there's interest from about 15 percent of customers and they could make around 11.5 million, but they should be careful about waste because a competitor had problems, so maybe they could start small or something.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The CEO has just walked in. Please give your recommendation, including the key rationale, the main risk, and how you\u2019d launch or test the idea.",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "stage",
+     "stage": "synthesis"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 5021,
+    "cache_read_tokens": 4850,
+    "cache_write_tokens": 165,
+    "output_tokens": 54,
+    "requests": 2,
+    "cost_usd": 9.672e-05
+   }
+  }
+ ],
+ "revealed": [
+  "shoppers",
+  "interest",
+  "economics",
+  "competition",
+  "waste"
+ ],
+ "scorecard": {
+  "case_id": "freshcart_kits",
+  "case_title": "FreshCart: should a grocer sell meal kits?",
+  "case_type": "market_entry",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 3,
+    "reason": "You named the main relevant areas, but the framework was loosely organized and not explicitly prioritized or used to cover all of them.",
+    "evidence_quote": "the customers and whether they want this, and also how much money each kit makes, and also the competitors"
+   },
+   {
+    "dimension": "clarifying",
+    "score": 3,
+    "reason": "You confirmed the core objective and asked for the customer base and likely demand, but did not clarify format, scope, or timeline.",
+    "evidence_quote": "what is the main goal here?"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 4,
+    "reason": "You correctly calculated annual volume and pre-waste gross profit with clear arithmetic, but did not calculate the key after-waste profit.",
+    "evidence_quote": "1.44 million times 8 is about 11.5 million dollars of gross profit"
+   },
+   {
+    "dimension": "judgment",
+    "score": 2,
+    "reason": "You recognized waste as a risk, but did not quantify its impact or develop the proposed mitigation into an actionable test.",
+    "evidence_quote": "they should be careful about waste because a competitor had problems, so maybe they could start small or something"
+   },
+   {
+    "dimension": "synthesis",
+    "score": 2,
+    "reason": "You gave a tentative recommendation with some support, but did not deliver the requested CEO-ready rationale, quantify post-waste economics, or specify a concrete launch plan.",
+    "evidence_quote": "FreshCart should probably go ahead with meal kits, because there's interest from about 15 percent of customers"
+   },
+   {
+    "dimension": "communication",
+    "score": 2,
+    "reason": "Your answers were understandable but frequently hedged and loosely structured, and you did not provide the final requested recommendation after the interviewer prompt.",
+    "evidence_quote": "Okay, so I think overall, um, FreshCart should probably go ahead with meal kits"
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "kits_per_year",
+    "question": "How many kits a year could FreshCart sell (in thousands)?",
+    "correct_answer": 1440.0,
+    "unit": "K kits",
+    "candidate_number": 1.44,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "gross_profit",
+    "question": "What gross profit would that earn before waste?",
+    "correct_answer": 11.52,
+    "unit": "$M",
+    "candidate_number": 11.5,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "profit_after_waste",
+    "question": "What is gross profit after accounting for waste?",
+    "correct_answer": 9.072,
+    "unit": "$M",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   }
+  ],
+  "overall": 2.7,
+  "top_strength": "You correctly translated the survey into 1.44 million potential annual kits and roughly $11.5 million of pre-waste gross profit.",
+  "biggest_gap": "You recognized food waste as the central risk but neither quantified its effect on profit nor turned \u201cstart small\u201d into a specific pilot with pre-orders and an expansion threshold.",
+  "summary": "You built a reasonable initial view and handled the volume and pre-waste profit calculations accurately. You should quantify the waste-adjusted economics and finish with a direct, specific pilot recommendation that names the risk controls and success criteria.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "There\u2019s no past-case history, so today is the baseline: judgment, synthesis, and communication were all 2, while quantitative was strongest at 4. The key miss was converting the recognized food-waste risk into quantified profit impact and a specific pilot decision rule.",
+  "focus_dimension": "judgment",
+  "drill": "In 10 minutes, run three 3-minute pilot decisions aloud: for each, quantify downside from waste or low adoption, name a pre-order or limited-launch test, and set a numeric go/no-go threshold; use the remaining minute to summarize the recommendation and key risk.",
+  "next_case_id": "brightsmile",
+  "next_case_reason": "This M&A case will push you to weigh risks and returns into a defensible judgment rather than stopping at identifying issues."
+ },
+ "usage": {
+  "input_tokens": 45712,
+  "cache_read_tokens": 39086,
+  "cache_write_tokens": 5282,
+  "output_tokens": 1518,
+  "requests": 25,
+  "cost_usd": 0.00194452
+ }
+}

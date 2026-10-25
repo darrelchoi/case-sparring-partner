@@ -1,0 +1,95 @@
+{
+  "id": "gen_fintech_ee1965",
+  "title": "LedgerLift: pricing a smarter invoice platform",
+  "case_type": "pricing",
+  "industry": "Fintech",
+  "difficulty": 2,
+  "prompt": "Our client is LedgerLift, a fintech platform that helps small businesses create invoices, accept payments, and reconcile transactions. It is considering raising the monthly price of its core subscription. The CEO wants to know whether to make the change and how to manage the risk of losing customers.",
+  "clarifying_answers": {
+    "objective": "Increase recurring contribution while retaining a healthy customer base; recommend whether to change the core subscription price.",
+    "timeline": "Make a decision in the next quarter and assess results over the following year.",
+    "geography": "United States only.",
+    "business_model": "LedgerLift charges small businesses a monthly subscription and also earns transaction revenue. For this decision, transaction revenue is unchanged by the subscription price change, so focus on subscription contribution.",
+    "scope": "Evaluate a proposed price increase for the existing core plan; assume fixed costs do not change."
+  },
+  "hidden_facts": [
+    {
+      "topic": "current_economics",
+      "hint": "Ask about current pricing, per-customer costs, or subscription margins.",
+      "fact": "The core plan currently costs $20 per customer per month. Variable servicing and payment-support costs average $6 per active customer per month; fixed costs are unchanged by the pricing decision.",
+      "numbers": {
+        "current_price": 20.0,
+        "variable_cost": 6.0
+      }
+    },
+    {
+      "topic": "customer_base",
+      "hint": "Ask how many customers are on the core plan or how large the installed base is.",
+      "fact": "LedgerLift has 50,000 active core-plan customers, all currently paying the same monthly price.",
+      "numbers": {
+        "active_users": 50000.0
+      }
+    },
+    {
+      "topic": "price_test",
+      "hint": "Ask about customer research, a pilot, or expected churn at the proposed price.",
+      "fact": "In a test lasting 6 weeks with 2,000 customers, the proposed $24 monthly price led 8% of customers to cancel. The remaining customers showed no change in usage or support needs, and there was no observed downgrade to another LedgerLift plan.",
+      "numbers": {
+        "new_price": 24.0,
+        "cancel_pct": 8.0,
+        "pilot_users": 2000.0,
+        "pilot_weeks": 6.0
+      }
+    },
+    {
+      "topic": "competitive_context",
+      "hint": "Ask about competitor pricing, differentiation, or customer willingness to pay.",
+      "fact": "Comparable small-business invoicing plans typically cost between $18 and $30 per month. LedgerLift's customer interviews highlight its automated reconciliation and payment tracking as differentiators, but customers can switch providers without a long-term contract.",
+      "numbers": {
+        "competitor_low": 18.0,
+        "competitor_high": 30.0
+      }
+    }
+  ],
+  "exhibits": [],
+  "math_answers": [
+    {
+      "id": "current_contribution",
+      "question": "What is LedgerLift's monthly subscription contribution from the current core-plan customer base?",
+      "formula": "active_users * (current_price - variable_cost)",
+      "answer": 700000.0,
+      "unit": "$/month",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "new_contribution",
+      "question": "Assuming the test cancellation rate applies to the full base, what would monthly subscription contribution be at the proposed price?",
+      "formula": "active_users * (1 - cancel_pct / 100) * (new_price - variable_cost)",
+      "answer": 828000.0,
+      "unit": "$/month",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "contribution_uplift",
+      "question": "How much would monthly subscription contribution change under the proposed price, versus today?",
+      "formula": "active_users * (1 - cancel_pct / 100) * (new_price - variable_cost) - active_users * (current_price - variable_cost)",
+      "answer": 128000.0,
+      "unit": "$/month",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Clarify the pricing objective, scope, and whether the change affects subscription revenue, transaction revenue, or both.",
+    "Establish baseline economics: active customers multiplied by price less variable cost; distinguish contribution from total profit.",
+    "Assess customer response to the proposed price using pilot cancellation and any changes in usage, support, or plan mix.",
+    "Check competitive pricing and whether LedgerLift's differentiated features support the increase.",
+    "Recommend rollout approach, customer communication, monitoring metrics, and contingency thresholds."
+  ],
+  "recommendation": "Raise the core-plan price from $20 to $24 per month, but roll it out in a monitored phase and communicate the value of automated reconciliation and payment tracking. If the pilot's 8% cancellation rate holds across the 50,000-customer base, monthly subscription contribution rises from $700,000 to $828,000, an uplift of $128,000 per month. The proposed price remains within the $18–$30 competitor range. Track cancellations, downgrades, acquisition, and support costs after launch; pause or refine the change if actual churn materially exceeds the pilot result.",
+  "common_mistakes": [
+    "Comparing subscription revenue without subtracting variable servicing costs.",
+    "Treating the 8% cancellation rate as a loss of all customer value rather than recalculating contribution from retained customers.",
+    "Ignoring that the pilot was short and may not fully predict long-run churn.",
+    "Focusing only on competitor prices without considering LedgerLift's differentiated features or customer response."
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "pickleball",
+  "title": "Pickleball paddles: sizing a hot market",
+  "case_type": "market_sizing",
+  "industry": "Sporting goods",
+  "difficulty": 1,
+  "prompt": "Our client is a sporting goods brand that wants to launch a line of pickleball paddles. Estimate the annual US market for pickleball paddles, in dollars.",
+  "clarifying_answers": {
+    "objective": "Size the market to decide whether a paddle line is worth launching.",
+    "geography": "United States.",
+    "scope": "Paddles only, not balls, shoes, or court fees."
+  },
+  "hidden_facts": [
+    {
+      "topic": "players",
+      "hint": "how many people play",
+      "fact": "About 20 million Americans played pickleball at least once last year.",
+      "numbers": {
+        "players_m": 20
+      }
+    },
+    {
+      "topic": "player_mix",
+      "hint": "types of players, how often people play, or core vs casual",
+      "fact": "About 25% are core players who play 8 or more times a year. The rest are casual players.",
+      "numbers": {
+        "core_pct": 25
+      }
+    },
+    {
+      "topic": "replacement",
+      "hint": "how often people buy a paddle",
+      "fact": "Core players buy about 1 new paddle a year. Casual players buy one about every 4 years.",
+      "numbers": {
+        "core_buys_per_year": 1,
+        "casual_years_per_paddle": 4
+      }
+    },
+    {
+      "topic": "price",
+      "hint": "paddle prices or what players spend",
+      "fact": "Core players spend about $120 per paddle. Casual players spend about $40.",
+      "numbers": {
+        "core_price": 120,
+        "casual_price": 40
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "US pickleball players (millions)",
+      "kind": "line",
+      "unlock_topic": "players",
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "series": [
+        {
+          "name": "Players",
+          "values": [
+            5,
+            9,
+            13,
+            17,
+            20
+          ]
+        }
+      ],
+      "unit": "M"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "paddles_per_year",
+      "question": "How many paddles are bought each year (in millions)?",
+      "formula": "players_m * core_pct / 100 * core_buys_per_year + players_m * (100 - core_pct) / 100 / casual_years_per_paddle",
+      "answer": 8.75,
+      "unit": "M paddles",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "market_size",
+      "question": "What is the annual market in dollars?",
+      "formula": "players_m * core_pct / 100 * core_buys_per_year * core_price + players_m * (100 - core_pct) / 100 / casual_years_per_paddle * casual_price",
+      "answer": 750,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Players x paddles bought per player per year x price",
+    "Segment: core vs casual players",
+    "Different replacement rates and prices per segment",
+    "Sanity check and growth trend"
+  ],
+  "recommendation": "The market is about $750M a year. Core players are only 25% of players but spend $600M of it (80%), so the client should launch a premium paddle aimed at core players, selling through clubs and online.",
+  "common_mistakes": [
+    "Treating all players the same",
+    "Assuming everyone buys a paddle every year"
+  ]
+}

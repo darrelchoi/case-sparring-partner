@@ -1,0 +1,8 @@
+Can I confirm the objective is to cut waiting times and walkouts within 6 months, and that we can't build new space?
+I'll structure this as a patient flow: arrival, triage, waiting for a bed, seeing a doctor, waiting for tests, and discharge or admission. I want to find the bottleneck, then the root cause, which may be outside the ER, then fixes and impact. Can you tell me how long patients spend in each step?
+So waiting for a bed is 2.5 of the 5 hours, which is 50 percent of the visit. That's clearly the bottleneck. Why are beds full? How many beds are there and who is in them?
+So 25 percent of 30 beds is 7.5 beds held by boarders waiting to go upstairs. What's going on with discharges upstairs?
+That's the root cause: upstairs discharges happen after 3 pm but ER admissions peak late morning, so boarders sit in ER beds. What volume do we see and how many patients leave?
+How much does each patient who leaves cost us?
+180 patients times 8 percent is 14.4 a day, times 365 is about 5,256 a year, times 600 dollars is about 3.15 million dollars a year lost.
+My recommendation: the ER's bottleneck is bed availability, not doctors. Half the visit is spent waiting for a bed because 7 or 8 of 30 beds hold boarding patients, since upstairs discharges happen after 3 pm. I'd move discharges before noon, open a discharge lounge, and add a fast track for low-acuity patients. This targets 3.15 million dollars a year in lost revenue. Risks are upstairs staffing resistance, so I'd pilot on two units and track bed-wait time weekly.

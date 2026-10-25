@@ -1,0 +1,366 @@
+{
+ "session_id": "86ee646be46b",
+ "user": "demo-trace",
+ "case_id": "harbor_er",
+ "finished": "2026-10-23T03:19:41+00:00",
+ "duration_sec": 72,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is Harbor General Hospital. Its emergency room has some of the longest wait times in the state, and more patients are leaving before being seen. The CEO asks us to find out what is causing the delays and fix them.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "candidate",
+   "text": "Can I confirm the objective is to cut waiting times and walkouts within 6 months, and that we can't build new space?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Yes. The objective is to reduce ER waits and patients leaving before being seen within six months. There\u2019s no budget for a new building, though there is some budget for staffing and process changes. Anything else you\u2019d like to clarify?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {
+    "input_tokens": 1077,
+    "cache_read_tokens": 0,
+    "cache_write_tokens": 1074,
+    "output_tokens": 96,
+    "requests": 1,
+    "cost_usd": 0.00018255
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "I'll structure this as a patient flow: arrival, triage, waiting for a bed, seeing a doctor, waiting for tests, and discharge or admission. I want to find the bottleneck, then the root cause, which may be outside the ER, then fixes and impact. Can you tell me how long patients spend in each step?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The average visit takes five hours: half an hour to triage, two and a half hours waiting for a bed, one hour with a doctor, and one hour waiting for test results. I\u2019m putting an exhibit on your screen. Where would you like to start?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "stage",
+     "stage": "structure"
+    },
+    {
+     "type": "fact",
+     "topic": "process_times"
+    },
+    {
+     "type": "stage",
+     "stage": "analysis"
+    },
+    {
+     "type": "exhibit",
+     "id": "ex1",
+     "title": "Where the time goes in an ER visit (hours)"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 2644,
+    "cache_read_tokens": 2318,
+    "cache_write_tokens": 320,
+    "output_tokens": 151,
+    "requests": 2,
+    "cost_usd": 0.00013928
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "So waiting for a bed is 2.5 of the 5 hours, which is 50 percent of the visit. That's clearly the bottleneck. Why are beds full? How many beds are there and who is in them?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "That\u2019s 50% of the visit. The ER has 30 beds, and about 25% are occupied by admitted patients waiting for an upstairs bed. What would you want to investigate next to understand why those beds are tied up?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "2.5 / 5 * 100",
+     "result": 50.0
+    },
+    {
+     "type": "fact",
+     "topic": "beds"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 6539,
+    "cache_read_tokens": 6178,
+    "cache_write_tokens": 349,
+    "output_tokens": 175,
+    "requests": 4,
+    "cost_usd": 0.00019411
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "So 25 percent of 30 beds is 7.5 beds held by boarders waiting to go upstairs. What's going on with discharges upstairs?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "That\u2019s correct: about 7.5 beds\u2019 worth of capacity is occupied by boarders. Upstairs, most patients are discharged after 3 p.m., while ER admissions peak in the late morning. How might that timing mismatch affect ER flow?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "upstairs"
+    },
+    {
+     "type": "calc",
+     "expression": "0.25 * 30",
+     "result": 7.5
+    }
+   ],
+   "tokens": {
+    "input_tokens": 3770,
+    "cache_read_tokens": 3575,
+    "cache_write_tokens": 189,
+    "output_tokens": 136,
+    "requests": 2,
+    "cost_usd": 0.00012798
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "That's the root cause: upstairs discharges happen after 3 pm but ER admissions peak late morning, so boarders sit in ER beds. What volume do we see and how many patients leave?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The ER sees about 180 patients a day, and 8% leave before being seen. What does that imply for the number of patients leaving each day?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "volumes"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 4216,
+    "cache_read_tokens": 3990,
+    "cache_write_tokens": 220,
+    "output_tokens": 124,
+    "requests": 2,
+    "cost_usd": 0.00013
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "How much does each patient who leaves cost us?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Each patient who leaves before being seen represents about $600 in lost revenue. Would you like to quantify the current daily revenue impact and then consider potential fixes?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "finances"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 4539,
+    "cache_read_tokens": 4394,
+    "cache_write_tokens": 139,
+    "output_tokens": 95,
+    "requests": 2,
+    "cost_usd": 0.00010941
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "180 patients times 8 percent is 14.4 a day, times 365 is about 5,256 a year, times 600 dollars is about 3.15 million dollars a year lost.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "That\u2019s right: about 14.4 patients leave each day, or roughly 5,256 a year, representing about $3.15 million in annual lost revenue. What changes would you recommend to reduce boarding and improve ER flow within six months?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "180 * 0.08",
+     "result": 14.4
+    },
+    {
+     "type": "calc",
+     "expression": "180 * 0.08 * 365",
+     "result": 5256.0
+    },
+    {
+     "type": "calc",
+     "expression": "180 * 0.08 * 365 * 600",
+     "result": 3153600.0
+    }
+   ],
+   "tokens": {
+    "input_tokens": 9906,
+    "cache_read_tokens": 9647,
+    "cache_write_tokens": 247,
+    "output_tokens": 166,
+    "requests": 4,
+    "cost_usd": 0.00021155
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "My recommendation: the ER's bottleneck is bed availability, not doctors. Half the visit is spent waiting for a bed because 7 or 8 of 30 beds hold boarding patients, since upstairs discharges happen after 3 pm. I'd move discharges before noon, open a discharge lounge, and add a fast track for low-acuity patients. This targets 3.15 million dollars a year in lost revenue. Risks are upstairs staffing resistance, so I'd pilot on two units and track bed-wait time weekly.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The CEO has just walked in. In one concise recommendation, what should Harbor General do first, and how will you measure whether it\u2019s working?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "stage",
+     "stage": "synthesis"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 5594,
+    "cache_read_tokens": 5275,
+    "cache_write_tokens": 313,
+    "output_tokens": 131,
+    "requests": 2,
+    "cost_usd": 0.00015798
+   }
+  }
+ ],
+ "revealed": [
+  "process_times",
+  "beds",
+  "upstairs",
+  "volumes",
+  "finances"
+ ],
+ "scorecard": {
+  "case_id": "harbor_er",
+  "case_title": "Harbor General: unclogging the ER",
+  "case_type": "operations",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 5,
+    "reason": "You tailored the flow framework to this ER, identified the bottleneck, and used it to reach an upstream root cause and targeted fixes.",
+    "evidence_quote": "I'll structure this as a patient flow: arrival, triage, waiting for a bed, seeing a doctor, waiting for tests, and discharge or admission."
+   },
+   {
+    "dimension": "clarifying",
+    "score": 4,
+    "reason": "You confirmed the time-bound objective and building constraint, though you did not clarify broader scope or business model.",
+    "evidence_quote": "Can I confirm the objective is to cut waiting times and walkouts within 6 months, and that we can't build new space?"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 5,
+    "reason": "You correctly calculated the bed-wait share, boarding beds, walkouts per year, and resulting lost revenue, and explained their implications.",
+    "evidence_quote": "180 patients times 8 percent is 14.4 a day, times 365 is about 5,256 a year, times 600 dollars is about 3.15 million dollars a year lost."
+   },
+   {
+    "dimension": "judgment",
+    "score": 5,
+    "reason": "You connected the bed-capacity bottleneck to discharge timing upstairs, avoided misdirected physician hiring, and proposed a pilot with a measurable operational focus.",
+    "evidence_quote": "The ER's bottleneck is bed availability, not doctors. Half the visit is spent waiting for a bed because 7 or 8 of 30 beds hold boarding patients"
+   },
+   {
+    "dimension": "synthesis",
+    "score": 4,
+    "reason": "You gave a clear recommendation with supporting metrics, risks, and a next step, but the transcript ends before the requested concise CEO-facing prioritization and measures.",
+    "evidence_quote": "I'd move discharges before noon, open a discharge lounge, and add a fast track for low-acuity patients."
+   },
+   {
+    "dimension": "communication",
+    "score": 4,
+    "reason": "You were generally clear and logically signposted, with concise conclusions, though the final requested CEO-facing response is absent.",
+    "evidence_quote": "That's the root cause: upstairs discharges happen after 3 pm but ER admissions peak late morning, so boarders sit in ER beds."
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "bed_wait_share",
+    "question": "What share of the visit is spent waiting for a bed?",
+    "correct_answer": 50.0,
+    "unit": "%",
+    "candidate_number": 50.0,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "lost_revenue",
+    "question": "How much revenue is lost each year from patients who leave?",
+    "correct_answer": 3.15,
+    "unit": "$M",
+    "candidate_number": 3.15,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "boarded_beds",
+    "question": "How many ER beds are taken by boarding patients?",
+    "correct_answer": 7.5,
+    "unit": "beds",
+    "candidate_number": 7.5,
+    "verdict": "correct"
+   }
+  ],
+  "overall": 4.5,
+  "top_strength": "You pinpointed boarding caused by late upstairs discharges as the core driver and translated the data into specific operational changes.",
+  "biggest_gap": "You did not complete the CEO's final request to state what Harbor should do first and how to measure whether it is working.",
+  "summary": "You built a tailored patient-flow analysis, correctly quantified the bed bottleneck and annual walkout revenue loss, and recommended practical interventions. You should finish by prioritizing the first action and naming explicit success measures, such as bed-wait time and walkout rate.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "Today your structure, quantitative, and judgment scores were strong at 5, with clarifying, synthesis, and communication at 4. All three calculations were correct, but you left the CEO without the requested first action and success measures.",
+  "focus_dimension": "synthesis",
+  "drill": "In 10 minutes, practice three 60-second case close-outs: for each, state the recommendation, the first action, two measurable KPIs with targets or direction, and one risk or contingency.",
+  "next_case_id": "freshcart_kits",
+  "next_case_reason": "This market-entry case is a good opportunity to turn analysis into a clear recommendation, prioritized next step, and measurable outcomes."
+ },
+ "usage": {
+  "input_tokens": 42433,
+  "cache_read_tokens": 35377,
+  "cache_write_tokens": 5740,
+  "output_tokens": 1938,
+  "requests": 21,
+  "cost_usd": 0.00217188
+ }
+}

@@ -1,0 +1,29 @@
+{
+  "scale": "1 = weak, 3 = solid, 5 = offer-ready at a top consulting firm",
+  "dimensions": [
+    {"key": "structure", "name": "Structure",
+     "1": "No framework, or a memorized one that does not fit the case.",
+     "3": "A sensible framework that covers most of the problem, somewhat generic.",
+     "5": "A tailored, MECE framework built for this case, prioritized, and used to drive the rest of the case."},
+    {"key": "clarifying", "name": "Clarifying questions",
+     "1": "Jumps in without confirming the objective or scope.",
+     "3": "Asks a few useful questions; confirms the objective.",
+     "5": "Asks sharp, targeted questions (objective, scope, timeline, business model) and uses the answers."},
+    {"key": "quantitative", "name": "Quantitative / math",
+     "1": "Skips the math or gets key numbers wrong.",
+     "3": "Gets most numbers right, sometimes slowly or with prompting.",
+     "5": "Sets up calculations clearly out loud, gets them right, and says what each number means."},
+    {"key": "judgment", "name": "Business judgment",
+     "1": "Ignores the data or draws conclusions that do not follow.",
+     "3": "Reasonable conclusions; misses some risks or second-order effects.",
+     "5": "Uses data to find the real driver, weighs trade-offs and risks, thinks like an owner."},
+    {"key": "synthesis", "name": "Synthesis / recommendation",
+     "1": "No clear recommendation, or just repeats facts.",
+     "3": "Gives a recommendation with some support.",
+     "5": "Leads with a clear answer, backs it with 2-3 numbers, names risks and next steps."},
+    {"key": "communication", "name": "Communication",
+     "1": "Hard to follow; rambles or goes silent.",
+     "3": "Clear most of the time; occasionally disorganized.",
+     "5": "Concise, signposted ('I'd look at three things...'), and checks in with the interviewer."}
+  ]
+}

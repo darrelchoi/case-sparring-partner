@@ -1,0 +1,120 @@
+{
+  "id": "freshcart_kits",
+  "title": "FreshCart: should a grocer sell meal kits?",
+  "case_type": "market_entry",
+  "industry": "Grocery / retail",
+  "difficulty": 1,
+  "prompt": "Our client is FreshCart, a regional grocery chain with 50 stores in the Southeast. The CEO wants to know whether FreshCart should start selling meal kits, and if so, how.",
+  "clarifying_answers": {
+    "objective": "Grow profit and give loyal shoppers a reason to visit more often.",
+    "format": "In-store kits on a shelf, with optional pre-order through the FreshCart app. No home delivery.",
+    "geography": "FreshCart's current stores in the Southeast."
+  },
+  "hidden_facts": [
+    {
+      "topic": "shoppers",
+      "hint": "FreshCart's customers or loyalty program",
+      "fact": "FreshCart has 400,000 loyalty-card households (in thousands: 400).",
+      "numbers": {
+        "households_k": 400
+      }
+    },
+    {
+      "topic": "interest",
+      "hint": "customer demand, surveys, or how often people would buy",
+      "fact": "In a survey, 15% of loyalty households said they would buy a meal kit about twice a month.",
+      "numbers": {
+        "interest_pct": 15
+      }
+    },
+    {
+      "topic": "economics",
+      "hint": "price, cost, or margin per kit",
+      "fact": "An in-store meal kit would sell for $25 and cost $17 to make, including food, packaging, and labor.",
+      "numbers": {
+        "kit_price": 25,
+        "kit_cost": 17
+      }
+    },
+    {
+      "topic": "competition",
+      "hint": "competitors or what others do",
+      "fact": "HelloFresh and Home Chef charge about $10 to $12 per serving, delivered. 2 rival grocery chains already sell in-store kits, and one dropped them after a year because of food waste.",
+      "numbers": {
+        "rival_chains": 2
+      }
+    },
+    {
+      "topic": "waste",
+      "hint": "food waste, spoilage, or unsold product",
+      "fact": "Prepared foods at FreshCart waste about 10% of the items made.",
+      "numbers": {
+        "waste_pct": 10
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Cost to make one kit ($)",
+      "kind": "table",
+      "unlock_topic": "economics",
+      "labels": [
+        "Food",
+        "Packaging",
+        "Labor",
+        "Total"
+      ],
+      "series": [
+        {
+          "name": "Cost",
+          "values": [
+            11,
+            2,
+            4,
+            17
+          ]
+        }
+      ],
+      "unit": "$"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "kits_per_year",
+      "question": "How many kits a year could FreshCart sell (in thousands)?",
+      "formula": "households_k * interest_pct / 100 * 24",
+      "answer": 1440,
+      "unit": "K kits",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "gross_profit",
+      "question": "What gross profit would that earn before waste?",
+      "formula": "households_k * interest_pct / 100 * 24 * (kit_price - kit_cost) / 1000",
+      "answer": 11.52,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "profit_after_waste",
+      "question": "What is gross profit after accounting for waste?",
+      "formula": "households_k * interest_pct / 100 * 24 * ((kit_price - kit_cost) - waste_pct / 100 * kit_cost) / 1000",
+      "answer": 9.072,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Market and customers: demand among FreshCart shoppers",
+    "Economics: kits x margin, minus waste",
+    "Competition: delivery kits vs in-store rivals",
+    "Capabilities: kitchen, supply chain, app",
+    "Entry plan: pilot, pre-orders to cut waste"
+  ],
+  "recommendation": "Yes, through a pilot. At full scale FreshCart could sell about 1.4 million kits a year and earn about $9M in gross profit after waste. Waste is the reason a rival quit, so launch in about 10 stores with app pre-orders to forecast demand, then expand if waste stays under 10%.",
+  "common_mistakes": [
+    "Ignoring waste even though a competitor failed because of it",
+    "Comparing on price with delivery kits instead of convenience"
+  ]
+}

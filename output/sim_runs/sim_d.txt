@@ -1,0 +1,68 @@
+
+== New Haven Nighthawks: filling the ballpark ==
+INTERVIEWER: Our client is the New Haven Nighthawks, a minor-league baseball team. Most weekday games have empty seats, but weekend games sell out. The owner wants to know how to change ticket prices to make more money.
+
+YOU: I think they should just raise ticket prices because that makes more money.
+   · {'type': 'stage', 'stage': 'structure'}
+INTERVIEWER: Higher prices could increase revenue, but they might also reduce attendance, especially on weekdays. How would you assess where prices should change and what the impact would be on total game-day revenue?
+   [stage structure | tokens in 2227 (cached 1059) out 128 | case cost so far $0.0002]
+
+YOU: Okay. What is the current ticket price?
+   · {'type': 'fact', 'topic': 'prices'}
+   · {'type': 'stage', 'stage': 'analysis'}
+INTERVIEWER: Every seat currently costs $15, regardless of the day. Where would you like to start analyzing?
+   [stage analysis | tokens in 2483 (cached 2380) out 43 | case cost so far $0.0003]
+
+YOU: How many people come to the games?
+   · {'type': 'fact', 'topic': 'attendance'}
+   · {'type': 'exhibit', 'id': 'ex1', 'title': 'Average attendance per game'}
+INTERVIEWER: The stadium holds 6,000. Weekend games sell out, while weekday games average 2,500 fans. I’m putting an exhibit on your screen. What would you like to analyze first?
+   [stage analysis | tokens in 2675 (cached 2556) out 90 | case cost so far $0.0004]
+
+YOU: So weekend games are full and weekday games have 2,500 fans. I would raise all prices to 20 dollars.
+INTERVIEWER: How would you assess whether raising prices to $20 across the board increases total game-day revenue, given that weekday attendance is much lower than weekend attendance?
+   [stage analysis | tokens in 1477 (cached 1372) out 81 | case cost so far $0.0004]
+
+YOU: How many games are there?
+   · {'type': 'fact', 'topic': 'schedule'}
+INTERVIEWER: There are 70 home games: 20 on weekends and 50 on weekdays. Can you compare the revenue impact of your proposed price increase across the two types of games?
+   [stage analysis | tokens in 3188 (cached 3041) out 77 | case cost so far $0.0005]
+
+YOU: So revenue now is 70 games times 6,000 fans times 15 dollars, which is 6.3 million dollars.
+   · {'type': 'calc', 'expression': '70 * 6000 * 15', 'result': 6300000.0}
+INTERVIEWER: The multiplication is right, but it assumes all 70 games are sellouts. Use the attendance figures by game type to calculate current ticket revenue.
+   [stage analysis | tokens in 3460 (cached 3321) out 114 | case cost so far $0.0006]
+
+YOU: My recommendation is to raise prices to 20 dollars for every game to make more money.
+   · {'type': 'stage', 'stage': 'synthesis'}
+INTERVIEWER: The CEO has just walked in. What’s your recommendation, including the expected revenue impact and the main risk or trade-off?
+   [stage synthesis | tokens in 3822 (cached 3609) out 107 | case cost so far $0.0007]
+
+
+== SCORECARD (overall 1.3/5) ==
+  structure      1  You offered a blanket price increase without a case-specific way to compare weekday and weekend economics.
+                 "I would raise all prices to 20 dollars."
+  clarifying     2  You asked about current price and attendance, but did not clarify the objective, scope, or broader revenue sources.
+                 "How many people come to the games?"
+  quantitative   1  Your season revenue calculation assumed every game sold out and you did not correct it or complete the requested analyses.
+                 "So revenue now is 70 games times 6,000 fans times 15 dollars, which is 6.3 million dollars."
+  judgment       1  You recommended increasing weekday prices despite substantial empty capacity and did not account for attendance response or ancillary spending.
+                 "My recommendation is to raise prices to 20 dollars for every game to make more money."
+  synthesis      1  Your recommendation was unsupported by a valid revenue impact and did not address risks or trade-offs.
+                 "My recommendation is to raise prices to 20 dollars for every game to make more money."
+  communication  2  Your statements were generally understandable but brief and not signposted, and you repeated a conclusion without supporting it.
+                 "So weekend games are full and weekday games have 2,500 fans."
+  math current_ticket_revenue   incorrect      you: 6300.0  key: 3675.0 $K
+  math weekday_gain_per_game    not_attempted  you: None  key: 20500.0 $
+  math season_gain              not_attempted  you: None  key: 1865.0 $K
+
+Strength: You asked for current ticket price, attendance, and the number of home games, which are relevant inputs to pricing analysis.
+Gap: You applied one price increase across both sold-out and underfilled games, then calculated current revenue using sold-out attendance for every game.
+
+== COACH ==
+With no past scorecards, today’s case shows a clear issue in quantitative work: you used sold-out attendance for every game and applied one price increase across sold-out and underfilled games; current-ticket revenue was incorrect, and both follow-on calculations were not attempted. Your structure, judgment, and synthesis scores were also 1, so the math error reflects a broader need to segment the problem before calculating and concluding.
+Focus: quantitative
+Drill: Spend 10 minutes on three short revenue problems. For each, separate customer or game segments, write a distinct volume × price calculation for each segment, then check your total against the segment-level results before moving on.
+Next case: ev_chargers (This uncompleted market-sizing case will give you focused practice structuring assumptions and carrying calculations through to a checked answer.)
+
+Total case cost: $0.0015  (23140 in, 17338 cached, 1355 out)

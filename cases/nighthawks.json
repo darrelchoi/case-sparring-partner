@@ -1,0 +1,126 @@
+{
+  "id": "nighthawks",
+  "title": "New Haven Nighthawks: filling the ballpark",
+  "case_type": "pricing",
+  "industry": "Sports / entertainment",
+  "difficulty": 1,
+  "prompt": "Our client is the New Haven Nighthawks, a minor-league baseball team. Most weekday games have empty seats, but weekend games sell out. The owner wants to know how to change ticket prices to make more money.",
+  "clarifying_answers": {
+    "objective": "Increase total game-day revenue this season.",
+    "constraints": "The league allows teams to set their own prices. The owner wants to stay family-friendly.",
+    "revenue_sources": "Tickets, plus food and merchandise sold at the park."
+  },
+  "hidden_facts": [
+    {
+      "topic": "attendance",
+      "hint": "attendance, capacity, or how full games are",
+      "fact": "The stadium has 6,000 seats. Weekend games sell out; weekday games average 2,500 fans.",
+      "numbers": {
+        "seats": 6000,
+        "weekday_fans": 2500
+      }
+    },
+    {
+      "topic": "schedule",
+      "hint": "the schedule or number of games",
+      "fact": "There are 70 home games: 20 on weekends and 50 on weekdays.",
+      "numbers": {
+        "home_games": 70,
+        "weekend_games": 20,
+        "weekday_games": 50
+      }
+    },
+    {
+      "topic": "prices",
+      "hint": "current ticket prices",
+      "fact": "Every seat costs $15, whatever the day.",
+      "numbers": {
+        "price": 15
+      }
+    },
+    {
+      "topic": "weekend_demand",
+      "hint": "weekend demand, waitlists, or resale prices",
+      "fact": "The weekend waitlist and resale prices suggest weekend fans would pay $22 without attendance dropping.",
+      "numbers": {
+        "weekend_price_new": 22
+      }
+    },
+    {
+      "topic": "weekday_test",
+      "hint": "past price experiments or lower weekday prices",
+      "fact": "A weekday test at $10 raised attendance to 4,000.",
+      "numbers": {
+        "weekday_price_test": 10,
+        "weekday_fans_test": 4000
+      }
+    },
+    {
+      "topic": "concessions",
+      "hint": "food, merchandise, or spending per fan",
+      "fact": "Each fan spends about $12 on food and merchandise.",
+      "numbers": {
+        "concessions_per_fan": 12
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Average attendance per game",
+      "kind": "bar",
+      "unlock_topic": "attendance",
+      "labels": [
+        "Weekend",
+        "Weekday"
+      ],
+      "series": [
+        {
+          "name": "Fans",
+          "values": [
+            6000,
+            2500
+          ]
+        }
+      ],
+      "unit": "fans"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "current_ticket_revenue",
+      "question": "What is ticket revenue for the season today?",
+      "formula": "(weekend_games * seats + weekday_games * weekday_fans) * price / 1000",
+      "answer": 3675,
+      "unit": "$K",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "weekday_gain_per_game",
+      "question": "How much more does a weekday game make at $10, counting food and merchandise?",
+      "formula": "weekday_fans_test * (weekday_price_test + concessions_per_fan) - weekday_fans * (price + concessions_per_fan)",
+      "answer": 20500,
+      "unit": "$",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "season_gain",
+      "question": "What is the total extra revenue for the season with $22 weekends and $10 weekdays?",
+      "formula": "(weekend_games * seats * (weekend_price_new - price) + weekday_games * (weekday_fans_test * (weekday_price_test + concessions_per_fan) - weekday_fans * (price + concessions_per_fan))) / 1000",
+      "answer": 1865,
+      "unit": "$K",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Revenue = fans x (ticket + food and merchandise), by day type",
+    "Weekends: demand above capacity, so raise price",
+    "Weekdays: empty seats, so lower price to fill and earn on food",
+    "Quantify each change; family-friendly constraint"
+  ],
+  "recommendation": "Use two prices: $22 on weekends and $10 on weekdays. Weekend fans will pay more, and cheaper weekday tickets bring in 1,500 more fans, each spending $12 on food and merchandise. Together that adds about $1.9M a season. Keep a family pack to stay family-friendly.",
+  "common_mistakes": [
+    "Raising prices everywhere",
+    "Forgetting food and merchandise revenue when lowering weekday prices"
+  ]
+}

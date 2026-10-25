@@ -1,0 +1,131 @@
+{
+  "id": "gen_online_tutoring_5b585f",
+  "title": "BrightPath: getting the right tutors online at the right time",
+  "case_type": "operations",
+  "industry": "Online tutoring",
+  "difficulty": 2,
+  "prompt": "BrightPath is an online tutoring platform serving students across the US. Student demand is growing, but families complain that it is hard to book lessons at convenient times and that too many sessions start late. The COO wants to improve service without adding unnecessary tutor capacity. How would you diagnose the problem and what would you recommend?",
+  "clarifying_answers": {
+    "objective": "Improve lesson availability and on-time starts while using existing tutor capacity more effectively.",
+    "timeline": "Show measurable improvement within six months.",
+    "geography": "The US; tutors and students are matched remotely across time zones.",
+    "business_model": "Students book and pay for one-on-one online tutoring sessions through BrightPath. Tutors are paid per completed session.",
+    "scope": "Focus on scheduling and delivery operations; assume overall student demand is not the issue."
+  },
+  "hidden_facts": [
+    {
+      "topic": "demand_patterns",
+      "hint": "student demand, booking patterns, or when sessions are requested",
+      "fact": "BrightPath handles 18,000 booked sessions per week. 55% of requests fall in the weekday 4–8 p.m. peak window.",
+      "numbers": {
+        "weekly_demand_sessions": 18000.0,
+        "peak_demand_share_pct": 55.0
+      }
+    },
+    {
+      "topic": "tutor_capacity",
+      "hint": "number of tutors, available slots, or how tutor time is allocated",
+      "fact": "BrightPath has 1,000 active tutors, each offering 20 bookable session slots per week on average. Only 35% of those slots are offered during the weekday 4–8 p.m. peak window.",
+      "numbers": {
+        "active_tutors": 1000.0,
+        "weekly_slots_per_tutor": 20.0,
+        "peak_slot_share_pct": 35.0
+      }
+    },
+    {
+      "topic": "service_performance",
+      "hint": "late starts, cancellations, complaints, or service targets",
+      "fact": "82% of lessons start within 5 minutes of their scheduled time, versus a company target of 95%. Families report that peak-time availability and late starts are their most common complaints.",
+      "numbers": {
+        "on_time_start_pct": 82.0,
+        "on_time_target_pct": 95.0
+      }
+    },
+    {
+      "topic": "schedule_flexibility",
+      "hint": "whether tutors can change their availability or shift sessions between time periods",
+      "fact": "In a tutor survey, 70% said they would be willing to move up to 5 weekly slots into the peak window if schedules were set 2 weeks in advance. The company currently publishes schedules only 1 week ahead.",
+      "numbers": {
+        "tutor_willingness_pct": 70.0,
+        "weekly_slots_shiftable_per_willing_tutor": 5.0,
+        "schedule_notice_weeks": 2.0,
+        "current_notice_weeks": 1.0
+      }
+    },
+    {
+      "topic": "booking_process",
+      "hint": "how students book, how availability is displayed, or how unfilled slots are handled",
+      "fact": "Students see tutor availability in weekly blocks, and the system does not suggest nearby time alternatives when a requested slot is full. Operations can change the booking flow without replacing the platform.",
+      "numbers": {}
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Weekly session demand and tutor slots by time period",
+      "kind": "bar",
+      "unlock_topic": "tutor_capacity",
+      "labels": [
+        "Peak",
+        "Off-peak"
+      ],
+      "series": [
+        {
+          "name": "Demand",
+          "values": [
+            9900.0,
+            8100.0
+          ]
+        },
+        {
+          "name": "Available tutor slots",
+          "values": [
+            7000.0,
+            13000.0
+          ]
+        }
+      ],
+      "unit": "sessions per week"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "peak_demand",
+      "question": "How many sessions per week are requested during the peak window?",
+      "formula": "weekly_demand_sessions * peak_demand_share_pct / 100",
+      "answer": 9900.0,
+      "unit": "sessions per week",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "peak_capacity_gap",
+      "question": "How many additional peak-time slots would be needed to meet current peak demand?",
+      "formula": "weekly_demand_sessions * peak_demand_share_pct / 100 - active_tutors * weekly_slots_per_tutor * peak_slot_share_pct / 100",
+      "answer": 2900.0,
+      "unit": "slots per week",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "offpeak_surplus",
+      "question": "How many more off-peak slots are available than off-peak sessions demanded each week?",
+      "formula": "active_tutors * weekly_slots_per_tutor * (100 - peak_slot_share_pct) / 100 - weekly_demand_sessions * (100 - peak_demand_share_pct) / 100",
+      "answer": 4900.0,
+      "unit": "slots per week",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Map demand and available tutor capacity by time of day, subject, and time zone.",
+    "Separate an aggregate capacity shortage from a scheduling mismatch across peak and off-peak periods.",
+    "Diagnose late starts across tutor punctuality, session overruns, student readiness, and platform or matching processes.",
+    "Assess operational levers: earlier schedule publication, tutor incentives or availability shifts, better booking alternatives, and targeted hiring only where gaps remain.",
+    "Pilot changes, track peak fill rate, on-time starts, cancellations, tutor retention, and cost per completed session."
+  ],
+  "recommendation": "Rebalance schedules before adding broad tutor capacity. Peak demand is 9,900 sessions per week against 7,000 peak slots, a gap of 2,900, while off-peak capacity exceeds demand by 4,900 slots. The survey suggests willing tutors could shift up to 3,500 weekly slots in aggregate (70% of 1,000 tutors times 5 slots), so BrightPath should test moving at least 2,900 slots into peak periods, publish schedules 2 weeks ahead, and add booking alternatives when a preferred time is full. Pilot this in high-demand subjects and monitor peak availability and the on-time-start rate against the 95% target; add peak-specific tutor capacity only if rebalancing does not close the gap.",
+  "common_mistakes": [
+    "Treating the issue as an overall tutor shortage without checking capacity by time period.",
+    "Assuming all off-peak slots can be shifted despite tutor preferences and subject-matching constraints.",
+    "Focusing only on availability while ignoring late-start root causes.",
+    "Recommending more hiring before testing schedule changes and booking-flow improvements."
+  ]
+}

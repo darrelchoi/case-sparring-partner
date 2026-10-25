@@ -1,0 +1,119 @@
+{
+  "id": "voltade_gritbar",
+  "title": "VoltAde buys GritBar? A sports-nutrition deal",
+  "case_type": "m_and_a",
+  "industry": "Consumer packaged goods",
+  "difficulty": 2,
+  "prompt": "Our client is VoltAde, a sports-drink brand. It is thinking about buying GritBar, a fast-growing protein-bar startup. VoltAde's CEO asks: does this deal make sense?",
+  "clarifying_answers": {
+    "objective": "Grow beyond drinks into sports nutrition; the deal should add profit within two years.",
+    "geography": "United States.",
+    "deal": "VoltAde would buy 100% of GritBar for cash."
+  },
+  "hidden_facts": [
+    {
+      "topic": "target_financials",
+      "hint": "GritBar's revenue, growth, or margins",
+      "fact": "GritBar has $40M of revenue, growing 30% a year, with a 10% operating margin.",
+      "numbers": {
+        "gb_revenue_m": 40,
+        "gb_growth_pct": 30,
+        "gb_margin_pct": 10
+      }
+    },
+    {
+      "topic": "price",
+      "hint": "the price or what the founders want",
+      "fact": "GritBar's founders want $120M.",
+      "numbers": {
+        "gb_price_m": 120
+      }
+    },
+    {
+      "topic": "synergies",
+      "hint": "distribution, outlets, or synergies",
+      "fact": "VoltAde sells in 20,000 gyms and convenience stores; GritBar sells in 5,000. Putting GritBar in VoltAde's outlets could add $12M of revenue in year one.",
+      "numbers": {
+        "voltade_outlets_k": 20,
+        "gritbar_outlets_k": 5,
+        "synergy_revenue_m": 12
+      }
+    },
+    {
+      "topic": "customers",
+      "hint": "customer overlap or brand fit",
+      "fact": "Surveys say 60% of GritBar buyers also drink sports drinks, and VoltAde is their favorite brand.",
+      "numbers": {
+        "overlap_pct": 60
+      }
+    },
+    {
+      "topic": "integration",
+      "hint": "integration costs or manufacturing",
+      "fact": "Integration would cost about $5M one time. GritBar uses a contract manufacturer, so there are no factories to merge.",
+      "numbers": {
+        "integration_m": 5
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Outlets carrying each brand (thousands)",
+      "kind": "bar",
+      "unlock_topic": "synergies",
+      "labels": [
+        "VoltAde",
+        "GritBar"
+      ],
+      "series": [
+        {
+          "name": "Outlets",
+          "values": [
+            20,
+            5
+          ]
+        }
+      ],
+      "unit": "K"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "revenue_multiple",
+      "question": "What revenue multiple are the founders asking?",
+      "formula": "gb_price_m / gb_revenue_m",
+      "answer": 3,
+      "unit": "x",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "next_year_revenue",
+      "question": "What would GritBar's revenue be next year, including the distribution boost?",
+      "formula": "gb_revenue_m * (1 + gb_growth_pct / 100) + synergy_revenue_m",
+      "answer": 64,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "next_year_profit",
+      "question": "What operating profit would that bring at today's margin?",
+      "formula": "(gb_revenue_m * (1 + gb_growth_pct / 100) + synergy_revenue_m) * gb_margin_pct / 100",
+      "answer": 6.4,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Strategic fit: customers, brand, channels",
+    "Target standalone value: growth and margins",
+    "Synergies: distribution, marketing; integration cost",
+    "Price: multiple vs growth; payback",
+    "Risks: founder retention, margin pressure"
+  ],
+  "recommendation": "Yes. The customers overlap heavily (60% of GritBar buyers drink sports drinks) and VoltAde can put GritBar into 4 times as many outlets. With the distribution boost, GritBar could reach about $64M of revenue and $6.4M of operating profit next year. 3x revenue is reasonable for 30% growth, and integration is cheap at $5M. Keep the founders through an earn-out.",
+  "common_mistakes": [
+    "Judging the price on today's profit only",
+    "Not putting a number on the distribution synergy"
+  ]
+}

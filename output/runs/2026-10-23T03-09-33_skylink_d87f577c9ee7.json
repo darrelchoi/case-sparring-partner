@@ -1,0 +1,194 @@
+{
+ "session_id": "d87f577c9ee7",
+ "user": "demo",
+ "case_id": "skylink",
+ "finished": "2026-10-23T03:09:33+00:00",
+ "duration_sec": 68,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is SkyLink, a regional airline flying short routes in the Midwest. Revenue grew last year, but the airline went from a small profit to a loss. The board wants to understand what happened and what to do about it.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "What's the objective and timeline here?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "The objective is to return to profitability next year, and the board wants a plan for that timeframe.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "I'd look at revenue and costs. On revenue, where did the growth come from?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Revenue increased from $800 million to $880 million, and all of that growth came from six new routes; revenue on existing routes was flat. What would you like to understand next?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Okay, and what happened to costs?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Total costs rose from $780 million to $900 million. Fuel costs on the existing network increased by $30 million, and operating the new routes cost $90 million. I\u2019m putting an exhibit on your screen. What stands out to you?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "So profit went from 20 million to minus 20 million, a 40 million swing. How are the new routes doing?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "That\u2019s right: profit moved from $20 million to a $20 million loss, a $40 million swing. The six new routes generated $80 million in revenue and are 55% full on average, compared with 82% on existing routes. I\u2019m putting an exhibit on your screen. What would you investigate or do next?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "The new routes make 80 minus 90, so they lose 10 million. The rest must be fuel. What happened with fuel prices?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Correct: the new routes lost $10 million based on their revenue and operating costs. Jet fuel prices rose 12%, and SkyLink does not hedge its fuel. How would you assess the impact of that, and what would you recommend doing about the routes?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "I think they should cut the new routes because they lose money and hedge fuel.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "You\u2019ve identified cutting the loss-making routes and hedging fuel as actions. The CEO has just walked in: what\u2019s your concise recommendation for returning SkyLink to profitability next year, including the key trade-offs or risks?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "My recommendation is to cut the unprofitable new routes and start hedging fuel, because the profit swing of 40 million comes from 30 million of fuel and a 10 million loss on new routes.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Understood. Is there anything else you\u2019d like to add to your recommendation before we wrap up?",
+   "flagged": false,
+   "flags": []
+  }
+ ],
+ "revealed": [
+  "revenue",
+  "costs",
+  "new_routes",
+  "fuel"
+ ],
+ "scorecard": {
+  "case_id": "skylink",
+  "case_title": "SkyLink Airlines: growing revenue, sinking profit",
+  "case_type": "profitability",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 2,
+    "reason": "You named revenue and costs, but did not build or use a tailored structure to distinguish existing routes from new routes and test the drivers.",
+    "evidence_quote": "I'd look at revenue and costs. On revenue, where did the growth come from?"
+   },
+   {
+    "dimension": "clarifying",
+    "score": 3,
+    "reason": "You confirmed the objective and timeline, but did not clarify scope or business model beyond that.",
+    "evidence_quote": "What's the objective and timeline here?"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 3,
+    "reason": "You correctly calculated the profit swing and new-route loss, but did not calculate the break-even load factor.",
+    "evidence_quote": "So profit went from 20 million to minus 20 million, a 40 million swing."
+   },
+   {
+    "dimension": "judgment",
+    "score": 2,
+    "reason": "You identified fuel and new routes as the drivers but recommended cutting all new routes without testing route-level economics, load-factor improvement, or competitive differences.",
+    "evidence_quote": "I think they should cut the new routes because they lose money and hedge fuel."
+   },
+   {
+    "dimension": "synthesis",
+    "score": 3,
+    "reason": "Your recommendation was direct and supported by the two key loss drivers, but lacked nuance, risks, and next steps.",
+    "evidence_quote": "My recommendation is to cut the unprofitable new routes and start hedging fuel, because the profit swing of 40 million comes from 30 million of fuel and a 10 million loss on new routes."
+   },
+   {
+    "dimension": "communication",
+    "score": 3,
+    "reason": "Your comments were generally clear and concise, though you did not signpost a broader analysis or check in with the interviewer.",
+    "evidence_quote": "The new routes make 80 minus 90, so they lose 10 million."
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "profit_swing",
+    "question": "How big was the swing in profit from last year to this year?",
+    "correct_answer": 40.0,
+    "unit": "$M",
+    "candidate_number": 40.0,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "new_route_profit",
+    "question": "What profit or loss do the new routes make?",
+    "correct_answer": -10.0,
+    "unit": "$M",
+    "candidate_number": -10.0,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "breakeven_load_factor",
+    "question": "Assuming revenue grows with how full the planes are, what load factor would the new routes need to break even?",
+    "correct_answer": 61.875,
+    "unit": "%",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   }
+  ],
+  "overall": 2.7,
+  "top_strength": "You correctly quantified both the $40 million profit swing and the $10 million loss on new routes.",
+  "biggest_gap": "You recommended cutting all new routes without calculating their roughly 62% break-even load factor or distinguishing competitive routes from the others.",
+  "summary": "You isolated the two main contributors to the profit decline and supported your recommendation with the key figures. You could strengthen your analysis by completing the break-even calculation and tailoring route actions to load factor and competitive conditions.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "With no prior scorecards, today is your baseline: structure and judgment are your lowest scores at 2, while the skipped break-even calculation led you to recommend cutting all new routes without distinguishing competitive ones.",
+  "focus_dimension": "judgment",
+  "drill": "Spend 10 minutes on three route decisions: for each, calculate break-even load factor, then state which routes to keep, cut, or test and what evidence would change your call. Take about 3 minutes per route.",
+  "next_case_id": "brightsmile",
+  "next_case_reason": "This M&A case will make you weigh competing strategic options and deal risks rather than jump to a blanket recommendation."
+ },
+ "usage": {
+  "input_tokens": 34494,
+  "cache_read_tokens": 29259,
+  "cache_write_tokens": 3915,
+  "output_tokens": 1517,
+  "requests": 21,
+  "cost_usd": 0.00167246
+ }
+}

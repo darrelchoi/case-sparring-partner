@@ -1,0 +1,127 @@
+{
+  "id": "gen_craft_breweries_2811b1",
+  "title": "Harborlight Brewing: finding the right pint price",
+  "case_type": "pricing",
+  "industry": "Craft breweries",
+  "difficulty": 2,
+  "prompt": "Harborlight Brewing is a regional craft brewery with a popular taproom. Its owners are considering raising the price of its flagship beer to help improve profitability, but they worry that customers may switch to other local breweries. They have asked us to assess whether a price increase makes sense and recommend how to proceed.",
+  "clarifying_answers": {
+    "objective": "Improve taproom profitability without causing a material loss of customer demand or damaging Harborlight's local reputation.",
+    "geography": "Harborlight's taproom and nearby competing breweries in its home market.",
+    "business_model": "Harborlight brews beer and sells it through its taproom and wholesale accounts. This decision concerns the taproom price of its flagship beer, sold by the pint.",
+    "timeline": "The owners would like to implement a decision within the next quarter and assess results over the following year.",
+    "scope": "Focus on the flagship beer's taproom price. Assume other menu prices and costs do not change in the analysis."
+  },
+  "hidden_facts": [
+    {
+      "topic": "current_price",
+      "hint": "the current price, proposed price, or pricing objective",
+      "fact": "Harborlight currently charges $7.00 per pint. Management is considering raising the price to $7.35 per pint.",
+      "numbers": {
+        "current_pint_price": 7.0,
+        "proposed_pint_price": 7.35
+      }
+    },
+    {
+      "topic": "volume",
+      "hint": "pint sales, customer demand, or the scale of taproom sales",
+      "fact": "The taproom sells about 100,000 pints of the flagship beer each year.",
+      "numbers": {
+        "annual_pints": 100000.0
+      }
+    },
+    {
+      "topic": "unit_economics",
+      "hint": "the cost of producing and serving a pint, or fixed taproom costs",
+      "fact": "The variable cost of brewing and serving each pint is $2.30. Annual fixed costs attributable to the taproom are $300,000.",
+      "numbers": {
+        "variable_cost_per_pint": 2.3,
+        "annual_fixed_cost": 300000.0
+      }
+    },
+    {
+      "topic": "price_sensitivity",
+      "hint": "customer reactions to price changes, elasticity, or prior price tests",
+      "fact": "A recent test suggests that each 1% increase in the pint price leads to about a 0.8% decrease in pint volume. Treat this as a linear estimate for the proposed price change.",
+      "numbers": {
+        "volume_elasticity": 0.8
+      }
+    },
+    {
+      "topic": "competitor_prices",
+      "hint": "local competitors, comparable beer prices, or Harborlight's price positioning",
+      "fact": "Comparable local taprooms charge an average of $7.50 per pint, with most prices between $7.25 and $7.75. Harborlight is currently priced below that average.",
+      "numbers": {
+        "competitor_average_price": 7.5,
+        "competitor_low_price": 7.25,
+        "competitor_high_price": 7.75
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Flagship pint prices at local taprooms",
+      "kind": "bar",
+      "unlock_topic": "competitor_prices",
+      "labels": [
+        "Harborlight current",
+        "Local brewery A",
+        "Local brewery B",
+        "Local brewery C"
+      ],
+      "series": [
+        {
+          "name": "Price per pint",
+          "values": [
+            7.0,
+            7.25,
+            7.5,
+            7.75
+          ]
+        }
+      ],
+      "unit": "$/pint"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "projected_volume",
+      "question": "If Harborlight raises the price as proposed, how many pints should it expect to sell in a year?",
+      "formula": "annual_pints * (1 - ((proposed_pint_price - current_pint_price) / current_pint_price * volume_elasticity))",
+      "answer": 96000.0,
+      "unit": "pints",
+      "tolerance_pct": 2.0
+    },
+    {
+      "id": "operating_profit_after_increase",
+      "question": "What would annual taproom operating profit be after the proposed price increase, assuming fixed costs stay the same?",
+      "formula": "annual_pints * (1 - ((proposed_pint_price - current_pint_price) / current_pint_price * volume_elasticity)) * (proposed_pint_price - variable_cost_per_pint) - annual_fixed_cost",
+      "answer": 184800.0,
+      "unit": "$",
+      "tolerance_pct": 2.0
+    },
+    {
+      "id": "breakeven_volume_decline",
+      "question": "What percentage decline in volume would make the proposed price increase break even on contribution profit?",
+      "formula": "(1 - ((current_pint_price - variable_cost_per_pint) / (proposed_pint_price - variable_cost_per_pint))) * 100",
+      "answer": 6.930693069306931,
+      "unit": "%",
+      "tolerance_pct": 2.0
+    }
+  ],
+  "ideal_structure": [
+    "Clarify the objective: improve taproom profit while protecting demand and the brand.",
+    "Assess the price position against local alternatives and consider whether Harborlight offers differentiated quality or experience.",
+    "Quantify the unit economics: price less variable cost, annual volume, and fixed costs.",
+    "Estimate demand response to the proposed change, then compare projected profit with the current baseline and identify the break-even volume loss.",
+    "Recommend a measured rollout and monitoring plan, including customer feedback, sales volume, and competitor response."
+  ],
+  "recommendation": "Raise the flagship pint price to $7.35, preferably as a monitored test before rolling it out permanently. The proposed increase is 5%, and the estimated elasticity implies volume would fall 4%, from 100,000 to 96,000 pints. Despite that decline, annual operating profit would be about $184,800, versus $170,000 today—an improvement of $14,800. The forecast volume decline is below the roughly 6.9% break-even threshold, and the new price remains below the local average of $7.50. Track sales and customer feedback closely; pause or adjust if the volume decline approaches the break-even level or if repeat visits weaken.",
+  "common_mistakes": [
+    "Assuming that a higher price automatically increases profit without modeling the effect on volume.",
+    "Applying the elasticity estimate to the price change incorrectly or treating a 5% price increase as a 5% volume decline.",
+    "Comparing revenue rather than contribution profit, and overlooking the variable cost per pint.",
+    "Ignoring local competitor prices or failing to recommend a test and monitoring plan."
+  ]
+}

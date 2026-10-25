@@ -1,0 +1,198 @@
+{
+ "session_id": "53d931c63314",
+ "user": "cost-test",
+ "case_id": "pickleball",
+ "finished": "2026-10-23T03:04:19+00:00",
+ "duration_sec": 85,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is a sporting goods brand that wants to launch a line of pickleball paddles. Estimate the annual US market for pickleball paddles, in dollars.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Just to clarify, are we sizing paddles only, in the US, and in annual dollar sales?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Yes\u2014paddles only, across the US, measured as annual sales in dollars. What else would you like to clarify?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Great. I'll size this as number of players, times paddles bought per player per year, times price, and I'll segment players into core and casual since they behave very differently. How many people play pickleball?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "About 20 million Americans played at least once last year. I\u2019m putting an exhibit on your screen. How would you like to estimate annual paddle purchases across your core and casual segments?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "What share are core players versus casual players?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "About 25% are core players, defined as playing eight or more times a year; the remaining 75% are casual players. How would you estimate paddle purchasing for each group?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "How often does each type buy a new paddle?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Core players buy about one new paddle per year, while casual players buy one about every four years. What annual paddle purchases does that imply for each segment?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "And how much do they spend per paddle?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Core players spend about $120 per paddle, and casual players about $40. Using the player counts, purchase rates, and prices, what annual US market size do you get? Don\u2019t forget to show me your math.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "So core players are 25 percent of 20 million, which is 5 million, buying 1 paddle a year, so 5 million paddles. Casual players are 15 million buying one every 4 years, so 3.75 million paddles. That's 8.75 million paddles a year.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "That\u2019s right: your segment estimates imply 8.75 million paddles bought annually. What does that imply for annual revenue at the different segment prices?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "In dollars, core is 5 million times 120, which is 600 million, and casual is 3.75 million times 40, which is 150 million. So the market is about 750 million dollars a year.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Correct\u2014your estimate is about $750 million in annual US paddle sales. The CEO just walked in: what\u2019s your recommendation, and what key assumption or risk would you highlight?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "So the US paddle market is about 750 million dollars a year, and 80 percent of it, 600 million, comes from core players even though they're only a quarter of players. I'd recommend the client launch a premium paddle for core players, sold through clubs and online, and monitor how fast casual players convert to core.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Understood. Is that your final recommendation?",
+   "flagged": false,
+   "flags": []
+  }
+ ],
+ "revealed": [
+  "players",
+  "player_mix",
+  "replacement",
+  "price"
+ ],
+ "scorecard": {
+  "case_id": "pickleball",
+  "case_title": "Pickleball paddles: sizing a hot market",
+  "case_type": "market_sizing",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 4,
+    "reason": "You built a tailored player-to-purchase-to-price structure and explicitly segmented core and casual players, though prioritization and a sanity check were limited.",
+    "evidence_quote": "I'll size this as number of players, times paddles bought per player per year, times price, and I'll segment players into core and casual since they behave very differently."
+   },
+   {
+    "dimension": "clarifying",
+    "score": 4,
+    "reason": "You confirmed geography, product scope, and annual dollar-sales objective, then asked targeted questions to uncover the key segmentation inputs.",
+    "evidence_quote": "Just to clarify, are we sizing paddles only, in the US, and in annual dollar sales?"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 5,
+    "reason": "You clearly calculated segment purchase volumes and revenues correctly, then stated the total annual market size.",
+    "evidence_quote": "In dollars, core is 5 million times 120, which is 600 million, and casual is 3.75 million times 40, which is 150 million."
+   },
+   {
+    "dimension": "judgment",
+    "score": 4,
+    "reason": "You identified core players as the disproportionate revenue pool and recommended a targeted premium launch, with a relevant conversion-monitoring consideration.",
+    "evidence_quote": "80 percent of it, 600 million, comes from core players even though they're only a quarter of players."
+   },
+   {
+    "dimension": "synthesis",
+    "score": 4,
+    "reason": "You led with the market estimate, supported the recommendation with the core segment's revenue share, and named a channel and a monitoring consideration, but did not state a further risk or next step.",
+    "evidence_quote": "I'd recommend the client launch a premium paddle for core players, sold through clubs and online, and monitor how fast casual players convert to core."
+   },
+   {
+    "dimension": "communication",
+    "score": 4,
+    "reason": "Your comments were concise and logically signposted, with clear calculations and a direct recommendation, though you did not explicitly check in during the analysis.",
+    "evidence_quote": "That's 8.75 million paddles a year."
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "paddles_per_year",
+    "question": "How many paddles are bought each year (in millions)?",
+    "correct_answer": 8.75,
+    "unit": "M paddles",
+    "candidate_number": 8.75,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "market_size",
+    "question": "What is the annual market in dollars?",
+    "correct_answer": 750.0,
+    "unit": "$M",
+    "candidate_number": 750.0,
+    "verdict": "correct"
+   }
+  ],
+  "overall": 4.2,
+  "top_strength": "You cleanly segmented core and casual buyers, calculated the annual volume and revenue for each, and used the revenue concentration to shape a premium-market recommendation.",
+  "biggest_gap": "You could strengthen the close by identifying a specific launch risk\u2014such as whether core-player demand is large enough for the client's economics\u2014and a concrete validation step.",
+  "summary": "You built and executed a clear segment-based sizing approach, arriving at 8.75 million paddles and about $750 million in annual sales. You made a focused premium-play recommendation grounded in the segment economics, and you could make it stronger by naming a specific launch risk and how to validate it.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "Your quantitative score rose from 4 in both prior cases to 5 today, and you got both calculations correct. Your close is the clearest opportunity: today\u2019s 4 in synthesis matches your prior 2 on the weakest past case, and the feedback calls for a specific risk and validation step.",
+  "focus_dimension": "synthesis",
+  "drill": "In 10 minutes, give three 60-second case closes. For each, state your recommendation, the two strongest reasons, one specific risk that could change the decision, and a concrete test with a metric or threshold.",
+  "next_case_id": "freshcart_kits",
+  "next_case_reason": "This market-entry case will let you practice turning market evidence into a crisp recommendation, naming a launch risk, and proposing a concrete validation step."
+ },
+ "usage": {
+  "input_tokens": 33266,
+  "cache_read_tokens": 26246,
+  "cache_write_tokens": 5715,
+  "output_tokens": 1455,
+  "requests": 21,
+  "cost_usd": 0.00183485
+ }
+}

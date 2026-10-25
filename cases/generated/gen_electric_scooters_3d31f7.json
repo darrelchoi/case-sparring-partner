@@ -1,0 +1,122 @@
+{
+  "id": "gen_electric_scooters_3d31f7",
+  "title": "VoltPath: acquiring a scooter rival",
+  "case_type": "m_and_a",
+  "industry": "Electric scooters",
+  "difficulty": 2,
+  "prompt": "VoltPath, an electric scooter manufacturer, is considering acquiring GlideWorks, a smaller competitor focused on commercial fleets. VoltPath believes the deal could strengthen its position with cities and improve its manufacturing economics. The CEO wants to know whether to proceed and what the deal would need to deliver to create value.",
+  "clarifying_answers": {
+    "objective": "Assess the strategic and financial case for acquiring GlideWorks, including whether the proposed price is attractive and what diligence is needed.",
+    "geography": "The United States, with a focus on major urban markets.",
+    "business_model": "VoltPath sells scooters to consumers and fleet operators. GlideWorks primarily sells scooters and battery systems to municipal and delivery fleets.",
+    "timeline": "VoltPath wants to make a decision within three months and complete integration over the following two years.",
+    "deal_structure": "The proposed transaction is an all-cash acquisition. VoltPath expects to fund it from cash on hand and available debt capacity."
+  },
+  "hidden_facts": [
+    {
+      "topic": "target_financials",
+      "hint": "GlideWorks' revenue, profitability, or recent financial performance",
+      "fact": "GlideWorks generated $80 million in annual revenue and has an EBITDA margin of 10%. Revenue has grown steadily, but margins have been pressured by battery costs.",
+      "numbers": {
+        "revenue_m": 80.0,
+        "ebitda_margin_pct": 10.0
+      }
+    },
+    {
+      "topic": "valuation",
+      "hint": "the proposed purchase price, valuation, or comparable deal multiples",
+      "fact": "The seller is asking for $72 million. VoltPath believes a reasonable value for a standalone scooter business is about 8 times EBITDA.",
+      "numbers": {
+        "offer_price_m": 72.0,
+        "benchmark_multiple": 8.0
+      }
+    },
+    {
+      "topic": "synergies",
+      "hint": "cost savings, revenue synergies, or integration expenses",
+      "fact": "VoltPath estimates it can save $4 million annually through combined battery procurement and another $2 million by consolidating duplicated corporate functions. Integration would cost $12 million, mostly for systems and manufacturing changes.",
+      "numbers": {
+        "procurement_savings_m": 4.0,
+        "overhead_savings_m": 2.0,
+        "integration_cost_m": 12.0
+      }
+    },
+    {
+      "topic": "strategic_fit",
+      "hint": "the target's products, customers, capabilities, or strategic fit with VoltPath",
+      "fact": "GlideWorks has a strong reputation with municipal fleets and a swappable-battery design that VoltPath does not currently offer. The acquisition could give VoltPath a more complete fleet offering and help it compete for city contracts.",
+      "numbers": {}
+    },
+    {
+      "topic": "market_and_risks",
+      "hint": "market growth, competition, or major risks to the deal",
+      "fact": "The US commercial electric-scooter market is forecast to grow about 8% annually. Key diligence risks are battery warranty claims, the durability of GlideWorks' fleet contracts, and whether the projected procurement savings can be achieved without disrupting production.",
+      "numbers": {
+        "commercial_market_growth_pct": 8.0
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Estimated annual cost synergies",
+      "kind": "bar",
+      "unlock_topic": "synergies",
+      "labels": [
+        "Battery procurement",
+        "Corporate functions"
+      ],
+      "series": [
+        {
+          "name": "Annual savings",
+          "values": [
+            4.0,
+            2.0
+          ]
+        }
+      ],
+      "unit": "$M"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "standalone_ebitda",
+      "question": "What is GlideWorks' annual EBITDA based on its revenue and margin?",
+      "formula": "revenue_m * ebitda_margin_pct / 100",
+      "answer": 8.0,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "offer_multiple",
+      "question": "What EBITDA multiple does the proposed offer represent?",
+      "formula": "offer_price_m / (revenue_m * ebitda_margin_pct / 100)",
+      "answer": 9.0,
+      "unit": "x EBITDA",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "net_deal_value",
+      "question": "At VoltPath's standalone valuation multiple, what is the estimated net value created after synergies, integration costs, and the purchase price?",
+      "formula": "(revenue_m * ebitda_margin_pct / 100) * benchmark_multiple + (procurement_savings_m + overhead_savings_m) * benchmark_multiple - offer_price_m - integration_cost_m",
+      "answer": 28.0,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Strategic rationale: customer overlap, fleet access, product and technology fit, and competitive response",
+    "Standalone target economics: revenue quality, EBITDA, growth, and cash needs",
+    "Valuation: implied offer multiple versus a standalone benchmark and the value of realizable synergies",
+    "Integration plan: procurement, overhead, manufacturing, systems, and retention of key talent",
+    "Risks and diligence: warranty exposure, contract durability, synergy achievability, and financing capacity",
+    "Decision: proceed, renegotiate, or walk away, with clear conditions and integration milestones"
+  ],
+  "recommendation": "Proceed to confirmatory diligence and negotiate firmly, rather than accepting the ask without conditions. GlideWorks has about $8 million of annual EBITDA, so the $72 million offer is 9 times EBITDA versus VoltPath's 8-times standalone benchmark. At that benchmark, the estimated $6 million of annual synergies adds $48 million of value; after the $12 million integration cost and purchase price, estimated net deal value is $28 million. The strategic fit is attractive, but VoltPath should validate battery warranty exposure, fleet-contract durability, and procurement savings before signing, and should use any diligence shortfall to reduce the price.",
+  "common_mistakes": [
+    "Evaluating the strategic fit without comparing the offer to standalone value",
+    "Counting the full value of synergies without deducting integration costs",
+    "Treating estimated cost savings as guaranteed before diligence",
+    "Ignoring customer and product risks while focusing only on the acquisition multiple"
+  ]
+}

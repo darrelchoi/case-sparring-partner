@@ -1,0 +1,87 @@
+{
+  "id": "gen_k_pop_concert_tours_7f3196",
+  "title": "How big is the US K-pop concert market?",
+  "case_type": "market_sizing",
+  "industry": "K-pop concert tours",
+  "difficulty": 2,
+  "prompt": "A concert promoter is considering expanding its K-pop touring business in the United States. The leadership team wants to understand the annual market for K-pop concert tickets and whether it is large enough to merit investment. How would you estimate the market?",
+  "clarifying_answers": {
+    "objective": "Estimate annual US primary ticket revenue and attendance for K-pop tours, then assess whether the opportunity merits further investment.",
+    "geography": "The United States only.",
+    "business_model": "The client promotes tours and earns revenue from producing and selling concert events.",
+    "market_scope": "Focus on primary ticket face-value sales for concerts, not merchandise, resale, service fees, festivals, or international dates.",
+    "timeline": "Estimate a representative current year using the acts and tour schedules that can reach the US."
+  },
+  "hidden_facts": [
+    {
+      "topic": "market_scope",
+      "hint": "what counts in the market, geography, or whether to include merchandise and ticket fees",
+      "fact": "Use annual primary ticket face-value revenue from K-pop concerts in the United States. Exclude merchandise, resale, service fees, festivals, and shows outside the country. Count each concert date separately, including multiple nights in one city.",
+      "numbers": {}
+    },
+    {
+      "topic": "headliner_supply",
+      "hint": "how many major acts tour the US and how many shows they play",
+      "fact": "A representative year has 8 headliner acts able to tour the US, with 12 US shows per act on average. These shows use venues with 15,000 seats.",
+      "numbers": {
+        "headliner_acts": 8.0,
+        "headliner_shows_per_act": 12.0,
+        "headliner_capacity": 15000.0
+      }
+    },
+    {
+      "topic": "headliner_demand",
+      "hint": "headliner attendance, sell-through, or ticket prices",
+      "fact": "Headliner shows fill about 90% of seats on average, and the average face-value ticket is $160.",
+      "numbers": {
+        "headliner_fill_pct": 90.0,
+        "headliner_ticket_price": 160.0
+      }
+    },
+    {
+      "topic": "emerging_supply_and_demand",
+      "hint": "smaller or emerging acts, their tour schedules, venues, attendance, or prices",
+      "fact": "There are about 20 emerging acts playing the US in a representative year, with 8 shows per act on average. They typically play 4,000-seat venues, fill about 85% of seats, and charge an average face-value ticket price of $90.",
+      "numbers": {
+        "emerging_acts": 20.0,
+        "emerging_shows_per_act": 8.0,
+        "emerging_capacity": 4000.0,
+        "emerging_fill_pct": 85.0,
+        "emerging_ticket_price": 90.0
+      }
+    }
+  ],
+  "exhibits": [],
+  "math_answers": [
+    {
+      "id": "annual_attendance",
+      "question": "How many annual US concert admissions do these tours generate?",
+      "formula": "headliner_acts * headliner_shows_per_act * headliner_capacity * headliner_fill_pct / 100 + emerging_acts * emerging_shows_per_act * emerging_capacity * emerging_fill_pct / 100",
+      "answer": 1840000.0,
+      "unit": "admissions",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "annual_ticket_revenue",
+      "question": "What is the estimated annual US primary ticket market in face-value revenue?",
+      "formula": "(headliner_acts * headliner_shows_per_act * headliner_capacity * headliner_fill_pct / 100 * headliner_ticket_price + emerging_acts * emerging_shows_per_act * emerging_capacity * emerging_fill_pct / 100 * emerging_ticket_price) / 1000000",
+      "answer": 256.32,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Clarify market definition: US only, annual primary face-value ticket sales, and which event types to include.",
+    "Build the estimate from the supply side: number of tourable acts by tier times US dates per act.",
+    "Estimate attendance by tier: dates times venue capacity times seat fill.",
+    "Convert attendance into ticket revenue using average ticket price by tier.",
+    "Sanity-check the result, identify the assumptions with the greatest uncertainty, and recommend how the promoter should validate demand and capture potential."
+  ],
+  "recommendation": "The estimated US K-pop concert market is about $256M in annual primary ticket sales, representing roughly 1.84M admissions across headliner and emerging acts. That is a meaningful opportunity for the promoter to pursue, but the estimate depends heavily on the number of acts and tour dates that can be booked and on sell-through. I would recommend a targeted expansion plan, validating local demand and venue availability against specific tour calendars before making large fixed-cost commitments.",
+  "common_mistakes": [
+    "Counting the entire global K-pop music business rather than US concert ticket sales.",
+    "Using venue capacity as attendance without applying a sell-through assumption.",
+    "Mixing ticket face value with fees, merchandise, or resale revenue.",
+    "Double-counting tour dates or failing to distinguish headliner and emerging-act economics."
+  ]
+}

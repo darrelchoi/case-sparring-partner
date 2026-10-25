@@ -1,0 +1,137 @@
+{
+  "id": "brightsmile",
+  "title": "BrightSmile Dental: a private equity buyout",
+  "case_type": "m_and_a",
+  "industry": "Healthcare / private equity",
+  "difficulty": 3,
+  "prompt": "Our client is a private equity fund considering buying BrightSmile, a group of dental practices in Texas. The seller has named an asking price. Should the fund buy BrightSmile?",
+  "clarifying_answers": {
+    "objective": "The fund wants a strong return within its normal holding period.",
+    "geography": "Texas only.",
+    "business_model": "General dentistry practices, paid by insurance and patients directly.",
+    "strategy": "The fund's playbook is to buy a platform and add small practices over time."
+  },
+  "hidden_facts": [
+    {
+      "topic": "deal_terms",
+      "hint": "the price, holding period, or exit plan",
+      "fact": "The asking price is $150M. The fund plans to sell in 5 years at the same EBITDA multiple it pays.",
+      "numbers": {
+        "price_m": 150,
+        "hold_years": 5
+      }
+    },
+    {
+      "topic": "financials",
+      "hint": "revenue, profit, EBITDA, or size",
+      "fact": "BrightSmile has 30 practices, $100M of revenue, and $15M of EBITDA.",
+      "numbers": {
+        "practices": 30,
+        "revenue_m": 100,
+        "ebitda_m": 15
+      }
+    },
+    {
+      "topic": "growth_plan",
+      "hint": "growth, add-on acquisitions, or the fund's plan",
+      "fact": "The fund believes it can add 5 practices a year by buying small ones, each adding about $0.5M of EBITDA.",
+      "numbers": {
+        "adds_per_year": 5,
+        "ebitda_per_add_m": 0.5
+      }
+    },
+    {
+      "topic": "market",
+      "hint": "comparable deals, valuation multiples, or market conditions",
+      "fact": "Comparable dental groups sell for 8 to 12 times EBITDA.",
+      "numbers": {
+        "comp_low_multiple": 8,
+        "comp_high_multiple": 12
+      }
+    },
+    {
+      "topic": "operations",
+      "hint": "dentists, staff, turnover, or operating risks",
+      "fact": "Dentist turnover at BrightSmile is 20% a year, versus a 10% industry average.",
+      "numbers": {
+        "turnover_pct": 20,
+        "industry_turnover_pct": 10
+      }
+    },
+    {
+      "topic": "target_return",
+      "hint": "the fund's return target",
+      "fact": "The fund needs to at least double its money in 5 years (a 2x multiple of money).",
+      "numbers": {
+        "target_moic": 2
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "BrightSmile EBITDA ($M)",
+      "kind": "line",
+      "unlock_topic": "financials",
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "series": [
+        {
+          "name": "EBITDA",
+          "values": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "unit": "$M"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "entry_multiple",
+      "question": "What EBITDA multiple is the fund paying?",
+      "formula": "price_m / ebitda_m",
+      "answer": 10,
+      "unit": "x",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "exit_ebitda",
+      "question": "What will EBITDA be at exit if the add-on plan works?",
+      "formula": "ebitda_m + adds_per_year * hold_years * ebitda_per_add_m",
+      "answer": 27.5,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "moic",
+      "question": "Ignoring debt and the cost of the add-on deals, what multiple of money does the fund make?",
+      "formula": "(ebitda_m + adds_per_year * hold_years * ebitda_per_add_m) / ebitda_m",
+      "answer": 1.833,
+      "unit": "x",
+      "tolerance_pct": 4.0
+    }
+  ],
+  "ideal_structure": [
+    "Is the target attractive? Market, financials, operations",
+    "Is the price right? Multiple vs comparables",
+    "Can the fund create value? Add-ons, operations",
+    "Returns: exit value vs price vs the 2x target",
+    "Risks: dentist turnover, integration, paying for add-ons"
+  ],
+  "recommendation": "Not at the asking price. At 10x EBITDA, even if the add-on plan works, the fund makes about 1.8x, short of its 2x target, and that's before paying for the add-ons. Offer closer to $135M (about 9x, still within the 8 to 12x range), and make fixing the 20% dentist turnover part of the plan before relying on growth.",
+  "common_mistakes": [
+    "Accepting the price because it is inside the comparable range",
+    "Ignoring the cost of buying the add-on practices",
+    "Missing the dentist-turnover risk"
+  ]
+}

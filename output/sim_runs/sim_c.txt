@@ -1,0 +1,77 @@
+
+== FreshCart: should a grocer sell meal kits? ==
+INTERVIEWER: Our client is FreshCart, a regional grocery chain with 50 stores in the Southeast. The CEO wants to know whether FreshCart should start selling meal kits, and if so, how.
+
+YOU: So, um, I guess the first thing I'd want to understand is, like, what the CEO is really trying to get out of this, because meal kits could be about profit, or about getting people into the stores more often, or maybe about competing with delivery companies, so what is the main goal here?
+INTERVIEWER: The main goals are to grow profit and give loyal shoppers a reason to visit more often. What else would you like to clarify before you structure the problem?
+   [stage clarify | tokens in 2234 (cached 1097) out 54 | case cost so far $0.0002]
+
+YOU: Okay, got it. So I think I'd want to look at, well, a bunch of things, like the customers and whether they want this, and also how much money each kit makes, and also the competitors, because I know HelloFresh is big, and also whether FreshCart can actually make these kits, and then how to launch it. How many customers does FreshCart have?
+   · {'type': 'fact', 'topic': 'shoppers'}
+   · {'type': 'stage', 'stage': 'analysis'}
+INTERVIEWER: FreshCart has 400,000 loyalty-card households. Where would you like to start your analysis?
+   [stage analysis | tokens in 3934 (cached 3680) out 106 | case cost so far $0.0003]
+
+YOU: And do we know how many of them would actually buy meal kits?
+   · {'type': 'fact', 'topic': 'interest'}
+INTERVIEWER: In a survey, 15% of loyalty households said they would buy a meal kit about twice a month. What would you like to assess next?
+   [stage analysis | tokens in 2899 (cached 2796) out 53 | case cost so far $0.0004]
+
+YOU: So let me think, 400 thousand households times 15 percent is 60 thousand households, and if they buy twice a month that's 24 kits a year each, so 60 thousand times 24 is, um, 1.44 million kits a year. What does a kit sell for and cost?
+   · {'type': 'calc', 'expression': '400000 * 0.15', 'result': 60000.0}
+   · {'type': 'calc', 'expression': '60000 * 24', 'result': 1440000.0}
+   · {'type': 'fact', 'topic': 'economics'}
+   · {'type': 'exhibit', 'id': 'ex1', 'title': 'Cost to make one kit ($)'}
+INTERVIEWER: That calculation is right: 1.44 million kits a year. Each kit sells for $25 and costs $17 to make, including food, packaging, and labor. I’m putting an exhibit on your screen. What does that imply for the economics?
+   [stage analysis | tokens in 6588 (cached 6316) out 149 | case cost so far $0.0005]
+
+YOU: Okay so each kit makes 8 dollars, 25 minus 17, so 1.44 million times 8 is about 11.5 million dollars of gross profit, which seems pretty good I think.
+   · {'type': 'calc', 'expression': '25 - 17', 'result': 8.0}
+   · {'type': 'calc', 'expression': '1440000 * 8', 'result': 11520000.0}
+INTERVIEWER: Correct: that’s $11.52 million in gross profit before any additional costs or effects such as unsold kits. What would you want to investigate next before deciding whether to launch?
+   [stage analysis | tokens in 7714 (cached 7434) out 133 | case cost so far $0.0007]
+
+YOU: What are competitors doing in this space?
+   · {'type': 'fact', 'topic': 'competition'}
+INTERVIEWER: Let's take that one step at a time. What would you like to look at next?
+   [stage analysis | tokens in 6362 (cached 6184) out 100 | case cost so far $0.0008]
+
+YOU: Hmm, a rival dropped kits because of food waste, so waste seems important. How much does FreshCart usually waste on prepared food?
+   · {'type': 'fact', 'topic': 'waste'}
+   · {'type': 'calc', 'expression': '(17 / 0.9)', 'result': 18.88888888888889}
+INTERVIEWER: FreshCart currently wastes about 10% of the prepared-food items it makes. How would you factor that into the kit economics, and what might FreshCart do to manage the risk?
+   [stage analysis | tokens in 6928 (cached 6729) out 124 | case cost so far $0.0010]
+
+YOU: Okay, so I think overall, um, FreshCart should probably go ahead with meal kits, because there's interest from about 15 percent of customers and they could make around 11.5 million, but they should be careful about waste because a competitor had problems, so maybe they could start small or something.
+   · {'type': 'stage', 'stage': 'synthesis'}
+INTERVIEWER: The CEO has just walked in. Please give your recommendation, including the key rationale, the main risk, and how you’d launch or test the idea.
+   [stage synthesis | tokens in 5021 (cached 4850) out 54 | case cost so far $0.0011]
+
+
+== SCORECARD (overall 2.7/5) ==
+  structure      3  You named the main relevant areas, but the framework was loosely organized and not explicitly prioritized or used to cover all of them.
+                 "the customers and whether they want this, and also how much money each kit makes, and also the competitors"
+  clarifying     3  You confirmed the core objective and asked for the customer base and likely demand, but did not clarify format, scope, or timeline.
+                 "what is the main goal here?"
+  quantitative   4  You correctly calculated annual volume and pre-waste gross profit with clear arithmetic, but did not calculate the key after-waste profit.
+                 "1.44 million times 8 is about 11.5 million dollars of gross profit"
+  judgment       2  You recognized waste as a risk, but did not quantify its impact or develop the proposed mitigation into an actionable test.
+                 "they should be careful about waste because a competitor had problems, so maybe they could start small or something"
+  synthesis      2  You gave a tentative recommendation with some support, but did not deliver the requested CEO-ready rationale, quantify post-waste economics, or specify a concrete launch plan.
+                 "FreshCart should probably go ahead with meal kits, because there's interest from about 15 percent of customers"
+  communication  2  Your answers were understandable but frequently hedged and loosely structured, and you did not provide the final requested recommendation after the interviewer prompt.
+                 "Okay, so I think overall, um, FreshCart should probably go ahead with meal kits"
+  math kits_per_year            correct        you: 1.44  key: 1440.0 K kits
+  math gross_profit             correct        you: 11.5  key: 11.52 $M
+  math profit_after_waste       not_attempted  you: None  key: 9.072 $M
+
+Strength: You correctly translated the survey into 1.44 million potential annual kits and roughly $11.5 million of pre-waste gross profit.
+Gap: You recognized food waste as the central risk but neither quantified its effect on profit nor turned “start small” into a specific pilot with pre-orders and an expansion threshold.
+
+== COACH ==
+There’s no past-case history, so today is the baseline: judgment, synthesis, and communication were all 2, while quantitative was strongest at 4. The key miss was converting the recognized food-waste risk into quantified profit impact and a specific pilot decision rule.
+Focus: judgment
+Drill: In 10 minutes, run three 3-minute pilot decisions aloud: for each, quantify downside from waste or low adoption, name a pre-order or limited-launch test, and set a numeric go/no-go threshold; use the remaining minute to summarize the recommendation and key risk.
+Next case: brightsmile (This M&A case will push you to weigh risks and returns into a defensible judgment rather than stopping at identifying issues.)
+
+Total case cost: $0.0019  (45712 in, 39086 cached, 1518 out)

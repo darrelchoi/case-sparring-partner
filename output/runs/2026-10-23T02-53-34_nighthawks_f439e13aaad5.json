@@ -1,0 +1,184 @@
+{
+ "session_id": "f439e13aaad5",
+ "user": "demo",
+ "case_id": "nighthawks",
+ "finished": "2026-10-23T02:53:34+00:00",
+ "duration_sec": 137,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is the New Haven Nighthawks, a minor-league baseball team. Most weekday games have empty seats, but weekend games sell out. The owner wants to know how to change ticket prices to make more money.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "What is the objective here, and are there any constraints on pricing?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "The objective is to increase total game-day revenue this season. The league lets the team set its own prices, but the owner wants to keep the experience family-friendly.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "I would look at revenue per game as fans times ticket price plus food and merch, split by weekend and weekday. Can I see attendance numbers?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "The stadium holds 6,000 fans. Weekend games sell out, while weekday games average 2,500 attendees. I\u2019m putting an exhibit on your screen. What would you like to examine next?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "How many home games are there of each type?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "There are 70 home games: 20 on weekends and 50 on weekdays. What would you like to look at next?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "So current ticket revenue is 20 weekend games times 6,000 plus 50 weekday games times 2,500, which is 245,000 tickets, times 15 dollars, so about 3.675 million dollars. What are current prices and how much do fans spend on food?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Your ticket count and ticket revenue are correct: 245,000 tickets at $15 each yields $3.675 million. Current ticket prices are $15 for every seat, and fans spend about $12 each on food and merchandise. What would you analyze next?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Weekends sell out, so demand is above capacity there. Do we know what weekend fans would pay? And has the team ever tested lower weekday prices?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "The weekend waitlist and resale prices suggest fans would pay $22 without attendance dropping. In a weekday test, lowering the price to $10 increased average attendance to 4,000. How would you use those results to evaluate pricing options?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "At 10 dollars, a weekday game earns 4,000 times 10, which is 40,000, versus 2,500 times 15, which is 37,500, so the gain per weekday game is 2,500 dollars. My recommendation is to raise weekend prices to 22 dollars and lower weekdays to 10 dollars, because weekends are underpriced and weekdays have empty seats.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Your ticket-revenue calculations are right: the weekday test adds $2,500 per game, and the weekend price increase adds $840,000 across the season if attendance stays full. The owner has just walked in\u2014please give your final recommendation, including the impact on food and merchandise revenue and any risks you\u2019d monitor.",
+   "flagged": false,
+   "flags": []
+  }
+ ],
+ "revealed": [
+  "attendance",
+  "schedule",
+  "prices",
+  "concessions",
+  "weekend_demand",
+  "weekday_test"
+ ],
+ "scorecard": {
+  "case_id": "nighthawks",
+  "case_title": "New Haven Nighthawks: filling the ballpark",
+  "case_type": "pricing",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 4,
+    "reason": "You framed the economics by day type and included both ticket and ancillary spending, though you did not fully develop or prioritize the structure.",
+    "evidence_quote": "I would look at revenue per game as fans times ticket price plus food and merch, split by weekend and weekday."
+   },
+   {
+    "dimension": "clarifying",
+    "score": 4,
+    "reason": "You confirmed the objective and constraint, then asked focused questions about attendance, game mix, prices, and demand.",
+    "evidence_quote": "What is the objective here, and are there any constraints on pricing?"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 3,
+    "reason": "You correctly calculated current ticket revenue and weekday ticket uplift, but omitted concessions and did not complete the requested season-wide impact calculation.",
+    "evidence_quote": "At 10 dollars, a weekday game earns 4,000 times 10, which is 40,000, versus 2,500 times 15, which is 37,500, so the gain per weekday game is 2,500 dollars."
+   },
+   {
+    "dimension": "judgment",
+    "score": 3,
+    "reason": "You correctly recognized the different pricing opportunities across sold-out weekends and underfilled weekdays, but did not account for ancillary revenue or fully assess the family-friendly trade-off.",
+    "evidence_quote": "My recommendation is to raise weekend prices to 22 dollars and lower weekdays to 10 dollars, because weekends are underpriced and weekdays have empty seats."
+   },
+   {
+    "dimension": "synthesis",
+    "score": 2,
+    "reason": "You gave a clear directional recommendation, but did not quantify total season impact or identify risks and next steps.",
+    "evidence_quote": "My recommendation is to raise weekend prices to 22 dollars and lower weekdays to 10 dollars, because weekends are underpriced and weekdays have empty seats."
+   },
+   {
+    "dimension": "communication",
+    "score": 4,
+    "reason": "Your reasoning was generally clear and concise, with calculations stated aloud, though you did not close with a fully supported final synthesis.",
+    "evidence_quote": "So current ticket revenue is 20 weekend games times 6,000 plus 50 weekday games times 2,500, which is 245,000 tickets, times 15 dollars, so about 3.675 million dollars."
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "current_ticket_revenue",
+    "question": "What is ticket revenue for the season today?",
+    "correct_answer": 3675.0,
+    "unit": "$K",
+    "candidate_number": 3675.0,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "weekday_gain_per_game",
+    "question": "How much more does a weekday game make at $10, counting food and merchandise?",
+    "correct_answer": 20500.0,
+    "unit": "$",
+    "candidate_number": 2500.0,
+    "verdict": "incorrect"
+   },
+   {
+    "math_id": "season_gain",
+    "question": "What is the total extra revenue for the season with $22 weekends and $10 weekdays?",
+    "correct_answer": 1865.0,
+    "unit": "$K",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   }
+  ],
+  "overall": 3.3,
+  "top_strength": "You separated weekend and weekday pricing and correctly computed current ticket revenue and weekday ticket uplift.",
+  "biggest_gap": "You omitted the $12 per-fan food and merchandise revenue from the weekday comparison and never calculated total season uplift.",
+  "summary": "You asked relevant questions and found a sensible two-price strategy, while calculating current ticket revenue accurately. You should include food and merchandise in the weekday economics and finish with the season-wide revenue impact, risks, and next steps.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "This is your first scorecard, so there\u2019s no trend yet: structure, clarification, and communication were strong at 4, while synthesis was lowest at 2. The math gap was specifically missing the $12 per-fan ancillary revenue and stopping before calculating season-wide uplift.",
+  "focus_dimension": "synthesis",
+  "drill": "In 10 minutes, do three 2-minute pricing comparisons: state the change in revenue per customer (including add-ons), multiply by affected customers or games, and finish with the total-period impact; use the remaining 4 minutes to give a concise recommendation that cites the total.",
+  "next_case_id": "pesopath",
+  "next_case_reason": "This market-entry case is a fresh opportunity to practice pulling the analysis into a clear, quantified recommendation and synthesis."
+ },
+ "usage": {
+  "input_tokens": 36283,
+  "cache_read_tokens": 28847,
+  "cache_write_tokens": 5118,
+  "output_tokens": 1816,
+  "requests": 22,
+  "cost_usd": 0.00206803
+ }
+}

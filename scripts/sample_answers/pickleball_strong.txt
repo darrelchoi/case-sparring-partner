@@ -1,0 +1,8 @@
+Just to clarify, are we sizing paddles only, in the US, and in annual dollar sales?
+Great. I'll size this as number of players, times paddles bought per player per year, times price, and I'll segment players into core and casual since they behave very differently. How many people play pickleball?
+What share are core players versus casual players?
+How often does each type buy a new paddle?
+And how much do they spend per paddle?
+So core players are 25 percent of 20 million, which is 5 million, buying 1 paddle a year, so 5 million paddles. Casual players are 15 million buying one every 4 years, so 3.75 million paddles. That's 8.75 million paddles a year.
+In dollars, core is 5 million times 120, which is 600 million, and casual is 3.75 million times 40, which is 150 million. So the market is about 750 million dollars a year.
+So the US paddle market is about 750 million dollars a year, and 80 percent of it, 600 million, comes from core players even though they're only a quarter of players. I'd recommend the client launch a premium paddle for core players, sold through clubs and online, and monitor how fast casual players convert to core.

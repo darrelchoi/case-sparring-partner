@@ -1,0 +1,119 @@
+{
+  "id": "ledgerloop_ai",
+  "title": "LedgerLoop: pricing an AI bookkeeping feature",
+  "case_type": "pricing",
+  "industry": "Software (SaaS)",
+  "difficulty": 2,
+  "prompt": "Our client is LedgerLoop, which sells accounting software to small businesses. It has built an AI assistant that categorizes expenses automatically. How should LedgerLoop price the new feature?",
+  "clarifying_answers": {
+    "objective": "Maximize profit from the feature without hurting customer retention.",
+    "customers": "Small businesses with 1 to 20 employees, in the US.",
+    "options": "Open to bundling it into the base plan or selling it as a paid add-on."
+  },
+  "hidden_facts": [
+    {
+      "topic": "customers",
+      "hint": "the customer base or current pricing",
+      "fact": "LedgerLoop has 50,000 customers (in thousands: 50) paying $40 a month.",
+      "numbers": {
+        "customers_k": 50,
+        "base_price": 40
+      }
+    },
+    {
+      "topic": "value",
+      "hint": "how much time or money the feature saves",
+      "fact": "Pilot customers saved about 3 hours a month on bookkeeping. Small-business owners value their time at roughly $50 an hour.",
+      "numbers": {
+        "hours_saved": 3,
+        "value_per_hour": 50
+      }
+    },
+    {
+      "topic": "cost",
+      "hint": "what the feature costs to run",
+      "fact": "Each customer's AI usage costs LedgerLoop about $2 a month in model and server costs.",
+      "numbers": {
+        "ai_cost": 2
+      }
+    },
+    {
+      "topic": "competitors",
+      "hint": "competitors or how others price similar features",
+      "fact": "QuickBooks includes a similar feature in its $90-a-month plan. Xero charges a $15-a-month add-on.",
+      "numbers": {
+        "qb_plan": 90,
+        "xero_addon": 15
+      }
+    },
+    {
+      "topic": "adoption",
+      "hint": "willingness to pay, surveys, or adoption at different prices",
+      "fact": "In a survey, 40% of customers would add the feature at $10 a month, and 20% at $20 a month.",
+      "numbers": {
+        "adopt_10_pct": 40,
+        "adopt_20_pct": 20
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Customers who would buy, by monthly price (%)",
+      "kind": "bar",
+      "unlock_topic": "adoption",
+      "labels": [
+        "$10 / month",
+        "$20 / month"
+      ],
+      "series": [
+        {
+          "name": "Would buy",
+          "values": [
+            40,
+            20
+          ]
+        }
+      ],
+      "unit": "%"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "value_per_customer",
+      "question": "How much is the feature worth to a typical customer each month?",
+      "formula": "hours_saved * value_per_hour",
+      "answer": 150,
+      "unit": "$",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "profit_at_10",
+      "question": "What monthly profit does the feature make at $10?",
+      "formula": "customers_k * adopt_10_pct / 100 * (10 - ai_cost)",
+      "answer": 160,
+      "unit": "$K",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "profit_at_20",
+      "question": "What monthly profit does the feature make at $20?",
+      "formula": "customers_k * adopt_20_pct / 100 * (20 - ai_cost)",
+      "answer": 180,
+      "unit": "$K",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Three pricing lenses: cost, competitors, customer value",
+    "Cost floor: $2 a month",
+    "Competitor anchors: Xero add-on, QuickBooks bundle",
+    "Value ceiling: hours saved x value of time",
+    "Profit at each price point; retention and strategic effects"
+  ],
+  "recommendation": "Sell it as an add-on at about $15 a month, between the two tested prices and matching Xero. $20 makes slightly more profit than $10 ($180K vs $160K a month) but reaches only half as many customers, and the feature is worth about $150 a month to users, so the price leaves them plenty of value. Then test a higher-priced plan that bundles the feature.",
+  "common_mistakes": [
+    "Pricing on cost alone",
+    "Picking the highest-profit price without thinking about adoption and retention"
+  ]
+}

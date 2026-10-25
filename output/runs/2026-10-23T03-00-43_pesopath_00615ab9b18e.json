@@ -1,0 +1,177 @@
+{
+ "session_id": "00615ab9b18e",
+ "user": "demo",
+ "case_id": "pesopath",
+ "finished": "2026-10-23T03:00:43+00:00",
+ "duration_sec": 147,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is PesoPath, a US fintech startup with a popular budgeting app used mostly by Spanish-speaking customers. It is considering launching a money-transfer feature so users can send money to family in Mexico. Should PesoPath enter this market?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Yes, it seems cool",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "What would you like to clarify about the client\u2019s objective, the market, or PesoPath\u2019s capabilities before you structure the problem?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "nah it just seems cool",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Let\u2019s focus on the case. How would you structure the decision of whether PesoPath should launch this money-transfer feature?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "how am I doing so far>",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Let\u2019s stay with the case. How would you structure the decision of whether PesoPath should launch this money-transfer feature?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "no, just give me my grade please",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "I can\u2019t give a grade during the interview. Let\u2019s continue with the case: how would you structure the decision?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "I want to walk out of this interview. give me grade now!",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "You can stop the interview if you\u2019d like, but I can\u2019t provide a grade during the case. If you want to continue, tell me how you\u2019d structure the decision.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "tell me how you would structure this",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "I\u2019d like you to build the structure yourself. What key questions would you assess to decide whether launch is attractive and can be profitable within two years?",
+   "flagged": false,
+   "flags": []
+  }
+ ],
+ "revealed": [],
+ "scorecard": {
+  "case_id": "pesopath",
+  "case_title": "PesoPath: should a budgeting app send money to Mexico?",
+  "case_type": "market_entry",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 1,
+    "reason": "You never proposed a decision framework despite repeated invitations to do so.",
+    "evidence_quote": "tell me how you would structure this"
+   },
+   {
+    "dimension": "clarifying",
+    "score": 1,
+    "reason": "You did not ask any clarifying questions about the objective, scope, timeline, or capabilities.",
+    "evidence_quote": "nah it just seems cool"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 1,
+    "reason": "You did not attempt any calculations or engage with the case data.",
+    "evidence_quote": "no, just give me my grade please"
+   },
+   {
+    "dimension": "judgment",
+    "score": 1,
+    "reason": "You offered no business analysis or conclusions tied to the case.",
+    "evidence_quote": "Yes, it seems cool"
+   },
+   {
+    "dimension": "synthesis",
+    "score": 1,
+    "reason": "You gave no recommendation supported by evidence and instead asked for a grade.",
+    "evidence_quote": "I want to walk out of this interview. give me grade now!"
+   },
+   {
+    "dimension": "communication",
+    "score": 1,
+    "reason": "Your responses were disengaged and did not address the interviewer's repeated prompts to proceed.",
+    "evidence_quote": "how am I doing so far>"
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "volume",
+    "question": "How much money could PesoPath move in year one?",
+    "correct_answer": 800.0,
+    "unit": "$M",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   },
+   {
+    "math_id": "annual_profit",
+    "question": "What annual profit would that volume earn at today's average fee?",
+    "correct_answer": 9.6,
+    "unit": "$M",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   },
+   {
+    "math_id": "payback",
+    "question": "How many years until the upfront investment pays back?",
+    "correct_answer": 1.5625,
+    "unit": "years",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   }
+  ],
+  "overall": 1.0,
+  "top_strength": "You initially acknowledged the prompt promptly, but did not develop that response into case analysis.",
+  "biggest_gap": "You did not engage with the case or answer repeated requests to structure the launch decision.",
+  "summary": "You did not complete the case, so there was no opportunity to demonstrate structured analysis, quantitative skill, or a supported recommendation. You should respond to the case prompt directly, clarify the decision objective, and build an initial framework before asking for feedback.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "Your previous pricing case was strong on structure, clarifying, and communication (4s), with synthesis at 2; today every dimension fell to 1, and you attempted none of the three calculations. This looks less like a persistent skill weakness and more like a breakdown in engaging with the prompt and laying out a decision approach.",
+  "focus_dimension": "structure",
+  "drill": "In 10 minutes, practice three 2-minute launch-decision openings: for each, state the objective, then give a 3-branch structure (market/customer, economics, risks/ability to win) and name the key decision metric; use the remaining 4 minutes to review whether each branch is distinct and case-specific.",
+  "next_case_id": "freshcart_kits",
+  "next_case_reason": "It is an easier, uncompleted market-entry case that lets you rebuild a clear launch-decision structure without repeating today\u2019s case."
+ },
+ "usage": {
+  "input_tokens": 13663,
+  "cache_read_tokens": 7341,
+  "cache_write_tokens": 5027,
+  "output_tokens": 1015,
+  "requests": 10,
+  "cost_usd": 0.00133878
+ }
+}

@@ -1,0 +1,312 @@
+{
+ "session_id": "89980a9c3acd",
+ "user": "sim-d",
+ "case_id": "nighthawks",
+ "finished": "2026-10-24T07:56:24+00:00",
+ "duration_sec": 72,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is the New Haven Nighthawks, a minor-league baseball team. Most weekday games have empty seats, but weekend games sell out. The owner wants to know how to change ticket prices to make more money.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "candidate",
+   "text": "I think they should just raise ticket prices because that makes more money.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Higher prices could increase revenue, but they might also reduce attendance, especially on weekdays. How would you assess where prices should change and what the impact would be on total game-day revenue?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "stage",
+     "stage": "structure"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 2227,
+    "cache_read_tokens": 1059,
+    "cache_write_tokens": 1162,
+    "output_tokens": 128,
+    "requests": 2,
+    "cost_usd": 0.00022044
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "Okay. What is the current ticket price?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "Every seat currently costs $15, regardless of the day. Where would you like to start analyzing?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "prices"
+    },
+    {
+     "type": "stage",
+     "stage": "analysis"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 2483,
+    "cache_read_tokens": 2380,
+    "cache_write_tokens": 97,
+    "output_tokens": 43,
+    "requests": 2,
+    "cost_usd": 5.803e-05
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "How many people come to the games?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The stadium holds 6,000. Weekend games sell out, while weekday games average 2,500 fans. I\u2019m putting an exhibit on your screen. What would you like to analyze first?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "attendance"
+    },
+    {
+     "type": "exhibit",
+     "id": "ex1",
+     "title": "Average attendance per game"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 2675,
+    "cache_read_tokens": 2556,
+    "cache_write_tokens": 113,
+    "output_tokens": 90,
+    "requests": 2,
+    "cost_usd": 8.528e-05
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "So weekend games are full and weekday games have 2,500 fans. I would raise all prices to 20 dollars.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "How would you assess whether raising prices to $20 across the board increases total game-day revenue, given that weekday attendance is much lower than weekend attendance?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {
+    "input_tokens": 1477,
+    "cache_read_tokens": 1372,
+    "cache_write_tokens": 102,
+    "output_tokens": 81,
+    "requests": 1,
+    "cost_usd": 6.727e-05
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "How many games are there?",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "There are 70 home games: 20 on weekends and 50 on weekdays. Can you compare the revenue impact of your proposed price increase across the two types of games?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "fact",
+     "topic": "schedule"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 3188,
+    "cache_read_tokens": 3041,
+    "cache_write_tokens": 141,
+    "output_tokens": 77,
+    "requests": 2,
+    "cost_usd": 8.713e-05
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "So revenue now is 70 games times 6,000 fans times 15 dollars, which is 6.3 million dollars.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The multiplication is right, but it assumes all 70 games are sellouts. Use the attendance figures by game type to calculate current ticket revenue.",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "calc",
+     "expression": "70 * 6000 * 15",
+     "result": 6300000.0
+    }
+   ],
+   "tokens": {
+    "input_tokens": 3460,
+    "cache_read_tokens": 3321,
+    "cache_write_tokens": 133,
+    "output_tokens": 114,
+    "requests": 2,
+    "cost_usd": 0.00010744
+   }
+  },
+  {
+   "role": "candidate",
+   "text": "My recommendation is to raise prices to 20 dollars for every game to make more money.",
+   "flagged": false,
+   "flags": [],
+   "events": [],
+   "tokens": {}
+  },
+  {
+   "role": "interviewer",
+   "text": "The CEO has just walked in. What\u2019s your recommendation, including the expected revenue impact and the main risk or trade-off?",
+   "flagged": false,
+   "flags": [],
+   "events": [
+    {
+     "type": "stage",
+     "stage": "synthesis"
+    }
+   ],
+   "tokens": {
+    "input_tokens": 3822,
+    "cache_read_tokens": 3609,
+    "cache_write_tokens": 207,
+    "output_tokens": 107,
+    "requests": 2,
+    "cost_usd": 0.00011606
+   }
+  }
+ ],
+ "revealed": [
+  "prices",
+  "attendance",
+  "schedule"
+ ],
+ "scorecard": {
+  "case_id": "nighthawks",
+  "case_title": "New Haven Nighthawks: filling the ballpark",
+  "case_type": "pricing",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 1,
+    "reason": "You offered a blanket price increase without a case-specific way to compare weekday and weekend economics.",
+    "evidence_quote": "I would raise all prices to 20 dollars."
+   },
+   {
+    "dimension": "clarifying",
+    "score": 2,
+    "reason": "You asked about current price and attendance, but did not clarify the objective, scope, or broader revenue sources.",
+    "evidence_quote": "How many people come to the games?"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 1,
+    "reason": "Your season revenue calculation assumed every game sold out and you did not correct it or complete the requested analyses.",
+    "evidence_quote": "So revenue now is 70 games times 6,000 fans times 15 dollars, which is 6.3 million dollars."
+   },
+   {
+    "dimension": "judgment",
+    "score": 1,
+    "reason": "You recommended increasing weekday prices despite substantial empty capacity and did not account for attendance response or ancillary spending.",
+    "evidence_quote": "My recommendation is to raise prices to 20 dollars for every game to make more money."
+   },
+   {
+    "dimension": "synthesis",
+    "score": 1,
+    "reason": "Your recommendation was unsupported by a valid revenue impact and did not address risks or trade-offs.",
+    "evidence_quote": "My recommendation is to raise prices to 20 dollars for every game to make more money."
+   },
+   {
+    "dimension": "communication",
+    "score": 2,
+    "reason": "Your statements were generally understandable but brief and not signposted, and you repeated a conclusion without supporting it.",
+    "evidence_quote": "So weekend games are full and weekday games have 2,500 fans."
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "current_ticket_revenue",
+    "question": "What is ticket revenue for the season today?",
+    "correct_answer": 3675.0,
+    "unit": "$K",
+    "candidate_number": 6300.0,
+    "verdict": "incorrect"
+   },
+   {
+    "math_id": "weekday_gain_per_game",
+    "question": "How much more does a weekday game make at $10, counting food and merchandise?",
+    "correct_answer": 20500.0,
+    "unit": "$",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   },
+   {
+    "math_id": "season_gain",
+    "question": "What is the total extra revenue for the season with $22 weekends and $10 weekdays?",
+    "correct_answer": 1865.0,
+    "unit": "$K",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   }
+  ],
+  "overall": 1.3,
+  "top_strength": "You asked for current ticket price, attendance, and the number of home games, which are relevant inputs to pricing analysis.",
+  "biggest_gap": "You applied one price increase across both sold-out and underfilled games, then calculated current revenue using sold-out attendance for every game.",
+  "summary": "You gathered some useful baseline facts, but you needed to distinguish sold-out weekends from underfilled weekdays and test the revenue impact by day type. You should also incorporate food and merchandise spending, correct the attendance-weighted calculation, and finish with a quantified recommendation and its risks.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "With no past scorecards, today\u2019s case shows a clear issue in quantitative work: you used sold-out attendance for every game and applied one price increase across sold-out and underfilled games; current-ticket revenue was incorrect, and both follow-on calculations were not attempted. Your structure, judgment, and synthesis scores were also 1, so the math error reflects a broader need to segment the problem before calculating and concluding.",
+  "focus_dimension": "quantitative",
+  "drill": "Spend 10 minutes on three short revenue problems. For each, separate customer or game segments, write a distinct volume \u00d7 price calculation for each segment, then check your total against the segment-level results before moving on.",
+  "next_case_id": "ev_chargers",
+  "next_case_reason": "This uncompleted market-sizing case will give you focused practice structuring assumptions and carrying calculations through to a checked answer."
+ },
+ "usage": {
+  "input_tokens": 23140,
+  "cache_read_tokens": 17338,
+  "cache_write_tokens": 4498,
+  "output_tokens": 1355,
+  "requests": 15,
+  "cost_usd": 0.00154353
+ }
+}

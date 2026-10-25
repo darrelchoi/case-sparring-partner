@@ -1,0 +1,17 @@
+# secrets
+.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# per-user practice history stays on this computer
+data/history.json
+
+# planning files, not part of the app
+instructions.html
+joke*.txt
+
+# macOS
+.DS_Store

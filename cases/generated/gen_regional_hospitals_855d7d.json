@@ -1,0 +1,134 @@
+{
+  "id": "gen_regional_hospitals_855d7d",
+  "title": "Northstar Regional Health: entering urgent care",
+  "case_type": "market_entry",
+  "industry": "Regional hospitals",
+  "difficulty": 2,
+  "prompt": "Our client is Northstar Regional Health, a nonprofit hospital system considering opening urgent-care centers in a neighboring county where it does not currently operate. Should it enter, and if so, how?",
+  "clarifying_answers": {
+    "objective": "Assess whether the entry can generate attractive operating returns while extending access to care.",
+    "geography": "One neighboring county within Northstar's current state.",
+    "business_model": "Walk-in urgent care for non-emergency illnesses and injuries, billed to patients and insurers.",
+    "timeline": "Evaluate steady-state performance by the third year of operation; the client would like a recommendation on whether to proceed now.",
+    "capabilities": "Northstar can staff the centers through its existing physician network, but it has not operated standalone urgent-care centers in this county."
+  },
+  "hidden_facts": [
+    {
+      "topic": "market_demand",
+      "hint": "county demand, visit volumes, or market growth",
+      "fact": "The target county generates about 120,000 urgent-care visits a year, and demand is expected to grow 3% annually.",
+      "numbers": {
+        "annual_market_visits": 120000.0,
+        "annual_market_growth_pct": 3.0
+      }
+    },
+    {
+      "topic": "competition",
+      "hint": "competitors, market shares, or the competitive landscape",
+      "fact": "Four named urgent-care operators serve the county: Mercy Urgent has 30% of visits, QuickCare has 25%, CountyWalk has 20%, and MetroNow has 15%. Other providers account for the remaining 10%.",
+      "numbers": {
+        "mercy_share_pct": 30.0,
+        "quickcare_share_pct": 25.0,
+        "countywalk_share_pct": 20.0,
+        "metronow_share_pct": 15.0,
+        "other_provider_share_pct": 10.0
+      }
+    },
+    {
+      "topic": "client_assets",
+      "hint": "Northstar's existing footprint, reputation, or capabilities",
+      "fact": "Northstar operates 3 hospitals in the region and has an established primary-care physician network. Its clinicians can refer patients to the centers, but the system would need to build local consumer awareness.",
+      "numbers": {
+        "regional_hospital_count": 3.0
+      }
+    },
+    {
+      "topic": "unit_economics",
+      "hint": "revenue per visit, variable cost, or center-level economics",
+      "fact": "Northstar expects average revenue of $220 per visit. Staffing, supplies, and billing would cost about $120 per visit in variable costs.",
+      "numbers": {
+        "revenue_per_visit": 220.0,
+        "variable_cost_per_visit": 120.0
+      }
+    },
+    {
+      "topic": "investment_and_capture",
+      "hint": "expected market share, number of centers, startup investment, or fixed costs",
+      "fact": "Northstar plans to open 2 centers. Market research estimates they could capture 20% of county urgent-care visits by year three. Each center requires $2 million upfront and $0.7 million in annual fixed operating costs.",
+      "numbers": {
+        "planned_centers": 2.0,
+        "steady_state_capture_pct": 20.0,
+        "startup_cost_per_center_m": 2.0,
+        "annual_fixed_cost_per_center_m": 0.7
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Urgent-care visit share by provider",
+      "kind": "bar",
+      "unlock_topic": "competition",
+      "labels": [
+        "Mercy Urgent",
+        "QuickCare",
+        "CountyWalk",
+        "MetroNow",
+        "Other"
+      ],
+      "series": [
+        {
+          "name": "Share of visits",
+          "values": [
+            30.0,
+            25.0,
+            20.0,
+            15.0,
+            10.0
+          ]
+        }
+      ],
+      "unit": "%"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "captured_visits",
+      "question": "At the estimated year-three capture rate, how many visits would Northstar's centers serve annually?",
+      "formula": "annual_market_visits * steady_state_capture_pct / 100",
+      "answer": 24000.0,
+      "unit": "visits per year",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "steady_state_operating_profit",
+      "question": "What annual operating profit would the two centers generate at steady state, before tax and financing costs?",
+      "formula": "annual_market_visits * steady_state_capture_pct / 100 * (revenue_per_visit - variable_cost_per_visit) / 1000000 - planned_centers * annual_fixed_cost_per_center_m",
+      "answer": 1.0,
+      "unit": "$M per year",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "investment_payback",
+      "question": "At that steady-state operating profit, how many years of operating profit would it take to recover the upfront investment?",
+      "formula": "planned_centers * startup_cost_per_center_m / (annual_market_visits * steady_state_capture_pct / 100 * (revenue_per_visit - variable_cost_per_visit) / 1000000 - planned_centers * annual_fixed_cost_per_center_m)",
+      "answer": 4.0,
+      "unit": "years",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Market attractiveness: size, growth, unmet needs, and local competition",
+    "Northstar's right to win: brand, physician referrals, staffing, and consumer awareness",
+    "Economics: visits captured, contribution per visit, fixed costs, upfront investment, and payback",
+    "Entry approach: site selection, phased rollout, referral pathways, and marketing",
+    "Risks and diligence: capture uncertainty, reimbursement, staffing, and impact on existing hospital services"
+  ],
+  "recommendation": "Proceed with a cautious, staged entry rather than committing to both centers at once. At the estimated 20% capture, Northstar would serve about 24,000 visits annually and generate about $1.0M in steady-state operating profit, implying a roughly 4-year payback on the $4.0M upfront investment. Those returns may be acceptable, but they depend on reaching the year-three capture estimate in a competitive market. Open one center first, validate demand and referral conversion, and approve the second only if the first is on track for the targeted utilization and unit economics.",
+  "common_mistakes": [
+    "Using the entire county visit market as Northstar's volume instead of applying its expected capture rate",
+    "Ignoring the fixed operating costs of the centers",
+    "Assuming hospital referrals automatically translate into urgent-care visits",
+    "Treating the estimated steady-state payback as guaranteed despite launch ramp-up and competitive response"
+  ]
+}

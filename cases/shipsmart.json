@@ -1,0 +1,132 @@
+{
+  "id": "shipsmart",
+  "title": "ShipSmart: stopping shipping mistakes",
+  "case_type": "operations",
+  "industry": "Logistics / e-commerce",
+  "difficulty": 2,
+  "prompt": "Our client is ShipSmart, which runs a warehouse that packs online orders for several apparel brands. Its biggest client is threatening to leave because of shipping mistakes: wrong items, wrong sizes, and late orders. What should ShipSmart do?",
+  "clarifying_answers": {
+    "objective": "Keep the big client and cut errors within 3 months.",
+    "operations": "One warehouse. Orders are picked by hand and packed at stations.",
+    "budget": "ShipSmart can invest if the payback is under two years."
+  },
+  "hidden_facts": [
+    {
+      "topic": "volume",
+      "hint": "order volume or error rates",
+      "fact": "The warehouse ships 20,000 orders a day. The error rate is 2%, versus 0.5% at the best competitors.",
+      "numbers": {
+        "orders_per_day": 20000,
+        "error_rate_pct": 2,
+        "best_error_rate_pct": 0.5
+      }
+    },
+    {
+      "topic": "cost_of_errors",
+      "hint": "what errors cost",
+      "fact": "Each error costs about $25: reshipping, processing the return, and a credit to the customer.",
+      "numbers": {
+        "cost_per_error": 25
+      }
+    },
+    {
+      "topic": "error_types",
+      "hint": "types of errors or a breakdown",
+      "fact": "Of all errors, 50% are wrong size, 30% are wrong item, and 20% are late orders.",
+      "numbers": {
+        "wrong_size_pct": 50,
+        "wrong_item_pct": 30,
+        "late_pct": 20
+      }
+    },
+    {
+      "topic": "staffing",
+      "hint": "workers, staffing, or training",
+      "fact": "35% of pickers are temporary workers hired in the last 3 months, and temps make errors at 3 times the rate of experienced pickers.",
+      "numbers": {
+        "temp_share_pct": 35,
+        "temp_error_multiple": 3
+      }
+    },
+    {
+      "topic": "client",
+      "hint": "the big client or revenue at risk",
+      "fact": "The big client is 40% of ShipSmart's $50M of yearly revenue.",
+      "numbers": {
+        "client_share_pct": 40,
+        "revenue_m": 50
+      }
+    },
+    {
+      "topic": "technology",
+      "hint": "technology, scanning, or automation options",
+      "fact": "Barcode scanning at packing stations would cost about $1.5M and cut wrong-item and wrong-size errors by 80%.",
+      "numbers": {
+        "scanner_cost_m": 1.5,
+        "scanner_reduction_pct": 80
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Error types (% of all errors)",
+      "kind": "bar",
+      "unlock_topic": "error_types",
+      "labels": [
+        "Wrong size",
+        "Wrong item",
+        "Late"
+      ],
+      "series": [
+        {
+          "name": "Share",
+          "values": [
+            50,
+            30,
+            20
+          ]
+        }
+      ],
+      "unit": "%"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "annual_error_cost",
+      "question": "What do errors cost ShipSmart each year?",
+      "formula": "orders_per_day * error_rate_pct / 100 * cost_per_error * 365 / 1000000",
+      "answer": 3.65,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "scanner_savings",
+      "question": "How much would barcode scanning save each year?",
+      "formula": "orders_per_day * error_rate_pct / 100 * cost_per_error * 365 / 1000000 * (wrong_size_pct + wrong_item_pct) / 100 * scanner_reduction_pct / 100",
+      "answer": 2.336,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "revenue_at_risk",
+      "question": "How much revenue is at risk if the big client leaves?",
+      "formula": "client_share_pct / 100 * revenue_m",
+      "answer": 20,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Size the problem: error rate, cost, revenue at risk",
+    "Break errors down by type and root cause",
+    "Root causes: people (temps, training), process, technology",
+    "Options: scanning, training or buddying temps, better scheduling",
+    "Payback and a plan to win back the client"
+  ],
+  "recommendation": "Invest in barcode scanning now. It costs $1.5M, saves about $2.3M a year (paying back in under a year), and protects $20M of revenue from the big client. At the same time, pair each temp with an experienced picker, because temps make 3 times as many errors. Share weekly error data with the client to rebuild trust.",
+  "common_mistakes": [
+    "Only fixing staffing, which misses the cheap technology fix",
+    "Not putting a number on the revenue at risk"
+  ]
+}

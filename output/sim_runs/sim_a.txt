@@ -1,0 +1,77 @@
+
+== Home EV chargers: how big is the market? ==
+INTERVIEWER: Our client is a home-energy company thinking about selling and installing home EV chargers in the United States. Before anything else, the CEO wants to know: how big is the annual US market for home EV charger installations, in dollars?
+
+YOU: Thanks. Just to confirm scope: we're sizing annual US sales of Level 2 home chargers including installation, in dollars, not public charging. Is that right?
+INTERVIEWER: Yes, that’s right: estimate annual US sales of Level 2 home chargers, including installation, in dollars; exclude public charging.
+   [stage clarify | tokens in 2206 (cached 2130) out 50 | case cost so far $0.0001]
+
+YOU: Great. I'll size this from two customer groups. First, new EV buyers: EV sales times the share who have a driveway or garage, times the share who actually install a charger. Second, existing EV owners who replace or upgrade. Then I'll multiply installs by the average price, and split hardware from installation since that matters for our client. Can I start with how many EVs are sold each year?
+   · {'type': 'fact', 'topic': 'ev_sales'}
+   · {'type': 'stage', 'stage': 'analysis'}
+   · {'type': 'exhibit', 'id': 'ex1', 'title': 'US EV sales (millions)'}
+INTERVIEWER: About 1.5 million new EVs are sold in the US annually. I’m putting an exhibit on your screen. Where would you like to go next?
+   [stage analysis | tokens in 3907 (cached 3667) out 75 | case cost so far $0.0002]
+
+YOU: What share of EV buyers live somewhere they can install a home charger?
+   · {'type': 'fact', 'topic': 'home_access'}
+INTERVIEWER: About 70% of EV buyers have access to a single-family home with a garage or driveway. What share of those eligible buyers do you think actually install a charger?
+   [stage analysis | tokens in 2875 (cached 2753) out 98 | case cost so far $0.0003]
+
+YOU: And of those, how many actually install a Level 2 charger?
+   · {'type': 'fact', 'topic': 'install_rate'}
+INTERVIEWER: About 80% of buyers with home access install a Level 2 charger in their first year. What would you like to estimate next?
+   [stage analysis | tokens in 3186 (cached 3026) out 52 | case cost so far $0.0003]
+
+YOU: So 1.5 million times 70 percent is 1.05 million, times 80 percent is 840 thousand new installs a year. Do existing owners also replace or upgrade chargers?
+   · {'type': 'calc', 'expression': '1.5 * 0.7', 'result': 1.0499999999999998}
+   · {'type': 'calc', 'expression': '1.05 * 0.8', 'result': 0.8400000000000001}
+   · {'type': 'fact', 'topic': 'replacements'}
+INTERVIEWER: That’s right: your estimate is 840,000 new-buyer installs annually. Existing owners add about 200,000 replacement or upgrade installs per year. What average price per installed charger would you use?
+   [stage analysis | tokens in 7043 (cached 6820) out 128 | case cost so far $0.0005]
+
+YOU: What does a typical charger and installation cost?
+   · {'type': 'fact', 'topic': 'price'}
+INTERVIEWER: A typical installed Level 2 charger costs about $1,800: $600 for hardware and $1,200 for installation. What does that imply for the annual market in dollars, including the hardware and installation split?
+   [stage analysis | tokens in 5881 (cached 5693) out 98 | case cost so far $0.0006]
+
+YOU: So total installs are 840 thousand plus 200 thousand, which is 1.04 million. Times 1,800 dollars, that's about 1.87 billion dollars a year. Installation alone is 1.04 million times 1,200, which is about 1.25 billion dollars.
+   · {'type': 'calc', 'expression': '840000+200000', 'result': 1040000.0}
+   · {'type': 'calc', 'expression': '1040000*1800', 'result': 1872000000.0}
+   · {'type': 'calc', 'expression': '1040000*1200', 'result': 1248000000.0}
+   · {'type': 'stage', 'stage': 'synthesis'}
+INTERVIEWER: Those calculations are right: about 1.04 million installs annually, or $1.87 billion in total, including roughly $1.25 billion in installation revenue. The CEO has just walked in—what’s your recommendation, and what key assumptions or risks would you highlight?
+   [stage synthesis | tokens in 11026 (cached 10741) out 147 | case cost so far $0.0008]
+
+YOU: My answer: the US home EV charger market is about 1.9 billion dollars a year, and about two thirds of it, 1.25 billion, is installation labor. Since our client is a home-energy installer, I'd recommend focusing on installation through partnerships with EV dealers and charger brands rather than making hardware. The market grows with EV sales, which went from 0.9 to 1.5 million in three years. Risks are cheaper DIY installs and slowing EV adoption, so next I'd check installer competition in our client's regions.
+INTERVIEWER: Okay. Let me know when you’re ready to be graded.
+   [stage synthesis | tokens in 2456 (cached 2278) out 67 | case cost so far $0.0009]
+
+
+== SCORECARD (overall 4.8/5) ==
+  structure      5  You built a tailored two-segment approach and explicitly connected install volume to pricing and the client-relevant revenue split.
+                 "First, new EV buyers: EV sales times the share who have a driveway or garage, times the share who actually install a charger."
+  clarifying     4  You confirmed geography, product scope, and revenue scope, then asked targeted questions to obtain key sizing inputs, though you did not probe timing or business model further.
+                 "Just to confirm scope: we're sizing annual US sales of Level 2 home chargers including installation, in dollars, not public charging."
+  quantitative   5  You correctly calculated new installs, total installs, total market size, and the installation-only portion while explaining each calculation clearly.
+                 "So total installs are 840 thousand plus 200 thousand, which is 1.04 million."
+  judgment       5  You translated the installation revenue share into a focused entry strategy and identified plausible demand and delivery risks with a relevant next diligence step.
+                 "Since our client is a home-energy installer, I'd recommend focusing on installation through partnerships with EV dealers and charger brands rather than making hardware."
+  synthesis      5  You led with a clear market estimate, supported it with key figures, and gave a recommendation, risks, and next step.
+                 "My answer: the US home EV charger market is about 1.9 billion dollars a year, and about two thirds of it, 1.25 billion, is installation labor."
+  communication  5  You communicated in a concise, signposted sequence and delivered a clear, well-organized final recommendation.
+                 "Great. I'll size this from two customer groups."
+  math new_installs             correct        you: 840.0  key: 840.0 K installs
+  math market_size              correct        you: 1.87  key: 1.872 $B
+  math install_only_market      correct        you: 1.25  key: 1.248 $B
+
+Strength: You combined a clear market-sizing structure with accurate math and tied the labor-heavy market to a specific partnership-led entry recommendation.
+Gap: You could have sharpened the initial clarification by explicitly confirming the decision timeline and exploring the client's operating model or geographic footprint.
+
+== COACH ==
+Today you scored 5 on structure, quantitative, judgment, synthesis, and communication, with clarifying at 4; all three market-sizing calculations were correct. With no past scorecards, the main signal is to strengthen the opening by confirming the decision timeline and the client’s operating model or footprint.
+Focus: clarifying
+Drill: For 10 minutes, practice opening 3 different cases: spend about 3 minutes each asking and prioritizing clarifiers, explicitly covering the client’s goal, decision timeline, geography, and operating model; use the final minute to identify any key unknown you still need.
+Next case: harbor_er (This operations case is a fresh scenario where clarifying the client’s context, constraints, and operating model will be especially useful.)
+
+Total case cost: $0.0019  (42665 in, 37108 cached, 1649 out)

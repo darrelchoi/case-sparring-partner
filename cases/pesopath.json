@@ -1,0 +1,127 @@
+{
+  "id": "pesopath",
+  "title": "PesoPath: should a budgeting app send money to Mexico?",
+  "case_type": "market_entry",
+  "industry": "Fintech",
+  "difficulty": 2,
+  "prompt": "Our client is PesoPath, a US fintech startup with a popular budgeting app used mostly by Spanish-speaking customers. It is considering launching a money-transfer feature so users can send money to family in Mexico. Should PesoPath enter this market?",
+  "clarifying_answers": {
+    "objective": "Decide whether to launch, and whether it would be profitable within two years.",
+    "geography": "US to Mexico transfers only, for now.",
+    "business_model": "The budgeting app is free with a paid premium tier. Transfers would earn a fee on each transfer.",
+    "capabilities": "PesoPath has no money-transfer licenses today; it would need a partner bank or its own licenses."
+  },
+  "hidden_facts": [
+    {
+      "topic": "market_size",
+      "hint": "how big the remittance market is",
+      "fact": "Migrants in the US send about $60 billion a year to Mexico.",
+      "numbers": {
+        "market_b": 60
+      }
+    },
+    {
+      "topic": "competitors",
+      "hint": "competitors, fees, or pricing in the market",
+      "fact": "Western Union and Remitly lead, followed by Wise and bank transfers. The average fee is about 3% of the amount sent, and it falls about 0.2 points a year.",
+      "numbers": {
+        "avg_fee_pct": 3,
+        "fee_decline_pts": 0.2
+      }
+    },
+    {
+      "topic": "user_base",
+      "hint": "PesoPath's users or how much they send",
+      "fact": "PesoPath has 2 million active users. A survey says 40% of them send money to Mexico, about $4,000 a year each.",
+      "numbers": {
+        "users_m": 2,
+        "sender_pct": 40,
+        "annual_sent_per_sender": 4000
+      }
+    },
+    {
+      "topic": "costs",
+      "hint": "costs, margins, or what it takes to build",
+      "fact": "PesoPath's cost to move money (partner bank, currency exchange, compliance) would be about 1.8% of the amount sent. Building the feature and getting licensed would cost about $15M upfront.",
+      "numbers": {
+        "cost_pct": 1.8,
+        "upfront_m": 15
+      }
+    },
+    {
+      "topic": "capture",
+      "hint": "how much of users' transfers PesoPath could win",
+      "fact": "Pilot data suggests PesoPath could win 25% of its senders' transfer volume in year one.",
+      "numbers": {
+        "capture_pct": 25
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Average US-to-Mexico remittance fee (%)",
+      "kind": "line",
+      "unlock_topic": "competitors",
+      "labels": [
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "series": [
+        {
+          "name": "Average fee",
+          "values": [
+            3.8,
+            3.6,
+            3.4,
+            3.2,
+            3.0
+          ]
+        }
+      ],
+      "unit": "%"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "volume",
+      "question": "How much money could PesoPath move in year one?",
+      "formula": "users_m * sender_pct / 100 * annual_sent_per_sender * capture_pct / 100",
+      "answer": 800,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "annual_profit",
+      "question": "What annual profit would that volume earn at today's average fee?",
+      "formula": "users_m * sender_pct / 100 * annual_sent_per_sender * capture_pct / 100 * (avg_fee_pct - cost_pct) / 100",
+      "answer": 9.6,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "payback",
+      "question": "How many years until the upfront investment pays back?",
+      "formula": "upfront_m / (users_m * sender_pct / 100 * annual_sent_per_sender * capture_pct / 100 * (avg_fee_pct - cost_pct) / 100)",
+      "answer": 1.5625,
+      "unit": "years",
+      "tolerance_pct": 8.0
+    }
+  ],
+  "ideal_structure": [
+    "Market attractiveness: size, growth, fees, competition",
+    "Client fit: existing users, trust, Spanish-language brand",
+    "Economics: volume x (fee - cost), upfront investment, payback",
+    "How to enter: partner bank vs own licenses",
+    "Risks: falling fees, regulation, fraud"
+  ],
+  "recommendation": "Yes, enter, but through a partner bank. Selling only to its own users, PesoPath could move about $800M in year one and earn about $9.6M at a 1.2-point margin, paying back the $15M in about 1.6 years. The big risk is fees falling 0.2 points a year, which would wipe out the margin in about 6 years, so PesoPath must also cut its transfer cost over time.",
+  "common_mistakes": [
+    "Sizing the whole $60B market instead of PesoPath's reachable volume",
+    "Ignoring that fees are falling",
+    "Forgetting the licensing and compliance cost"
+  ]
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Sparring Partner</title>
+<link rel="stylesheet" href="/static/style.css?v=yale5">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand" onclick="App.showStart()">
+    <div class="logo">CS</div>
+    <div>
+      <div class="name">Case Sparring Partner</div>
+      <div class="tag">Mock case interviews, out loud</div>
+    </div>
+  </div>
+  <nav class="topnav">
+    <button class="link" onclick="App.showStart()">New case</button>
+    <button class="link" onclick="App.showProgress()">My progress</button>
+  </nav>
+</header>
+
+<!-- =========================================================== START -->
+<main id="view-start" class="view">
+  <section class="hero">
+    <h1>Practice a consulting case <span class="accent">out loud</span>.</h1>
+    <p>An AI interviewer runs a real case. The data stays hidden until you ask the right questions, and exhibits appear on screen as you unlock them.
+      When you're done, you get a scorecard based on a fixed rubric and the case's answer key, plus a coach who picks what to drill next.</p>
+    <div class="namebox">
+      <label for="username">Your first name <span class="muted">(keeps your practice history on this computer)</span></label>
+      <div class="row">
+        <input id="username" maxlength="40" placeholder="e.g. Darrel" autocomplete="given-name">
+        <button class="primary" id="coach-pick">▶ Coach's pick</button>
+      </div>
+    </div>
+    <div class="notes">
+      <span class="pill" id="voice-pill">🎤 Voice works best in Chrome or Edge</span>
+      <span class="pill">⌨️ Typing always works</span>
+      <span class="pill">🔒 Your history stays on this computer</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Case library</h2>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="grid" id="case-grid"></div>
+  </section>
+
+  <section class="card gen">
+    <h2>Generate a new case</h2>
+    <p class="muted">The Case Generator agent writes an original case. Code then recomputes every number. If the math doesn't check out, the agent has to fix it (at most 2 retries).</p>
+    <div class="gen-row">
+      <select id="gen-type">
+        <option value="profitability">Profitability</option>
+        <option value="market_sizing">Market sizing</option>
+        <option value="market_entry">Market entry</option>
+        <option value="m_and_a">M&amp;A</option>
+        <option value="pricing">Pricing</option>
+        <option value="operations">Operations</option>
+      </select>
+      <input id="gen-industry" maxlength="60" placeholder="Industry, e.g. fintech, airlines, K-pop">
+      <select id="gen-diff"><option value="1">Easy</option><option value="2" selected>Medium</option><option value="3">Hard</option></select>
+      <button class="primary" id="gen-btn">✨ Generate</button>
+    </div>
+    <div id="gen-status" class="gen-status"></div>
+  </section>
+
+  <p class="privacy muted">Privacy: in Chrome, the 🎤 sends your speech to Google to turn it into text. Everything else, including your history, stays on this computer and goes only to the AI model.</p>
+</main>
+
+<!-- =========================================================== INTERVIEW -->
+<main id="view-interview" class="view hidden">
+  <div class="case-bar">
+    <div>
+      <div class="kicker" id="case-type"></div>
+      <div class="case-title" id="case-title"></div>
+    </div>
+    <div class="stages" id="stages"></div>
+    <div class="timer" id="timer">00:00</div>
+  </div>
+
+  <div class="interview">
+    <section class="chat-col">
+      <div class="chat" id="chat"></div>
+      <div class="composer">
+        <div class="interim" id="interim"></div>
+        <textarea id="input" rows="3" placeholder="Type your answer, or press 🎤 and talk (hold the spacebar when you're not typing)"></textarea>
+        <div class="composer-row">
+          <button class="mic" id="mic" title="Talk">🎤</button>
+          <label class="toggle" title="Send as soon as you stop talking"><input type="checkbox" id="autosend"> Auto-send</label>
+          <label class="toggle" title="Read the interviewer's replies aloud"><input type="checkbox" id="speak" checked> 🔊 Read aloud</label>
+          <label class="toggle">Voice <select id="voice-select" class="voice-select" title="Interviewer voice"></select></label>
+          <button class="ghost small" id="voice-test" type="button" title="Hear this voice">▶</button>
+          <span class="charcount" id="charcount"></span>
+          <button class="primary" id="send">Send ➤</button>
+        </div>
+        <div class="voice-hint" id="voice-hint">🎤 Your words appear in the box. Check them, fix anything the mic misheard, then press Enter.</div>
+        <div class="voice-note hidden" id="voice-note">Voice input needs Chrome or Edge. You can type instead.</div>
+      </div>
+    </section>
+
+    <aside class="side-col">
+      <div class="card exhibit-card">
+        <div class="card-head"><span>📊 Exhibits</span><span class="muted" id="facts-count"></span></div>
+        <div id="exhibits"><div class="empty">Exhibits appear here when you ask for the right data.</div></div>
+      </div>
+      <div class="card meter">
+        <div class="card-head"><span>⚡ Token meter</span><span class="muted">gpt-6-luna</span></div>
+        <div class="meter-grid">
+          <div><div class="mval" id="m-in">0</div><div class="mlab">input</div></div>
+          <div><div class="mval" id="m-cached">0</div><div class="mlab">cached</div></div>
+          <div><div class="mval" id="m-out">0</div><div class="mlab">output</div></div>
+          <div><div class="mval accent" id="m-cost">$0.0000</div><div class="mlab">this case</div></div>
+        </div>
+        <div class="budget"><div id="budget-bar"></div></div>
+        <div class="mlab" id="budget-text"></div>
+      </div>
+      <button class="primary big" id="end-btn">I'm ready to be graded ✓</button>
+    </aside>
+  </div>
+</main>
+
+<!-- =========================================================== SCORECARD -->
+<main id="view-score" class="view hidden">
+  <div id="grading" class="grading hidden">
+    <div class="spinner"></div>
+    <div>The Grader is scoring your transcript against the rubric, then the Coach is reviewing your history…</div>
+  </div>
+  <div id="score-body"></div>
+</main>
+
+<!-- =========================================================== PROGRESS -->
+<main id="view-progress" class="view hidden">
+  <div class="section-head">
+    <h1>My progress</h1>
+    <button class="ghost danger" id="delete-history">Delete my history</button>
+  </div>
+  <div id="progress-body"></div>
+</main>
+
+<!-- =========================================================== REVIEW -->
+<main id="view-review" class="view hidden">
+  <div class="case-bar">
+    <div>
+      <div class="kicker" id="rv-type"></div>
+      <div class="case-title" id="rv-title"></div>
+    </div>
+    <button class="ghost" onclick="App.showProgress()">← Back to my progress</button>
+  </div>
+  <div class="interview">
+    <section class="chat-col"><div class="chat" id="rv-chat" style="max-height:none"></div></section>
+    <aside class="side-col">
+      <div class="card exhibit-card">
+        <div class="card-head"><span>📊 Exhibits you unlocked</span><span class="muted" id="rv-facts"></span></div>
+        <div id="rv-exhibits"></div>
+      </div>
+      <div class="card meter">
+        <div class="card-head"><span>⚡ Tokens for this case</span><span class="muted">gpt-6-luna</span></div>
+        <div class="meter-grid">
+          <div><div class="mval" id="rv-in">0</div><div class="mlab">input</div></div>
+          <div><div class="mval" id="rv-cached">0</div><div class="mlab">cached</div></div>
+          <div><div class="mval" id="rv-out">0</div><div class="mlab">output</div></div>
+          <div><div class="mval accent" id="rv-cost">$0</div><div class="mlab">total</div></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <h2 style="margin-top:26px">Scorecard</h2>
+  <div id="rv-score"></div>
+</main>
+
+<div class="toast hidden" id="toast"></div>
+<script src="/static/app.js?v=yale5"></script>
+</body>
+</html>

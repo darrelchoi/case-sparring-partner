@@ -1,0 +1,8 @@
+Thanks. Just to confirm scope: we're sizing annual US sales of Level 2 home chargers including installation, in dollars, not public charging. Is that right?
+Great. I'll size this from two customer groups. First, new EV buyers: EV sales times the share who have a driveway or garage, times the share who actually install a charger. Second, existing EV owners who replace or upgrade. Then I'll multiply installs by the average price, and split hardware from installation since that matters for our client. Can I start with how many EVs are sold each year?
+What share of EV buyers live somewhere they can install a home charger?
+And of those, how many actually install a Level 2 charger?
+So 1.5 million times 70 percent is 1.05 million, times 80 percent is 840 thousand new installs a year. Do existing owners also replace or upgrade chargers?
+What does a typical charger and installation cost?
+So total installs are 840 thousand plus 200 thousand, which is 1.04 million. Times 1,800 dollars, that's about 1.87 billion dollars a year. Installation alone is 1.04 million times 1,200, which is about 1.25 billion dollars.
+My answer: the US home EV charger market is about 1.9 billion dollars a year, and about two thirds of it, 1.25 billion, is installation labor. Since our client is a home-energy installer, I'd recommend focusing on installation through partnerships with EV dealers and charger brands rather than making hardware. The market grows with EV sales, which went from 0.9 to 1.5 million in three years. Risks are cheaper DIY installs and slowing EV adoption, so next I'd check installer competition in our client's regions.

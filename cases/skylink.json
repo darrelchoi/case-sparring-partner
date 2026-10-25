@@ -1,0 +1,146 @@
+{
+  "id": "skylink",
+  "title": "SkyLink Airlines: growing revenue, sinking profit",
+  "case_type": "profitability",
+  "industry": "Airlines",
+  "difficulty": 2,
+  "prompt": "Our client is SkyLink, a regional airline flying short routes in the Midwest. Revenue grew last year, but the airline went from a small profit to a loss. The board wants to understand what happened and what to do about it.",
+  "clarifying_answers": {
+    "objective": "Return to profitability next year.",
+    "geography": "Midwest US, short routes under two hours.",
+    "business_model": "Ticket sales plus small bag and seat fees. All planes are the same model.",
+    "timeline": "Board wants a plan for next year.",
+    "changes": "SkyLink expanded its route network last year."
+  },
+  "hidden_facts": [
+    {
+      "topic": "revenue",
+      "hint": "revenue, sales growth, or where growth came from",
+      "fact": "Revenue grew from $800M to $880M. All of that growth came from 6 new routes. Revenue on existing routes was flat.",
+      "numbers": {
+        "revenue_before_m": 800,
+        "revenue_now_m": 880,
+        "new_routes": 6
+      }
+    },
+    {
+      "topic": "costs",
+      "hint": "costs, cost breakdown, or cost growth",
+      "fact": "Total costs grew from $780M to $900M. Fuel costs on the existing network went up $30M, and the new routes cost $90M to operate.",
+      "numbers": {
+        "cost_before_m": 780,
+        "cost_now_m": 900,
+        "fuel_increase_m": 30,
+        "new_route_cost_m": 90
+      }
+    },
+    {
+      "topic": "new_routes",
+      "hint": "how the new routes are performing, load factor, or how full planes are",
+      "fact": "The 6 new routes bring in $80M of revenue combined. Planes on new routes are 55% full on average (load factor), versus 82% on existing routes.",
+      "numbers": {
+        "new_route_revenue_m": 80,
+        "new_load_factor_pct": 55,
+        "old_load_factor_pct": 82
+      }
+    },
+    {
+      "topic": "fuel",
+      "hint": "fuel prices or hedging",
+      "fact": "Jet fuel prices rose 12% last year. SkyLink does not hedge its fuel.",
+      "numbers": {
+        "fuel_price_rise_pct": 12
+      }
+    },
+    {
+      "topic": "competition",
+      "hint": "competitors or fares on the new routes",
+      "fact": "On 4 of the 6 new routes, a low-cost carrier already flies, with fares about 20% below SkyLink's.",
+      "numbers": {
+        "competitor_routes": 4,
+        "fare_discount_pct": 20
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Where cost growth came from ($M)",
+      "kind": "bar",
+      "unlock_topic": "costs",
+      "labels": [
+        "Fuel (existing routes)",
+        "New routes"
+      ],
+      "series": [
+        {
+          "name": "Cost increase",
+          "values": [
+            30,
+            90
+          ]
+        }
+      ],
+      "unit": "$M"
+    },
+    {
+      "id": "ex2",
+      "title": "Load factor by route group (%)",
+      "kind": "bar",
+      "unlock_topic": "new_routes",
+      "labels": [
+        "Existing routes",
+        "New routes"
+      ],
+      "series": [
+        {
+          "name": "Load factor",
+          "values": [
+            82,
+            55
+          ]
+        }
+      ],
+      "unit": "%"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "profit_swing",
+      "question": "How big was the swing in profit from last year to this year?",
+      "formula": "(revenue_before_m - cost_before_m) - (revenue_now_m - cost_now_m)",
+      "answer": 40,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "new_route_profit",
+      "question": "What profit or loss do the new routes make?",
+      "formula": "new_route_revenue_m - new_route_cost_m",
+      "answer": -10,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "breakeven_load_factor",
+      "question": "Assuming revenue grows with how full the planes are, what load factor would the new routes need to break even?",
+      "formula": "new_load_factor_pct * new_route_cost_m / new_route_revenue_m",
+      "answer": 61.875,
+      "unit": "%",
+      "tolerance_pct": 3.0
+    }
+  ],
+  "ideal_structure": [
+    "Profit swing = change in revenue - change in costs",
+    "Split the network: existing routes vs new routes",
+    "Existing routes: revenue flat, fuel cost up",
+    "New routes: revenue, cost, load factor, competition",
+    "Options: cut or fix weak routes, fuel hedging, pricing"
+  ],
+  "recommendation": "The $40M profit swing has two parts: $30M from unhedged fuel on existing routes, and a $10M loss on the new routes, which are only 55% full against a break-even of about 62%. Exit or reschedule the new routes where a low-cost carrier competes, keep the ones near break-even, and start a fuel hedging program.",
+  "common_mistakes": [
+    "Missing that revenue growth came entirely from loss-making routes",
+    "Ignoring fuel because revenue grew",
+    "Not computing a break-even load factor"
+  ]
+}

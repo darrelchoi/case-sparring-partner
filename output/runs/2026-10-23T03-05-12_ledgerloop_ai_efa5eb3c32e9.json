@@ -1,0 +1,193 @@
+{
+ "session_id": "efa5eb3c32e9",
+ "user": "cost-test",
+ "case_id": "ledgerloop_ai",
+ "finished": "2026-10-23T03:05:12+00:00",
+ "duration_sec": 53,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is LedgerLoop, which sells accounting software to small businesses. It has built an AI assistant that categorizes expenses automatically. How should LedgerLoop price the new feature?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "I think they should just charge 10 dollars because that sounds reasonable.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "What would you want to learn before settling on a price? Please lay out how you\u2019d evaluate the options, then we can dig into the data.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Okay, I guess I'd look at costs and competitors. What does the feature cost to run?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "It costs LedgerLoop about $2 per customer per month to run the feature. What would you like to investigate next?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "What do competitors charge?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "QuickBooks includes a similar feature in its $90-a-month plan, while Xero charges $15 a month for an add-on. How would you use that information to assess LedgerLoop\u2019s pricing options?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "So Xero is 15, so maybe 15 is fine.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "That\u2019s a useful reference point, but competitors\u2019 prices don\u2019t tell us what LedgerLoop\u2019s customers will pay or what the feature is worth to them. What would you want to learn next to test whether $15 is the right price?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "How many customers would buy it?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "In a survey, 40% of customers said they\u2019d add it at $10 a month, compared with 20% at $20. I\u2019m putting an exhibit on your screen. How would you compare the revenue at those two prices?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "At 10 dollars maybe 40 percent buy, at 20 dollars 20 percent buy. I would pick 10 dollars because more people buy it.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "More customers would buy at $10, but that alone doesn\u2019t tell us which price earns more. Compare monthly revenue per 100 customers at each price, then account for the $2 monthly cost per buyer.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "I recommend 10 dollars.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "The CEO just walked in. Please give your final recommendation, including why you\u2019d choose that price and how you\u2019d protect retention.",
+   "flagged": false,
+   "flags": []
+  }
+ ],
+ "revealed": [
+  "cost",
+  "competitors",
+  "adoption"
+ ],
+ "scorecard": {
+  "case_id": "ledgerloop_ai",
+  "case_title": "LedgerLoop: pricing an AI bookkeeping feature",
+  "case_type": "pricing",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 2,
+    "reason": "You named costs and competitors but did not build a complete pricing framework or investigate value, adoption economics, and retention systematically.",
+    "evidence_quote": "Okay, I guess I'd look at costs and competitors. What does the feature cost to run?"
+   },
+   {
+    "dimension": "clarifying",
+    "score": 1,
+    "reason": "You did not clarify the objective, scope, or retention constraint before proposing a price.",
+    "evidence_quote": "I think they should just charge 10 dollars because that sounds reasonable."
+   },
+   {
+    "dimension": "quantitative",
+    "score": 1,
+    "reason": "You repeated adoption rates but did not calculate customer value or compare profit at the tested prices, even after prompting.",
+    "evidence_quote": "At 10 dollars maybe 40 percent buy, at 20 dollars 20 percent buy. I would pick 10 dollars because more people buy it."
+   },
+   {
+    "dimension": "judgment",
+    "score": 2,
+    "reason": "You focused on higher adoption rather than weighing profit, customer value, and retention trade-offs, and did not support your initial price with evidence.",
+    "evidence_quote": "I would pick 10 dollars because more people buy it."
+   },
+   {
+    "dimension": "synthesis",
+    "score": 1,
+    "reason": "You gave a price but no final recommendation with supporting economics, retention safeguards, or next steps.",
+    "evidence_quote": "At 10 dollars maybe 40 percent buy, at 20 dollars 20 percent buy. I would pick 10 dollars because more people buy it."
+   },
+   {
+    "dimension": "communication",
+    "score": 2,
+    "reason": "Your responses were brief, but the recommendation was underdeveloped and you did not signpost your analysis or deliver the requested final rationale.",
+    "evidence_quote": "So Xero is 15, so maybe 15 is fine."
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "value_per_customer",
+    "question": "How much is the feature worth to a typical customer each month?",
+    "correct_answer": 150.0,
+    "unit": "$",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   },
+   {
+    "math_id": "profit_at_10",
+    "question": "What monthly profit does the feature make at $10?",
+    "correct_answer": 160.0,
+    "unit": "$K",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   },
+   {
+    "math_id": "profit_at_20",
+    "question": "What monthly profit does the feature make at $20?",
+    "correct_answer": 180.0,
+    "unit": "$K",
+    "candidate_number": null,
+    "verdict": "not_attempted"
+   }
+  ],
+  "overall": 1.5,
+  "top_strength": "You recognized competitor pricing as a useful reference point and asked what competitors charge.",
+  "biggest_gap": "You did not compare contribution profit at $10 and $20, so your choice relied on adoption volume alone rather than the case\u2019s core economics.",
+  "summary": "You identified costs, competitor pricing, and adoption as relevant inputs, but you did not calculate customer value or compare the profits at the two tested prices. You should structure the analysis around cost, competitive anchors, customer value, and adoption economics, then recommend a price with a retention safeguard and a clear test plan.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "Your quantitative score fell from 4 and 5 in your last two cases to 1 today, and clarifying and synthesis also landed at 1; the key miss was not calculating contribution profit at either price. Earlier results show you can do the math, so this looks like failing to apply it to the decision rather than a consistent quantitative weakness.",
+  "focus_dimension": "quantitative",
+  "drill": "In 10 minutes, do three pricing mini-cases: for each, calculate contribution profit at two prices using unit margin \u00d7 expected customers, state which price wins, and explain the trade-off in one sentence. Say every calculation aloud.",
+  "next_case_id": "nighthawks",
+  "next_case_reason": "It is an unseen pricing case that gives you another chance to compare economics across price points and tie the calculation to a recommendation."
+ },
+ "usage": {
+  "input_tokens": 22087,
+  "cache_read_tokens": 15234,
+  "cache_write_tokens": 5547,
+  "output_tokens": 1583,
+  "requests": 15,
+  "cost_usd": 0.00176783
+ }
+}

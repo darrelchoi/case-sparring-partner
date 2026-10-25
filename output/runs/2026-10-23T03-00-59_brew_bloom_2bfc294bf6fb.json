@@ -1,0 +1,218 @@
+{
+ "session_id": "2bfc294bf6fb",
+ "user": "cost-test",
+ "case_id": "brew_bloom",
+ "finished": "2026-10-23T03:00:59+00:00",
+ "duration_sec": 80,
+ "transcript": [
+  {
+   "role": "interviewer",
+   "text": "Our client is Brew & Bloom, a coffee chain with stores across the Northeast. Over the last two years its operating profit has fallen sharply, even though the CEO says the stores are as busy as ever. The CEO has asked us to figure out why profits are falling and what to do about it.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Thanks. Before I structure this, can I confirm the objective? Is it to get operating profit back to where it was, and over what timeline?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Yes. The objective is to restore operating profit to its level from two years ago within 18 months.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Got it. Are all the stores company-owned, and has anything changed in how we sell, like new channels?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "All stores are company-owned, and the chain added mobile ordering through an app about 18 months ago.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "I'd like to take a minute to structure this. Profit is revenue minus costs, so I'd look at three things: first, revenue, split into traffic and average ticket by channel, in-store versus mobile; second, costs, split into fixed costs like rent and variable costs like labor and ingredients; third, anything external like competitors or wage laws. Since the CEO says stores are busy, my hypothesis is that this is a cost problem. Can I start with revenue to confirm?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "That sounds reasonable. What would you like to know about revenue first?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Can I see what's happened to costs per store over the last two years?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Total cost per store rose from $1.2 million to $1.38 million over the two years. Labor was the main increase, rising from $450,000 to $600,000 per store; rent was flat and ingredient costs rose only slightly. I\u2019m putting an exhibit on your screen. What would you like to investigate next?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "So cost per store rose from 1.2 million to 1.38 million, an increase of 180 thousand. Labor went up 150 thousand, so labor is about 83 percent of the increase. Profit per store today is 1.5 minus 1.38, which is 120 thousand, down from 300 thousand. How many stores are there?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Sorry, let me reset. Could you say that again, a bit more briefly?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "With 120 stores, the chain-wide profit drop is 180 thousand times 120, which is 21.6 million dollars. Why did labor go up? Was it wages or hours?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Your arithmetic is right: that\u2019s a $21.6 million increase in annual costs across the chain. Labor rose because the starting wage increased from $15 to $18 an hour to retain staff, and each store added a third barista to every shift when mobile ordering launched. What would you like to examine next?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "Interesting, so it's both wages and more staff hours. How busy are stores at different times of day, and what's going on with mobile orders?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Mobile orders account for 30% of transactions, with the same average ticket as other orders: $7. They pile up during the morning rush, but the third barista is idle for about 60% of the day outside that rush. What does that suggest to you?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "So the third barista is idle 60 percent of the day. That suggests we're paying for peak capacity all day long. I'd keep the wage increase for retention but staff the third barista only during the morning rush.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "That could address the excess staffing outside the rush. How would you estimate the savings, and what would you want to check to make sure service during the rush doesn\u2019t suffer?",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "candidate",
+   "text": "My recommendation: profits fell 21.6 million because labor cost per store rose 150 thousand, mostly from adding a third barista on every shift for mobile ordering. I recommend scheduling the third barista only for the morning peak, testing a small mobile-order fee, and keeping the higher wage to protect retention. Risks are slower service at peak and staff morale, so we should pilot in 10 stores first and measure wait times.",
+   "flagged": false,
+   "flags": []
+  },
+  {
+   "role": "interviewer",
+   "text": "Thanks. Is there anything else you\u2019d like to add to your recommendation before we wrap?",
+   "flagged": false,
+   "flags": []
+  }
+ ],
+ "revealed": [
+  "costs",
+  "store_count",
+  "labor_drivers",
+  "mobile_ordering"
+ ],
+ "scorecard": {
+  "case_id": "brew_bloom",
+  "case_title": "Brew & Bloom: busy stores, shrinking profit",
+  "case_type": "profitability",
+  "scores": [
+   {
+    "dimension": "structure",
+    "score": 4,
+    "reason": "You used a relevant profit decomposition with channel-level revenue and cost categories, though you did not fully develop or prioritize the structure through the case.",
+    "evidence_quote": "Profit is revenue minus costs, so I'd look at three things: first, revenue, split into traffic and average ticket by channel"
+   },
+   {
+    "dimension": "clarifying",
+    "score": 4,
+    "reason": "You confirmed the objective and timeline and asked about ownership and a new sales channel, but did not probe the geography or competition directly.",
+    "evidence_quote": "Before I structure this, can I confirm the objective? Is it to get operating profit back to where it was, and over what timeline?"
+   },
+   {
+    "dimension": "quantitative",
+    "score": 4,
+    "reason": "You correctly calculated per-store profit, its decline, labor's share of the cost increase, and the chain-wide impact, but did not estimate the savings opportunity.",
+    "evidence_quote": "Labor went up 150 thousand, so labor is about 83 percent of the increase."
+   },
+   {
+    "dimension": "judgment",
+    "score": 4,
+    "reason": "You identified the idle off-peak staffing as an actionable driver, preserved wages for retention, and proposed a pilot to manage service and morale risks.",
+    "evidence_quote": "I'd keep the wage increase for retention but staff the third barista only during the morning rush."
+   },
+   {
+    "dimension": "synthesis",
+    "score": 4,
+    "reason": "You gave a clear recommendation supported by chain-wide and labor figures, with risks and a pilot, but did not quantify expected savings or explicitly tie recovery to the 18-month target.",
+    "evidence_quote": "I recommend scheduling the third barista only for the morning peak, testing a small mobile-order fee, and keeping the higher wage to protect retention."
+   },
+   {
+    "dimension": "communication",
+    "score": 3,
+    "reason": "Your reasoning was generally clear and signposted, though the interviewer asked you to restate one response more briefly and your close could be tighter.",
+    "evidence_quote": "So cost per store rose from 1.2 million to 1.38 million, an increase of 180 thousand."
+   }
+  ],
+  "math_results": [
+   {
+    "math_id": "profit_per_store",
+    "question": "What is operating profit per store today?",
+    "correct_answer": 0.12,
+    "unit": "$M",
+    "candidate_number": 0.12,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "total_profit_drop",
+    "question": "How much has operating profit fallen across the whole chain?",
+    "correct_answer": 21.6,
+    "unit": "$M",
+    "candidate_number": 21.6,
+    "verdict": "correct"
+   },
+   {
+    "math_id": "labor_share_of_increase",
+    "question": "What share of the cost increase comes from labor?",
+    "correct_answer": 83.33,
+    "unit": "%",
+    "candidate_number": 83.0,
+    "verdict": "correct"
+   }
+  ],
+  "overall": 3.8,
+  "top_strength": "You connected labor's disproportionate cost increase to the third barista's off-peak idleness and proposed a practical pilot that protects retention.",
+  "biggest_gap": "You did not estimate the savings from reducing third-barista hours, so the recommendation is not quantified against the $21.6 million profit decline.",
+  "summary": "You used the profit data well to isolate labor as the main driver and made a thoughtful staffing recommendation that balances retention with service risks. You should strengthen the close by estimating recoverable savings and showing whether the plan can restore profit within the 18-month objective.",
+  "adjustments": []
+ },
+ "coach": {
+  "pattern": "There\u2019s no prior scorecard to compare against; today you scored 4 on structure, clarifying, quantitative, judgment, and synthesis, and 3 on communication. Your calculations were correct, but you didn\u2019t quantify the proposed labor savings against the $21.6M profit decline.",
+  "focus_dimension": "quantitative",
+  "drill": "Spend 10 minutes building a savings bridge: calculate annual savings from reducing third-barista hours using stated assumptions, then compare the result with the $21.6M decline; repeat with two sensitivity scenarios and say each formula aloud.",
+  "next_case_id": "ledgerloop_ai",
+  "next_case_reason": "This pricing case will give you another chance to quantify financial impact and tie a recommendation to measurable economics."
+ },
+ "usage": {
+  "input_tokens": 35112,
+  "cache_read_tokens": 29318,
+  "cache_write_tokens": 4474,
+  "output_tokens": 1565,
+  "requests": 20,
+  "cost_usd": 0.00176692
+ }
+}

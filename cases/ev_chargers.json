@@ -1,0 +1,123 @@
+{
+  "id": "ev_chargers",
+  "title": "Home EV chargers: how big is the market?",
+  "case_type": "market_sizing",
+  "industry": "Energy / automotive",
+  "difficulty": 2,
+  "prompt": "Our client is a home-energy company thinking about selling and installing home EV chargers in the United States. Before anything else, the CEO wants to know: how big is the annual US market for home EV charger installations, in dollars?",
+  "clarifying_answers": {
+    "objective": "A market size estimate to decide whether to enter.",
+    "geography": "United States.",
+    "scope": "Level 2 home chargers, hardware plus installation. Not public charging stations.",
+    "customers": "Homeowners who buy EVs, plus existing EV owners replacing or upgrading chargers."
+  },
+  "hidden_facts": [
+    {
+      "topic": "ev_sales",
+      "hint": "how many EVs are sold",
+      "fact": "About 1.5 million new EVs (battery electric and plug-in hybrid) are sold in the US each year.",
+      "numbers": {
+        "ev_sales_m": 1.5
+      }
+    },
+    {
+      "topic": "home_access",
+      "hint": "how many buyers can install a charger at home, housing type, or garages",
+      "fact": "About 70% of EV buyers live in a single-family home with a garage or driveway, so they can install a home charger.",
+      "numbers": {
+        "home_access_pct": 70
+      }
+    },
+    {
+      "topic": "install_rate",
+      "hint": "how many eligible buyers actually install one",
+      "fact": "Of buyers who can install a charger, about 80% get a Level 2 home charger in their first year.",
+      "numbers": {
+        "install_rate_pct": 80
+      }
+    },
+    {
+      "topic": "price",
+      "hint": "price, cost, or what customers pay",
+      "fact": "A Level 2 charger with installation costs about $1,800 on average: $600 for the hardware and $1,200 for installation.",
+      "numbers": {
+        "total_price": 1800,
+        "hardware_price": 600,
+        "install_price": 1200
+      }
+    },
+    {
+      "topic": "replacements",
+      "hint": "existing EV owners, replacements, or upgrades",
+      "fact": "Existing EV owners also replace or upgrade chargers, about 200,000 installs a year (in thousands: 200).",
+      "numbers": {
+        "replacement_installs_k": 200
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "US EV sales (millions)",
+      "kind": "line",
+      "unlock_topic": "ev_sales",
+      "labels": [
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "series": [
+        {
+          "name": "EVs sold",
+          "values": [
+            0.9,
+            1.2,
+            1.4,
+            1.5
+          ]
+        }
+      ],
+      "unit": "M"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "new_installs",
+      "question": "How many new home charger installs come from new EV buyers each year (in thousands)?",
+      "formula": "ev_sales_m * 1000 * home_access_pct / 100 * install_rate_pct / 100",
+      "answer": 840,
+      "unit": "K installs",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "market_size",
+      "question": "What is the total annual market in dollars?",
+      "formula": "(ev_sales_m * 1000 * home_access_pct / 100 * install_rate_pct / 100 + replacement_installs_k) * total_price / 1000000",
+      "answer": 1.872,
+      "unit": "$B",
+      "tolerance_pct": 10.0
+    },
+    {
+      "id": "install_only_market",
+      "question": "How much of that is installation labor alone?",
+      "formula": "(ev_sales_m * 1000 * home_access_pct / 100 * install_rate_pct / 100 + replacement_installs_k) * install_price / 1000000",
+      "answer": 1.248,
+      "unit": "$B",
+      "tolerance_pct": 10.0
+    }
+  ],
+  "ideal_structure": [
+    "Two customer groups: new EV buyers and existing owners",
+    "New buyers: EV sales x share with home access x install rate",
+    "Existing owners: replacements and upgrades",
+    "Installs x price, split into hardware vs installation",
+    "Sanity check against growth in EV sales"
+  ],
+  "recommendation": "The market is about $1.9B a year (roughly 1.04 million installs at $1,800). About $1.25B of that is installation, which is the client's strength, so they should focus on installation, partnering with EV dealers and charger makers rather than making hardware.",
+  "common_mistakes": [
+    "Counting all EV buyers, including people without a driveway or garage",
+    "Forgetting replacement and upgrade demand",
+    "Not separating hardware from installation"
+  ]
+}

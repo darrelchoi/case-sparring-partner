@@ -1,0 +1,137 @@
+{
+  "id": "brew_bloom",
+  "title": "Brew & Bloom: busy stores, shrinking profit",
+  "case_type": "profitability",
+  "industry": "Coffee / restaurants",
+  "difficulty": 1,
+  "prompt": "Our client is Brew & Bloom, a coffee chain with stores across the Northeast. Over the last two years its operating profit has fallen sharply, even though the CEO says the stores are as busy as ever. The CEO has asked us to figure out why profits are falling and what to do about it.",
+  "clarifying_answers": {
+    "objective": "Get operating profit back to where it was two years ago within 18 months.",
+    "geography": "Northeast US only. All stores are company-owned, no franchises.",
+    "business_model": "Coffee, espresso drinks, and pastries. Sold in store and, for the last 18 months, through a mobile ordering app.",
+    "competition": "Starbucks, Dunkin', and local cafes. No big new competitor has entered.",
+    "timeline": "18 months."
+  },
+  "hidden_facts": [
+    {
+      "topic": "revenue",
+      "hint": "revenue, sales, prices, or customer traffic",
+      "fact": "Revenue is flat: about $1.5M per store per year, the same as two years ago. Customer counts and average prices haven't changed.",
+      "numbers": {
+        "revenue_per_store_m": 1.5
+      }
+    },
+    {
+      "topic": "costs",
+      "hint": "costs, cost breakdown, or cost trends",
+      "fact": "Total cost per store went from $1.2M two years ago to $1.38M today. Labor is the big mover: it went from $450K to $600K per store. Rent is flat and ingredients are up only slightly.",
+      "numbers": {
+        "cost_per_store_before_m": 1.2,
+        "cost_per_store_now_m": 1.38,
+        "labor_before_k": 450,
+        "labor_now_k": 600
+      }
+    },
+    {
+      "topic": "store_count",
+      "hint": "how many stores there are, or the size of the chain",
+      "fact": "Brew & Bloom has 120 stores.",
+      "numbers": {
+        "stores": 120
+      }
+    },
+    {
+      "topic": "labor_drivers",
+      "hint": "why labor costs rose, wages, staffing, or scheduling",
+      "fact": "Two things drove labor up. The starting wage went from $15 to $18 an hour to keep staff from leaving. And when mobile ordering launched, every store added a third barista to every shift.",
+      "numbers": {
+        "wage_before": 15,
+        "wage_now": 18
+      }
+    },
+    {
+      "topic": "mobile_ordering",
+      "hint": "mobile orders, the app, or how busy different times of day are",
+      "fact": "Mobile orders are now 30% of transactions, with the same average ticket of $7. Store managers say mobile orders pile up in the morning rush, but the third barista is idle for about 60% of the day outside the rush.",
+      "numbers": {
+        "mobile_share_pct": 30,
+        "avg_ticket": 7,
+        "offpeak_idle_pct": 60
+      }
+    }
+  ],
+  "exhibits": [
+    {
+      "id": "ex1",
+      "title": "Cost per store ($K)",
+      "kind": "bar",
+      "unlock_topic": "costs",
+      "labels": [
+        "Labor",
+        "Rent",
+        "Ingredients",
+        "Other"
+      ],
+      "series": [
+        {
+          "name": "Two years ago",
+          "values": [
+            450,
+            300,
+            330,
+            120
+          ]
+        },
+        {
+          "name": "Today",
+          "values": [
+            600,
+            300,
+            345,
+            135
+          ]
+        }
+      ],
+      "unit": "$K"
+    }
+  ],
+  "math_answers": [
+    {
+      "id": "profit_per_store",
+      "question": "What is operating profit per store today?",
+      "formula": "revenue_per_store_m - cost_per_store_now_m",
+      "answer": 0.12,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "total_profit_drop",
+      "question": "How much has operating profit fallen across the whole chain?",
+      "formula": "(cost_per_store_now_m - cost_per_store_before_m) * stores",
+      "answer": 21.6,
+      "unit": "$M",
+      "tolerance_pct": 5.0
+    },
+    {
+      "id": "labor_share_of_increase",
+      "question": "What share of the cost increase comes from labor?",
+      "formula": "(labor_now_k - labor_before_k) / ((cost_per_store_now_m - cost_per_store_before_m) * 1000) * 100",
+      "answer": 83.33,
+      "unit": "%",
+      "tolerance_pct": 5.0
+    }
+  ],
+  "ideal_structure": [
+    "Profit = revenue - costs; check each side",
+    "Revenue: traffic x ticket, by channel (in store vs mobile)",
+    "Costs: fixed (rent) vs variable (labor, ingredients); find what changed",
+    "Dig into labor: wage rate vs hours; why hours went up",
+    "Options: flexible staffing, mobile pricing, keep wages for retention"
+  ],
+  "recommendation": "Profit fell because cost per store rose $180K while revenue stayed flat, and about 83% of that increase is labor. Keep the higher wage (it protects retention), but schedule the third barista only for the morning rush, since they are idle about 60% of the day. Consider a small mobile-order fee or price test. Together this should recover most of the $21.6M drop within 18 months.",
+  "common_mistakes": [
+    "Jumping to 'raise prices' before finding the cost driver",
+    "Blaming the wage increase alone and missing the extra barista hours",
+    "Not quantifying the chain-wide impact"
+  ]
+}
