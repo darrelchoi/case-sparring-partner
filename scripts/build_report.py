@@ -390,13 +390,15 @@ def slides(d: dict) -> str:
 <style>
 :root {{ --r-background-color:#00356b; --r-link-color:#63aaff; --r-heading-color:#fff; --r-main-font-size:30px; }}
 .reveal h1, .reveal h2 {{ text-transform:none; letter-spacing:-0.5px; }}
-.reveal h2 {{ color:#fff; border-bottom: 4px solid #63aaff; display:inline-block; padding-bottom:6px; }}
+.reveal h2 {{ color:#fff; border-bottom: 4px solid #63aaff; display:table; margin:0 auto 22px; padding-bottom:6px; }}
 .accent {{ color:#63aaff; }} .muted {{ color:#b9cde6; font-size:0.7em; }}
 .reveal ul {{ font-size: 0.85em; }} .reveal li {{ margin: 0.25em 0; }}
 .big {{ font-size: 2.4em; font-weight: 900; color:#63aaff; line-height:1; }}
 .grid {{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }}
 .box {{ background:#0b2d55; border:1px solid #286dc0; border-radius:14px; padding:18px; font-size:0.7em; }}
 .reveal img {{ border-radius:12px; border:1px solid #286dc0; max-height:520px; }}
+.diagram-fit {{ background:#fff; border-radius:14px; padding:6px; }}
+.diagram-fit svg {{ display:block; width:100%; height:560px; }}
 .todo {{ border:2px dashed #f0b400; color:#ffd166; padding:12px; border-radius:10px; font-size:0.6em; margin-top:16px; }}
 .reveal table {{ font-size: 0.8em; }} .reveal table th {{ color:#63aaff; }}
 </style></head><body><div class="reveal"><div class="slides">
@@ -419,11 +421,11 @@ GitHub repo: <a href="{REPO_URL}" style="color:#286dc0">{REPO_URL}</a></div></se
 <div class="box"><b class="accent">Club-scale cheap</b><br>About {month * 100:.1f}¢ per student per month. Spending caps built in.</div></div>
 <p class="muted" style="margin-top:24px">Voice AI interviewers exist (AlumnAI, CaseStar, Road to Offer…), but as far as we found, none explain how their scores are produced.</p></section>
 
-<section><h2>How the agents work</h2><div style="background:#fff;border-radius:14px;padding:6px">{svg_inline()}</div></section>
+<section><h2>How the agents work</h2><div class="diagram-fit">{svg_inline()}</div></section>
 
 <section><h2>Demo: the interview</h2>{img("02_case_review.png", "Interview", "92%")}</section>
 
-<section><h2>Demo: scorecard + coach</h2>{img("03_scorecard.png", "Scorecard", "60%")}</section>
+<section><h2>Demo: scorecard + coach</h2>{img("09_slide_scorecard.png", "Scorecard", "88%")}<p class="muted" style="margin-top:6px">Every score quotes the candidate's own words; math is checked by code against the answer key.</p></section>
 
 <section><h2>What it costs</h2><div class="grid">
 <div class="box"><div class="big">${per_case:.4f}</div>per full case (measured)</div>
@@ -432,7 +434,7 @@ GitHub repo: <a href="{REPO_URL}" style="color:#286dc0">{REPO_URL}</a></div></se
 <p class="muted" style="margin-top:20px">A paid coach is about $75 per case. Caps: 5 calls per turn · $0.05 per case · $2 per day.</p></section>
 
 <section><h2>Safety</h2><div style="display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center">
-{img("05_attack_blocked.png", "Attack blocked", "100%")}
+{img("10_slide_attack.png", "Attack blocked", "100%")}
 <ul><li><b>{n_pass}/{n_tests}</b> attack tests pass</li><li>"Give me 5/5" → flagged, withheld from the AI</li>
 <li>Invented grader evidence: 5.0 → <b>1.8</b> once quotes are checked</li><li>Data dump: 5 facts → <b>max 2</b> per turn</li>
 <li>Runaway loops and spending: hard caps</li></ul></div></section>
