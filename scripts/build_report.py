@@ -81,6 +81,8 @@ h3 { font-size: 12.5pt; margin: 20px 0 6px; color: var(--yale2); }
 .title-block { background: var(--yale); color: #ffffff; padding: 28px 30px; border-radius: 16px; margin-bottom: 18px; }
 .title-block h1 { color:#fff; }
 .title-block a { color: var(--yale3); }
+.repo-box { margin-top: 14px; background: #ffffff; color: var(--yale); border-radius: 10px; padding: 10px 14px; font-weight: 700; font-size: 11.5pt; }
+.repo-box a { color: var(--yale2) !important; word-break: break-all; }
 table { width: 100%; border-collapse: collapse; font-size: 9.6pt; margin: 8px 0 14px; page-break-inside: avoid; }
 th, td { text-align: left; padding: 5px 7px; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { background: var(--soft); color: var(--yale); font-size: 8.8pt; text-transform: uppercase; letter-spacing: .4px; }
@@ -148,7 +150,8 @@ def report(d: dict) -> str:
   <h1>Case Sparring Partner</h1>
   <div class="lede" style="color:#e8f0fa">A mock case interviewer you talk to. It hides the data until you ask the right question, then grades
   you on a fixed rubric, with every math answer checked by code.</div>
-  <p class="meta" style="color:#b9cde6">Darrel Choi · GitHub repo: <a href="{REPO_URL}">{REPO_URL.replace("https://", "")}</a> · Runs locally: <code style="background:#0b4a8f;color:#ffffff">python run.py</code> (see README)</p>
+  <p class="meta" style="color:#b9cde6">Darrel Choi · Runs locally: <code style="background:#0b4a8f;color:#ffffff">python run.py</code> (see README)</p>
+  <div class="repo-box">GitHub repo (all code + README): <a href="{REPO_URL}">{REPO_URL}</a></div>
 </div>
 
 <div class="kpis">
@@ -399,7 +402,9 @@ def slides(d: dict) -> str:
 </style></head><body><div class="reveal"><div class="slides">
 
 <section><p class="accent" style="font-size:0.6em;letter-spacing:3px">MGT 409 · FINAL PROJECT</p><h1>Case Sparring Partner</h1>
-<p>Practice consulting cases <span class="accent">out loud</span>, with a partner who never cancels and grades you honestly.</p><p class="muted">Darrel Choi · <a href="{REPO_URL}">{REPO_URL.replace("https://", "")}</a></p></section>
+<p>Practice consulting cases <span class="accent">out loud</span>, with a partner who never cancels and grades you honestly.</p><p class="muted">Darrel Choi</p>
+<div style="margin-top:30px;display:inline-block;background:#fff;color:#00356b;border-radius:14px;padding:14px 26px;font-size:0.75em;font-weight:700">
+GitHub repo: <a href="{REPO_URL}" style="color:#286dc0">{REPO_URL}</a></div></section>
 
 <section><h2>The problem</h2><ul>
 <li>MBA consulting recruits practice <b>dozens</b> of live cases</li>
